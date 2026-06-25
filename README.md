@@ -1,8 +1,14 @@
 # 论文日报视觉交互方案规范
 
-这是论文日报 App 的视觉与交互设计仓库，用来沉淀产品气质、组件规范、推荐体验、四端适配和案例研究。
+这是论文日报 App 的视觉与交互设计仓库，用来沉淀产品气质、组件规范、页面案例、推荐体验和四端适配。
 
 目标不是把论文做成更严肃的 PDF 入口，而是把“发现、理解、收藏、继续读”做成一种轻快的日常信息消费体验：专业、有判断力、亲和、灵动，并且越刷越懂用户。
+
+当前 GitHub Pages 形态：
+
+- `index.html`：极简入口页，只负责把人送进规范站。
+- `docs.html`：左侧目录 + 右侧文档 + 动态 demo 的文档站。
+- `locales/*/common.json`：使用 `i18next` 的多语言资源。
 
 ## 核心方向
 
@@ -37,6 +43,8 @@ Figma 文件：<https://www.figma.com/design/6kWePIR4gW1ZsKBhfAfBTh>
 
 入口文件：[index.html](index.html)
 
+文档页：[docs.html](docs.html)
+
 发布方式：
 
 1. 推送到 GitHub。
@@ -46,12 +54,12 @@ Figma 文件：<https://www.figma.com/design/6kWePIR4gW1ZsKBhfAfBTh>
 
 页面能力：
 
-- 设计哲学说明。
-- 常用前端组件 demo。
-- AI-native 论文对话工作台 demo。
-- 暗黑模式切换。
-- 中文 / 英文 / 阿拉伯语切换。
-- RTL 布局演示。
+- 极简首页入口。
+- 左侧可展开目录的文档页。
+- 常用组件动态 demo。
+- 页面案例模板。
+- `i18next` 多语言切换。
+- 暗黑模式和 RTL 支持。
 
 ## 使用方式
 

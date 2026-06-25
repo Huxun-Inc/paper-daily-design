@@ -1,381 +1,144 @@
 <!doctype html>
-<html lang="zh-CN" dir="ltr">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ScholarDaily visual interaction system: design philosophy, component demos, dark mode, multilingual and RTL guidance."
+      content="ScholarDaily Design is an open design guideline site for a paper-reading product, with documentation, components, and page demos."
     />
-    <title>ScholarDaily Design System</title>
+    <title>ScholarDaily Design</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body>
+  <body data-page="landing">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="ScholarDaily home">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html" aria-label="ScholarDaily Design home">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span>ScholarDaily</span>
+          <span>ScholarDaily Design</span>
         </a>
 
-        <div class="nav-links" aria-label="Page sections">
-          <a href="#philosophy" data-i18n="navPhilosophy">设计哲学</a>
-          <a href="#components" data-i18n="navComponents">组件 Demo</a>
-          <a href="#copilot" data-i18n="navCopilot">AI 对话</a>
-          <a href="#patterns" data-i18n="navPatterns">交互规范</a>
-          <a href="#i18n" data-i18n="navI18n">多语言</a>
-        </div>
+        <nav class="topbar-nav" aria-label="Primary">
+          <a href="docs.html#intro" data-i18n="nav.docs">文档</a>
+          <a href="docs.html#components-paper-card" data-i18n="nav.components">组件</a>
+          <a href="docs.html#pages-feed" data-i18n="nav.pages">页面案例</a>
+        </nav>
 
-        <div class="toolbar" aria-label="Display controls">
-          <label class="select-label" for="languageSelect" data-i18n="languageLabel">语言</label>
+        <div class="toolbar">
           <select id="languageSelect" aria-label="Language">
             <option value="zh">中文</option>
             <option value="en">English</option>
             <option value="ar">العربية</option>
           </select>
-          <button class="icon-button" id="themeToggle" type="button" aria-pressed="false">
-            <span aria-hidden="true">◐</span>
-            <span data-i18n="themeToggle">暗黑</span>
+          <button class="toolbar-button" id="themeToggle" type="button" aria-pressed="false">
+            <span data-i18n="theme.toggle">暗色</span>
           </button>
+          <a class="toolbar-link" href="docs.html" data-i18n="landing.openDocs">进入文档</a>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <main id="main">
-      <section class="hero-section" id="top">
+    <main id="main" class="landing-shell">
+      <section class="hero-block">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="eyebrow">视觉交互规范 · GitHub Pages</p>
-          <h1 data-i18n="heroTitle">让论文像信息流一样好刷，但仍然可靠。</h1>
-          <p class="hero-lede" data-i18n="heroLede">
-            这不是论文数据库皮肤，而是一套面向推荐、留存、阅读舒适度和跨端一致性的产品设计系统。
+          <p class="eyebrow" data-i18n="landing.eyebrow">Open Design System</p>
+          <h1 data-i18n="landing.title">一个像 Ant Design 一样的论文产品设计规范站。</h1>
+          <p class="hero-text" data-i18n="landing.subtitle">
+            首页保持极简，文档站承载设计哲学、组件规范、页面案例和可操作 demo。
           </p>
           <div class="hero-actions">
-            <a class="primary-link" href="#components" data-i18n="viewComponents">查看组件</a>
-            <a class="secondary-link" href="https://www.figma.com/design/6kWePIR4gW1ZsKBhfAfBTh" data-i18n="openFigma">打开 Figma</a>
+            <a class="primary-button" href="docs.html" data-i18n="landing.enterDocs">查看文档</a>
+            <a class="secondary-button" href="docs.html#components-paper-card" data-i18n="landing.enterComponents">查看组件</a>
           </div>
         </div>
 
-        <div class="hero-demo" aria-label="ScholarDaily interface preview">
-          <div class="phone-preview">
-            <div class="phone-status">
-              <span>9:41</span>
-              <span>5G</span>
+        <div class="hero-preview">
+          <div class="preview-window">
+            <div class="preview-window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div class="app-topline">
-              <span class="mini-mark"></span>
-              <button type="button" aria-label="Refresh">↻</button>
-            </div>
-            <h2 data-i18n="briefingTitle">今日简报</h2>
-            <p data-i18n="briefingSubtitle">为你精选 12 篇论文 · 预计 18 分钟</p>
-            <article class="paper-card is-hot">
-              <div class="paper-rank">1</div>
-              <div>
-                <p class="paper-source">ArXiv: AI</p>
-                <h3 data-i18n="paperTitle">A new scaling law for reasoning in large language models</h3>
-                <p data-i18n="paperSummary">推理能力会随着算力和高质量数据增长，以可预测方式提升。</p>
-                <div class="chip-row">
-                  <span>reasoning</span>
-                  <span>LLM</span>
+
+            <div class="preview-docs">
+              <aside class="preview-sidebar">
+                <strong>Guide</strong>
+                <button type="button" class="is-active">Paper Card</button>
+                <button type="button">Summary Block</button>
+                <button type="button">Command Bar</button>
+                <button type="button">AI Answer</button>
+              </aside>
+
+              <section class="preview-main">
+                <div class="preview-section-head">
+                  <span class="preview-tag">Component</span>
+                  <h2 data-i18n="landing.previewTitle">Paper Card</h2>
                 </div>
-              </div>
-              <button class="save-button" type="button" aria-label="Save paper">☆</button>
-            </article>
-            <article class="paper-card">
-              <div class="paper-rank">2</div>
-              <div>
-                <p class="paper-source">Nature</p>
-                <h3 data-i18n="paperTitleTwo">A reversible gene switch for safer cell therapies</h3>
-                <p data-i18n="paperSummaryTwo">精确控制治疗基因开关，降低临床应用风险。</p>
-              </div>
-              <button class="save-button" type="button" aria-label="Save paper">☆</button>
-            </article>
-          </div>
-        </div>
-      </section>
 
-      <section class="section-grid" id="philosophy">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="philosophyEyebrow">Design Philosophy</p>
-          <h2 data-i18n="philosophyTitle">专业感来自判断力，不来自把界面做得讨厌。</h2>
-        </div>
-        <div class="principle-grid">
-          <article class="principle-card">
-            <span>01</span>
-            <h3 data-i18n="principleOneTitle">刷得动</h3>
-            <p data-i18n="principleOneCopy">第一屏让用户立刻进入内容，不用先面对数据库式筛选器。</p>
-          </article>
-          <article class="principle-card">
-            <span>02</span>
-            <h3 data-i18n="principleTwoTitle">读得懂</h3>
-            <p data-i18n="principleTwoCopy">卡片给判断，详情给关键发现、白话解释、局限和原文入口。</p>
-          </article>
-          <article class="principle-card">
-            <span>03</span>
-            <h3 data-i18n="principleThreeTitle">越用越懂你</h3>
-            <p data-i18n="principleThreeCopy">收藏、跳过、更多类似、听读都变成推荐画像的轻反馈。</p>
-          </article>
-          <article class="principle-card warning">
-            <span>NO</span>
-            <h3 data-i18n="principleFourTitle">不要新罗马式学术感</h3>
-            <p data-i18n="principleFourCopy">禁用 Times/New Roman 气质；用现代无衬线和清晰层级建立亲和的专业感。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="component-lab" id="components">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="componentsEyebrow">Component Demo</p>
-          <h2 data-i18n="componentsTitle">前端常用组件 Demo</h2>
-          <p data-i18n="componentsCopy">这些组件可直接转成 React/Vue/SwiftUI/Compose 的实现规范。</p>
-        </div>
-
-        <div class="demo-grid">
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="paperCardLabel">Paper Card</span>
-              <code>.paper-card</code>
-            </div>
-            <article class="paper-card component-sample">
-              <div class="paper-rank">1</div>
-              <div>
-                <p class="paper-source">ArXiv: AI · <span data-i18n="reasonLabel">推荐理由</span></p>
-                <h3 data-i18n="paperTitle">A new scaling law for reasoning in large language models</h3>
-                <p data-i18n="paperSummary">推理能力会随着算力和高质量数据增长，以可预测方式提升。</p>
-                <div class="chip-row">
-                  <span>reasoning</span>
-                  <span>scaling law</span>
-                </div>
-              </div>
-              <button class="save-button" type="button">☆</button>
-            </article>
-          </article>
-
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="findingLabel">Key Finding</span>
-              <code>.finding-card</code>
-            </div>
-            <div class="finding-card">
-              <div class="finding-icon">✦</div>
-              <div>
-                <h3 data-i18n="findingTitle">关键发现</h3>
-                <p data-i18n="findingCopy">模型推理能力的提升可以被估计，这让训练预算和评估计划更可控。</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="authLabel">Auth Form</span>
-              <code>.auth-card</code>
-            </div>
-            <form class="auth-card">
-              <label>
-                <span data-i18n="emailLabel">邮箱</span>
-                <input type="email" value="researcher@example.com" />
-              </label>
-              <label>
-                <span data-i18n="passwordLabel">密码</span>
-                <input type="password" value="scholardaily" />
-              </label>
-              <button type="button" data-i18n="loginButton">登录</button>
-            </form>
-          </article>
-
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="interestLabel">Interest Chips</span>
-              <code>.interest-chip</code>
-            </div>
-            <div class="interest-list" role="group" aria-label="Research interests">
-              <button class="interest-chip is-selected" type="button">LLM</button>
-              <button class="interest-chip is-selected" type="button">Agent</button>
-              <button class="interest-chip" type="button">Physics</button>
-              <button class="interest-chip" type="button">Biomedicine</button>
-              <button class="interest-chip" type="button">Climate</button>
-            </div>
-          </article>
-
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="feedbackLabel">Feedback Controls</span>
-              <code>.feedback-bar</code>
-            </div>
-            <div class="feedback-bar" role="group" aria-label="Recommendation feedback">
-              <button type="button" data-i18n="lessLike">不感兴趣</button>
-              <button type="button" data-i18n="save">收藏</button>
-              <button class="is-primary" type="button" data-i18n="moreLike">更多类似</button>
-            </div>
-          </article>
-
-          <article class="demo-panel">
-            <div class="demo-header">
-              <span data-i18n="playerLabel">Listen Player</span>
-              <code>.listen-player</code>
-            </div>
-            <div class="listen-player">
-              <button type="button" aria-label="Play">▶</button>
-              <div>
-                <strong data-i18n="playerTitle">正在听读：Scaling law for reasoning</strong>
-                <span data-i18n="playerMeta">Plain English · 1.25x · 04:12</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="copilot-section" id="copilot">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="copilotEyebrow">AI-native Research Copilot</p>
-          <h2 data-i18n="copilotTitle">不只是读论文，而是和论文一起推理。</h2>
-          <p data-i18n="copilotCopy">
-            对话可以追问单篇论文，也可以向外搜索更多论文，把证据、对比和分析队列组织成一个持续工作的研究桌面。
-          </p>
-        </div>
-
-        <div class="copilot-workbench" aria-label="AI research copilot interface demo">
-          <aside class="glass-panel context-panel">
-            <div class="panel-title">
-              <span data-i18n="contextTitle">当前上下文</span>
-              <strong>3</strong>
-            </div>
-            <article class="context-paper is-active">
-              <span>01</span>
-              <div>
-                <strong data-i18n="contextPaperOne">Reasoning scaling law</strong>
-                <p>ArXiv: AI · 2025</p>
-              </div>
-            </article>
-            <article class="context-paper">
-              <span>02</span>
-              <div>
-                <strong data-i18n="contextPaperTwo">Agentic memory benchmark</strong>
-                <p>ACL · 2025</p>
-              </div>
-            </article>
-            <article class="context-paper">
-              <span>03</span>
-              <div>
-                <strong data-i18n="contextPaperThree">Data quality for reasoning</strong>
-                <p>NeurIPS · 2024</p>
-              </div>
-            </article>
-
-            <div class="queue-card">
-              <span data-i18n="analysisQueue">分析队列</span>
-              <strong data-i18n="queueStatus">正在生成：方法对比表</strong>
-              <div class="queue-progress" aria-hidden="true"><span></span></div>
-            </div>
-          </aside>
-
-          <section class="glass-panel chat-panel">
-            <div class="chat-topbar">
-              <div>
-                <span class="live-dot"></span>
-                <strong data-i18n="chatTitle">Ask ScholarDaily</strong>
-              </div>
-              <button class="ghost-button" type="button" data-i18n="searchMorePapers">搜索更多论文</button>
-            </div>
-
-            <div class="chat-stream" aria-live="polite">
-              <article class="message user-message">
-                <p data-i18n="userQuestion">这篇 scaling law 和去年那篇 Chinchilla-style compute law 有什么差异？</p>
-              </article>
-              <article class="message ai-message">
-                <div class="message-avatar">AI</div>
-                <div>
-                  <p data-i18n="aiAnswer">
-                    核心差异在目标变量：Chinchilla 更关注训练计算量与语言建模损失，这篇把重点放在 reasoning benchmark 的可预测提升。建议一起读三篇相关论文形成证据链。
-                  </p>
-                  <div class="citation-row" aria-label="Citations">
-                    <button type="button">[1] Scaling Law</button>
-                    <button type="button">[2] Compute Optimal</button>
-                    <button type="button">[3] Reasoning Data</button>
+                <article class="paper-card-demo is-featured" data-demo-card>
+                  <div class="paper-card-rank">01</div>
+                  <div class="paper-card-body">
+                    <p class="paper-card-source">ArXiv AI · because you saved reasoning papers</p>
+                    <h3>A new scaling law for reasoning in large language models</h3>
+                    <p class="paper-card-summary" data-i18n="landing.previewSummary">
+                      三秒内知道值不值得点开，十秒内知道值不值得收藏。
+                    </p>
+                    <div class="token-row">
+                      <span>reasoning</span>
+                      <span>benchmark</span>
+                      <span>LLM</span>
+                    </div>
                   </div>
+                  <button class="bookmark-button" type="button" data-bookmark>☆</button>
+                </article>
+
+                <div class="preview-toolbar">
+                  <button type="button" class="chip-button is-active" data-chip>推荐</button>
+                  <button type="button" class="chip-button" data-chip>已读</button>
+                  <button type="button" class="chip-button" data-chip>收藏</button>
+                  <button type="button" class="chip-button" data-chip>更多类似</button>
                 </div>
-              </article>
+              </section>
             </div>
-
-            <form class="prompt-box">
-              <label class="visually-hidden" for="copilotPrompt" data-i18n="promptLabel">向论文提问</label>
-              <input id="copilotPrompt" type="text" data-i18n-placeholder="promptPlaceholder" placeholder="追问局限、找相关论文、生成对比表..." />
-              <button type="button" id="askDemoButton" data-i18n="askButton">提问</button>
-            </form>
-          </section>
-
-          <aside class="glass-panel evidence-panel">
-            <div class="panel-title">
-              <span data-i18n="evidenceTitle">证据与动作</span>
-              <strong>5</strong>
-            </div>
-            <div class="evidence-card">
-              <span data-i18n="evidenceOneLabel">证据链</span>
-              <p data-i18n="evidenceOneCopy">把引用片段、论文来源和模型推断分开显示，避免“AI 说了算”。</p>
-            </div>
-            <div class="evidence-card">
-              <span data-i18n="evidenceTwoLabel">继续探索</span>
-              <p data-i18n="evidenceTwoCopy">搜索相似方法、反例论文、同作者后续工作和高引用综述。</p>
-            </div>
-            <div class="action-stack">
-              <button type="button" data-i18n="actionCompare">生成对比表</button>
-              <button type="button" data-i18n="actionBrief">加入今日简报</button>
-              <button type="button" data-i18n="actionMap">创建主题图谱</button>
-            </div>
-          </aside>
+          </div>
         </div>
       </section>
 
-      <section class="patterns" id="patterns">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="patternsEyebrow">Interaction Rules</p>
-          <h2 data-i18n="patternsTitle">推荐和留存要在前端有形。</h2>
-        </div>
-        <div class="rule-list">
-          <article>
-            <h3 data-i18n="ruleOneTitle">推荐解释</h3>
-            <p data-i18n="ruleOneCopy">每张重点卡片都能说清为什么出现，不用“猜你喜欢”糊弄用户。</p>
-          </article>
-          <article>
-            <h3 data-i18n="ruleTwoTitle">轻反馈</h3>
-            <p data-i18n="ruleTwoCopy">收藏、跳过、更多类似必须一触即达，并允许撤销。</p>
-          </article>
-          <article>
-            <h3 data-i18n="ruleThreeTitle">渐进画像</h3>
-            <p data-i18n="ruleThreeCopy">注册阶段只收集最少信息，偏好在真实使用中慢慢学习。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="i18n-section" id="i18n">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="i18nEyebrow">Dark Mode · Multilingual · RTL</p>
-          <h2 data-i18n="i18nTitle">暗黑模式和阿拉伯语不是皮肤，是布局能力。</h2>
-          <p data-i18n="i18nCopy">
-            阿拉伯语需要 `dir="rtl"`、镜像导航、右侧起读、图标方向校正和数字/英文片段的混排策略。
+      <section class="landing-grid">
+        <article class="landing-card">
+          <p class="landing-card-label" data-i18n="landing.cardPhilosophyLabel">Philosophy</p>
+          <h2 data-i18n="landing.cardPhilosophyTitle">设计哲学只保留够用的原则</h2>
+          <p data-i18n="landing.cardPhilosophyCopy">
+            不讲空话，只规定产品气质、字体态度、信息密度和交互判断。
           </p>
-        </div>
-        <div class="locale-demo">
-          <div class="locale-card">
-            <span class="locale-pill">LTR</span>
-            <h3>English / 中文</h3>
-            <p data-i18n="ltrCopy">标题、摘要、标签和操作从左到右排列，卡片收藏按钮靠右。</p>
-          </div>
-          <div class="locale-card rtl-sample" dir="rtl" lang="ar">
-            <span class="locale-pill">RTL</span>
-            <h3>ملخص الأبحاث اليومي</h3>
-            <p>تبدأ القراءة من اليمين، وتنعكس بنية البطاقة والتنقل، مع الحفاظ على وضوح المصدر والوسوم.</p>
-          </div>
-        </div>
+          <a href="docs.html#philosophy-core" data-i18n="landing.readDoc">阅读文档</a>
+        </article>
+
+        <article class="landing-card">
+          <p class="landing-card-label" data-i18n="landing.cardComponentsLabel">Components</p>
+          <h2 data-i18n="landing.cardComponentsTitle">组件案例要能真的操作</h2>
+          <p data-i18n="landing.cardComponentsCopy">
+            卡片、命令栏、摘要块、AI 回复、底部面板都提供动态示例。
+          </p>
+          <a href="docs.html#components-paper-card" data-i18n="landing.viewDemos">查看 Demo</a>
+        </article>
+
+        <article class="landing-card">
+          <p class="landing-card-label" data-i18n="landing.cardPagesLabel">Pages</p>
+          <h2 data-i18n="landing.cardPagesTitle">页面案例直接给结构模板</h2>
+          <p data-i18n="landing.cardPagesCopy">
+            首页信息流、详情页、AI 工作台、登录引导统一成可以复用的页面范式。
+          </p>
+          <a href="docs.html#pages-feed" data-i18n="landing.openCases">打开案例</a>
+        </article>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>ScholarDaily Design System</span>
-      <a href="README.md" data-i18n="readDocs">阅读规范文档</a>
-    </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.16.8/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.5.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="assets/app.js"></script>
   </body>
 </html>
