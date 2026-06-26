@@ -3,142 +3,826 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="ScholarDaily Design is an open design guideline site for a paper-reading product, with documentation, components, and page demos."
-    />
-    <title>ScholarDaily Design</title>
+    <meta name="description" content="Aurora Design System — 专业级企业产品设计系统，包含完整的设计令牌、组件库、图标系统和设计规范。" />
+    <title>Aurora Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body data-page="landing">
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">跳转到主要内容</a>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a class="brand" href="index.html" aria-label="ScholarDaily Design home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>ScholarDaily Design</span>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="index.html" aria-label="Aurora Design System 首页">
+          <div class="brand-logo">
+            <i class="ph-fill ph-asterisk"></i>
+          </div>
+          <span class="brand-name">Aurora</span>
+          <span class="brand-badge">v2.0</span>
         </a>
 
-        <nav class="topbar-nav" aria-label="Primary">
-          <a href="docs.html#intro" data-i18n="nav.docs">文档</a>
-          <a href="docs.html#components-paper-card" data-i18n="nav.components">组件</a>
-          <a href="docs.html#pages-feed" data-i18n="nav.pages">页面案例</a>
+        <nav class="navbar-nav" aria-label="主导航">
+          <a href="#foundations" class="nav-link">设计规范</a>
+          <a href="#components" class="nav-link">组件</a>
+          <a href="#icons" class="nav-link">图形</a>
+          <a href="#theming" class="nav-link">主题</a>
         </nav>
 
-        <div class="toolbar">
-          <select id="languageSelect" aria-label="Language">
-            <option value="zh">中文</option>
-            <option value="en">English</option>
-            <option value="ar">العربية</option>
-          </select>
-          <button class="toolbar-button" id="themeToggle" type="button" aria-pressed="false">
-            <span data-i18n="theme.toggle">暗色</span>
+        <div class="navbar-actions">
+          <button class="icon-button" id="searchButton" aria-label="搜索">
+            <i class="ph ph-magnifying-glass"></i>
           </button>
-          <a class="toolbar-link" href="docs.html" data-i18n="landing.openDocs">进入文档</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+            <i class="ph ph-sun" data-theme-icon="sun"></i>
+            <i class="ph-fill ph-moon" data-theme-icon="moon"></i>
+          </button>
+          <a class="btn btn-primary btn-sm" href="#">
+            <i class="ph ph-github-logo"></i>
+            GitHub
+          </a>
         </div>
       </div>
     </header>
 
-    <main id="main" class="landing-shell">
-      <section class="hero-block">
-        <div class="hero-copy">
-          <p class="eyebrow" data-i18n="landing.eyebrow">Open Design System</p>
-          <h1 data-i18n="landing.title">一个像 Ant Design 一样的论文产品设计规范站。</h1>
-          <p class="hero-text" data-i18n="landing.subtitle">
-            首页保持极简，文档站承载设计哲学、组件规范、页面案例和可操作 demo。
-          </p>
-          <div class="hero-actions">
-            <a class="primary-button" href="docs.html" data-i18n="landing.enterDocs">查看文档</a>
-            <a class="secondary-button" href="docs.html#components-paper-card" data-i18n="landing.enterComponents">查看组件</a>
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-badge">
+              <i class="ph-fill ph-sparkle"></i>
+              <span>Aurora Design System v2.0 发布</span>
+              <i class="ph ph-arrow-right"></i>
+            </div>
+            <h1 class="hero-title">
+              为企业级产品打造的
+              <span class="hero-title-accent">设计系统</span>
+            </h1>
+            <p class="hero-subtitle">
+              一套完整的设计语言，包含 180+ 精心设计的组件、2,000+ 开源图标、完善的设计令牌系统，以及可直接用于生产的代码实现。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="#foundations">
+                开始使用
+                <i class="ph ph-arrow-right"></i>
+              </a>
+              <a class="btn btn-secondary btn-lg" href="#components">
+                <i class="ph ph-squares-four"></i>
+                浏览组件
+              </a>
+            </div>
+            <div class="hero-meta">
+              <div class="meta-item">
+                <div class="meta-value">180+</div>
+                <div class="meta-label">组件</div>
+              </div>
+              <div class="meta-divider"></div>
+              <div class="meta-item">
+                <div class="meta-value">2,000+</div>
+                <div class="meta-label">图标</div>
+              </div>
+              <div class="meta-divider"></div>
+              <div class="meta-item">
+                <div class="meta-value">3</div>
+                <div class="meta-label">主题模式</div>
+              </div>
+              <div class="meta-divider"></div>
+              <div class="meta-item">
+                <div class="meta-value">WCAG 2.1</div>
+                <div class="meta-label">无障碍级</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="card-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="card-preview-grid">
+                <div class="preview-comp preview-button">
+                  <button class="btn btn-primary">主要按钮</button>
+                  <button class="btn btn-secondary">次要按钮</button>
+                  <button class="btn btn-ghost">幽灵按钮</button>
+                </div>
+                <div class="preview-comp preview-card">
+                  <div class="mini-card">
+                    <div class="mini-card-icon"><i class="ph-fill ph-lightning"></i></div>
+                    <div class="mini-card-body">
+                      <strong>性能优化</strong>
+                      <p>极速加载体验</p>
+                    </div>
+                  </div>
+                  <div class="mini-card">
+                    <div class="mini-card-icon accent"><i class="ph-fill ph-shield-check"></i></div>
+                    <div class="mini-card-body">
+                      <strong>安全可靠</strong>
+                      <p>企业级安全标准</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-comp preview-input">
+                  <div class="input-field">
+                    <i class="ph ph-envelope"></i>
+                    <input type="text" placeholder="输入邮箱地址" />
+                  </div>
+                  <div class="toggle-row">
+                    <div class="toggle is-on"><span></span></div>
+                    <span>启用通知</span>
+                  </div>
+                </div>
+                <div class="preview-comp preview-badges">
+                  <span class="badge badge-primary"><i class="ph-fill ph-check-circle"></i>成功</span>
+                  <span class="badge badge-warning"><i class="ph-fill ph-warning"></i>警告</span>
+                  <span class="badge badge-error"><i class="ph-fill ph-x-circle"></i>错误</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-preview">
-          <div class="preview-window">
-            <div class="preview-window-bar">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+      </section>
+
+      <section id="foundations" class="section section-foundations">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">
+              <i class="ph ph-ruler"></i>
+              <span>设计规范</span>
+            </div>
+            <h2 class="section-title">Design Foundations</h2>
+            <p class="section-desc">
+              从排版、色彩到间距，每一个设计决策都经过精心打磨，确保跨平台一致性。
+            </p>
+          </div>
+
+          <div class="foundations-grid">
+            <div class="foundation-card" data-foundation="typography">
+              <div class="foundation-header">
+                <div class="foundation-icon">
+                  <i class="ph ph-text-t"></i>
+                </div>
+                <div>
+                  <h3>排版系统</h3>
+                  <p>Typography</p>
+                </div>
+              </div>
+              <div class="type-samples">
+                <div class="type-sample type-display">Aa</div>
+                <div class="type-meta">
+                  <div><strong>Manrope</strong> · 无衬线体</div>
+                  <div>用于界面与正文</div>
+                </div>
+                <div class="type-scale">
+                  <div class="scale-row">
+                    <span class="scale-label">Display</span>
+                    <span class="scale-weight">800</span>
+                    <span class="scale-size">72px</span>
+                  </div>
+                  <div class="scale-row">
+                    <span class="scale-label">H1</span>
+                    <span class="scale-weight">700</span>
+                    <span class="scale-size">48px</span>
+                  </div>
+                  <div class="scale-row">
+                    <span class="scale-label">Body</span>
+                    <span class="scale-weight">400</span>
+                    <span class="scale-size">16px</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="preview-docs">
-              <aside class="preview-sidebar">
-                <strong>Guide</strong>
-                <button type="button" class="is-active">Paper Card</button>
-                <button type="button">Summary Block</button>
-                <button type="button">Command Bar</button>
-                <button type="button">AI Answer</button>
-              </aside>
-
-              <section class="preview-main">
-                <div class="preview-section-head">
-                  <span class="preview-tag">Component</span>
-                  <h2 data-i18n="landing.previewTitle">Paper Card</h2>
+            <div class="foundation-card" data-foundation="colors">
+              <div class="foundation-header">
+                <div class="foundation-icon">
+                  <i class="ph ph-palette"></i>
                 </div>
-
-                <article class="paper-card-demo is-featured" data-demo-card>
-                  <div class="paper-card-rank">01</div>
-                  <div class="paper-card-body">
-                    <p class="paper-card-source">ArXiv AI · because you saved reasoning papers</p>
-                    <h3>A new scaling law for reasoning in large language models</h3>
-                    <p class="paper-card-summary" data-i18n="landing.previewSummary">
-                      三秒内知道值不值得点开，十秒内知道值不值得收藏。
-                    </p>
-                    <div class="token-row">
-                      <span>reasoning</span>
-                      <span>benchmark</span>
-                      <span>LLM</span>
-                    </div>
+                <div>
+                  <h3>色彩系统</h3>
+                  <p>Color Palette</p>
+                </div>
+              </div>
+              <div class="color-palette">
+                <div class="color-row">
+                  <div class="swatch" style="background: var(--brand-50)"><span>50</span></div>
+                  <div class="swatch" style="background: var(--brand-100)"><span>100</span></div>
+                  <div class="swatch" style="background: var(--brand-200)"><span>200</span></div>
+                  <div class="swatch" style="background: var(--brand-500)"><span>500</span></div>
+                  <div class="swatch" style="background: var(--brand-600)"><span>600</span></div>
+                  <div class="swatch" style="background: var(--brand-700)"><span>700</span></div>
+                  <div class="swatch" style="background: var(--brand-900)"><span>900</span></div>
+                </div>
+                <div class="semantic-colors">
+                  <div class="semantic-item">
+                    <span class="semantic-dot" style="background: var(--success-500)"></span>
+                    <span>Success</span>
                   </div>
-                  <button class="bookmark-button" type="button" data-bookmark>☆</button>
-                </article>
-
-                <div class="preview-toolbar">
-                  <button type="button" class="chip-button is-active" data-chip>推荐</button>
-                  <button type="button" class="chip-button" data-chip>已读</button>
-                  <button type="button" class="chip-button" data-chip>收藏</button>
-                  <button type="button" class="chip-button" data-chip>更多类似</button>
+                  <div class="semantic-item">
+                    <span class="semantic-dot" style="background: var(--warning-500)"></span>
+                    <span>Warning</span>
+                  </div>
+                  <div class="semantic-item">
+                    <span class="semantic-dot" style="background: var(--error-500)"></span>
+                    <span>Error</span>
+                  </div>
+                  <div class="semantic-item">
+                    <span class="semantic-dot" style="background: var(--info-500)"></span>
+                    <span>Info</span>
+                  </div>
                 </div>
-              </section>
+              </div>
+            </div>
+
+            <div class="foundation-card" data-foundation="spacing">
+              <div class="foundation-header">
+                <div class="foundation-icon">
+                  <i class="ph ph-squares-four"></i>
+                </div>
+                <div>
+                  <h3>间距系统</h3>
+                  <p>Spacing Scale</p>
+                </div>
+              </div>
+              <div class="spacing-scale">
+                <div class="spacing-item">
+                  <span class="spacing-block" style="width: 4px; height: 4px"></span>
+                  <div>
+                    <strong>xs</strong>
+                    <span>4px</span>
+                  </div>
+                </div>
+                <div class="spacing-item">
+                  <span class="spacing-block" style="width: 8px; height: 8px"></span>
+                  <div>
+                    <strong>sm</strong>
+                    <span>8px</span>
+                  </div>
+                </div>
+                <div class="spacing-item">
+                  <span class="spacing-block" style="width: 16px; height: 16px"></span>
+                  <div>
+                    <strong>md</strong>
+                    <span>16px</span>
+                  </div>
+                </div>
+                <div class="spacing-item">
+                  <span class="spacing-block" style="width: 24px; height: 24px"></span>
+                  <div>
+                    <strong>lg</strong>
+                    <span>24px</span>
+                  </div>
+                </div>
+                <div class="spacing-item">
+                  <span class="spacing-block" style="width: 32px; height: 32px"></span>
+                  <div>
+                    <strong>xl</strong>
+                    <span>32px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="foundation-card" data-foundation="elevation">
+              <div class="foundation-header">
+                <div class="foundation-icon">
+                  <i class="ph ph-stack"></i>
+                </div>
+                <div>
+                  <h3>阴影层级</h3>
+                  <p>Elevation</p>
+                </div>
+              </div>
+              <div class="elevation-demo">
+                <div class="elev-card elev-sm">
+                  <span>sm</span>
+                </div>
+                <div class="elev-card elev-md">
+                  <span>md</span>
+                </div>
+                <div class="elev-card elev-lg">
+                  <span>lg</span>
+                </div>
+                <div class="elev-card elev-xl">
+                  <span>xl</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="landing-grid">
-        <article class="landing-card">
-          <p class="landing-card-label" data-i18n="landing.cardPhilosophyLabel">Philosophy</p>
-          <h2 data-i18n="landing.cardPhilosophyTitle">设计哲学只保留够用的原则</h2>
-          <p data-i18n="landing.cardPhilosophyCopy">
-            不讲空话，只规定产品气质、字体态度、信息密度和交互判断。
-          </p>
-          <a href="docs.html#philosophy-core" data-i18n="landing.readDoc">阅读文档</a>
-        </article>
+      <section id="components" class="section section-components">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">
+              <i class="ph ph-layout"></i>
+              <span>组件库</span>
+            </div>
+            <h2 class="section-title">Components</h2>
+            <p class="section-desc">
+              180+ 高质量 React 组件，支持主题定制、无障碍访问，每一个组件都经过严格测试。
+            </p>
+          </div>
 
-        <article class="landing-card">
-          <p class="landing-card-label" data-i18n="landing.cardComponentsLabel">Components</p>
-          <h2 data-i18n="landing.cardComponentsTitle">组件案例要能真的操作</h2>
-          <p data-i18n="landing.cardComponentsCopy">
-            卡片、命令栏、摘要块、AI 回复、底部面板都提供动态示例。
-          </p>
-          <a href="docs.html#components-paper-card" data-i18n="landing.viewDemos">查看 Demo</a>
-        </article>
+          <div class="component-tabs">
+            <button class="comp-tab is-active" data-tab="buttons">按钮</button>
+            <button class="comp-tab" data-tab="forms">表单</button>
+            <button class="comp-tab" data-tab="feedback">反馈</button>
+            <button class="comp-tab" data-tab="data">数据展示</button>
+            <button class="comp-tab" data-tab="navigation">导航</button>
+          </div>
 
-        <article class="landing-card">
-          <p class="landing-card-label" data-i18n="landing.cardPagesLabel">Pages</p>
-          <h2 data-i18n="landing.cardPagesTitle">页面案例直接给结构模板</h2>
-          <p data-i18n="landing.cardPagesCopy">
-            首页信息流、详情页、AI 工作台、登录引导统一成可以复用的页面范式。
-          </p>
-          <a href="docs.html#pages-feed" data-i18n="landing.openCases">打开案例</a>
-        </article>
+          <div class="component-showcase">
+            <div class="comp-panel is-active" data-panel="buttons">
+              <div class="demo-block">
+                <h4>按钮类型</h4>
+                <div class="demo-row">
+                  <button class="btn btn-primary">Primary</button>
+                  <button class="btn btn-secondary">Secondary</button>
+                  <button class="btn btn-ghost">Ghost</button>
+                  <button class="btn btn-outline">Outline</button>
+                  <button class="btn btn-destructive">Destructive</button>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>按钮尺寸</h4>
+                <div class="demo-row demo-row-center">
+                  <button class="btn btn-primary btn-xs">Extra Small</button>
+                  <button class="btn btn-primary btn-sm">Small</button>
+                  <button class="btn btn-primary btn-md">Medium</button>
+                  <button class="btn btn-primary btn-lg">Large</button>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>图标按钮</h4>
+                <div class="demo-row">
+                  <button class="btn btn-primary"><i class="ph ph-plus"></i>新建</button>
+                  <button class="btn btn-secondary"><i class="ph ph-download-simple"></i>下载</button>
+                  <button class="btn btn-ghost"><i class="ph ph-pencil-simple"></i>编辑</button>
+                  <button class="btn btn-icon btn-primary"><i class="ph-fill ph-heart"></i></button>
+                  <button class="btn btn-icon btn-secondary"><i class="ph ph-bell"></i></button>
+                  <button class="btn btn-icon btn-ghost"><i class="ph ph-dots-three"></i></button>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>按钮状态</h4>
+                <div class="demo-row">
+                  <button class="btn btn-primary" disabled>Disabled</button>
+                  <button class="btn btn-primary btn-loading">
+                    <i class="ph ph-spinner"></i>Loading
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-panel" data-panel="forms">
+              <div class="demo-grid-2">
+                <div class="demo-block">
+                  <h4>输入框</h4>
+                  <div class="form-field">
+                    <label>用户名</label>
+                    <div class="input-field">
+                      <i class="ph ph-user"></i>
+                      <input type="text" placeholder="请输入用户名" />
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label>密码</label>
+                    <div class="input-field input-error">
+                      <i class="ph ph-lock"></i>
+                      <input type="password" placeholder="请输入密码" value="123" />
+                      <i class="ph ph-warning-circle error-icon"></i>
+                    </div>
+                    <div class="field-error">密码长度至少为 8 位</div>
+                  </div>
+                </div>
+                <div class="demo-block">
+                  <h4>选择控件</h4>
+                  <div class="form-row">
+                    <label class="checkbox">
+                      <input type="checkbox" checked />
+                      <span class="checkbox-box"><i class="ph-fill ph-check"></i></span>
+                      记住我
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" />
+                      <span class="checkbox-box"><i class="ph-fill ph-check"></i></span>
+                      接收邮件通知
+                    </label>
+                  </div>
+                  <div class="form-row">
+                    <label class="radio">
+                      <input type="radio" name="demo-radio" checked />
+                      <span class="radio-circle"></span>
+                      免费版
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="demo-radio" />
+                      <span class="radio-circle"></span>
+                      专业版
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="demo-radio" />
+                      <span class="radio-circle"></span>
+                      企业版
+                    </label>
+                  </div>
+                  <div class="form-row">
+                    <div class="toggle is-on" data-toggle-demo><span></span></div>
+                    <span class="toggle-label">深色模式</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-panel" data-panel="feedback">
+              <div class="demo-grid-2">
+                <div class="demo-block">
+                  <h4>徽章 Badges</h4>
+                  <div class="demo-row demo-row-wrap">
+                    <span class="badge badge-primary"><i class="ph-fill ph-check-circle"></i>Primary</span>
+                    <span class="badge badge-success"><i class="ph-fill ph-check"></i>Success</span>
+                    <span class="badge badge-warning"><i class="ph-fill ph-warning"></i>Warning</span>
+                    <span class="badge badge-error"><i class="ph-fill ph-x-circle"></i>Error</span>
+                    <span class="badge badge-info"><i class="ph-fill ph-info"></i>Info</span>
+                    <span class="badge badge-neutral">Neutral</span>
+                  </div>
+                </div>
+                <div class="demo-block">
+                  <h4>提示条 Alerts</h4>
+                  <div class="alert alert-success">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <div>
+                      <strong>操作成功</strong>
+                      <p>您的更改已成功保存。</p>
+                    </div>
+                    <button class="alert-close"><i class="ph ph-x"></i></button>
+                  </div>
+                  <div class="alert alert-warning">
+                    <i class="ph-fill ph-warning"></i>
+                    <div>
+                      <strong>注意</strong>
+                      <p>您的试用版将在 3 天后过期。</p>
+                    </div>
+                  </div>
+                  <div class="alert alert-error">
+                    <i class="ph-fill ph-x-circle"></i>
+                    <div>
+                      <strong>错误</strong>
+                      <p>网络连接失败，请检查后重试。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>进度与加载</h4>
+                <div class="demo-row demo-row-col">
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 68%"></div>
+                  </div>
+                  <div class="demo-row">
+                    <div class="spinner spinner-sm"></div>
+                    <div class="spinner"></div>
+                    <div class="spinner spinner-lg"></div>
+                    <button class="btn btn-primary btn-loading">
+                      <i class="ph ph-spinner"></i>处理中
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-panel" data-panel="data">
+              <div class="demo-block">
+                <h4>卡片 Cards</h4>
+                <div class="cards-demo">
+                  <div class="ds-card">
+                    <div class="ds-card-media">
+                      <i class="ph-fill ph-rocket-launch"></i>
+                    </div>
+                    <div class="ds-card-body">
+                      <span class="card-tag">Featured</span>
+                      <h5>快速部署</h5>
+                      <p>一键部署到云端，支持 Vercel、Netlify、AWS 等多个平台。</p>
+                    </div>
+                    <div class="ds-card-footer">
+                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="ds-card">
+                    <div class="ds-card-media accent-green">
+                      <i class="ph-fill ph-chart-line-up"></i>
+                    </div>
+                    <div class="ds-card-body">
+                      <span class="card-tag tag-green">Analytics</span>
+                      <h5>数据分析</h5>
+                      <p>实时数据监控，可视化报表，助您做出明智决策。</p>
+                    </div>
+                    <div class="ds-card-footer">
+                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="ds-card">
+                    <div class="ds-card-media accent-purple">
+                      <i class="ph-fill ph-users-three"></i>
+                    </div>
+                    <div class="ds-card-body">
+                      <span class="card-tag tag-purple">Team</span>
+                      <h5>团队协作</h5>
+                      <p>多人实时协作，权限精细化管理，提升团队效率。</p>
+                    </div>
+                    <div class="ds-card-footer">
+                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>Avatar 头像</h4>
+                <div class="demo-row">
+                  <div class="avatar avatar-sm">A</div>
+                  <div class="avatar">B</div>
+                  <div class="avatar avatar-lg"><img src="https://api.dicebear.com/7.x/initials/svg?seed=Aurora&backgroundColor=6366f1" alt="" /></div>
+                  <div class="avatar-group">
+                    <div class="avatar avatar-sm" style="background: #f59e0b">A</div>
+                    <div class="avatar avatar-sm" style="background: #10b981">B</div>
+                    <div class="avatar avatar-sm" style="background: #8b5cf6">C</div>
+                    <div class="avatar avatar-sm" style="background: #ef4444">+5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="comp-panel" data-panel="navigation">
+              <div class="demo-block">
+                <h4>标签页 Tabs</h4>
+                <div class="tabs-demo" data-tabs-demo>
+                  <div class="tabs-header">
+                    <button class="tab-btn is-active" data-tab-btn="t1">概览</button>
+                    <button class="tab-btn" data-tab-btn="t2">设置</button>
+                    <button class="tab-btn" data-tab-btn="t3">集成</button>
+                    <button class="tab-btn" data-tab-btn="t4">API</button>
+                  </div>
+                  <div class="tabs-content">
+                    <div class="tab-panel is-active" data-tab-panel="t1">
+                      <p>这里是概览面板，展示产品的核心功能和使用统计。</p>
+                    </div>
+                    <div class="tab-panel" data-tab-panel="t2">
+                      <p>设置面板允许您配置账户偏好、通知选项和安全设置。</p>
+                    </div>
+                    <div class="tab-panel" data-tab-panel="t3">
+                      <p>集成面板展示所有第三方服务连接状态。</p>
+                    </div>
+                    <div class="tab-panel" data-tab-panel="t4">
+                      <p>API 文档提供完整的接口说明和代码示例。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-block">
+                <h4>面包屑 & 分页</h4>
+                <nav class="breadcrumb">
+                  <a href="#"><i class="ph ph-house"></i>首页</a>
+                  <i class="ph ph-caret-right"></i>
+                  <a href="#">组件</a>
+                  <i class="ph ph-caret-right"></i>
+                  <span>导航</span>
+                </nav>
+                <div class="pagination">
+                  <button class="page-btn" disabled><i class="ph ph-caret-left"></i></button>
+                  <button class="page-btn is-active">1</button>
+                  <button class="page-btn">2</button>
+                  <button class="page-btn">3</button>
+                  <span class="page-ellipsis">...</span>
+                  <button class="page-btn">12</button>
+                  <button class="page-btn"><i class="ph ph-caret-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="icons" class="section section-icons">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">
+              <i class="ph ph-star"></i>
+              <span>图形</span>
+            </div>
+            <h2 class="section-title">Icon Library</h2>
+            <p class="section-desc">
+              使用 <strong>Phosphor Icons</strong> 专业图标库，提供 6 种风格、2,000+ 矢量图标，支持自定义尺寸与颜色。
+            </p>
+          </div>
+
+          <div class="icon-styles">
+            <button class="icon-style-btn is-active" data-icon-weight="regular">Regular</button>
+            <button class="icon-style-btn" data-icon-weight="fill">Fill</button>
+            <button class="icon-style-btn" data-icon-weight="duotone">Duotone</button>
+            <button class="icon-style-btn" data-icon-weight="thin">Thin</button>
+            <button class="icon-style-btn" data-icon-weight="light">Light</button>
+            <button class="icon-style-btn" data-icon-weight="bold">Bold</button>
+          </div>
+
+          <div class="icon-search-bar">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="iconSearch" placeholder="搜索图标名称..." />
+          </div>
+
+          <div class="icon-grid" id="iconGrid">
+          </div>
+
+          <div class="icon-footer-note">
+            <i class="ph ph-info"></i>
+            <span>以上为精选图标，完整图标库包含 2,000+ 图标，支持 6 种粗细风格。</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="theming" class="section section-theming">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">
+              <i class="ph ph-paint-brush"></i>
+              <span>主题</span>
+            </div>
+            <h2 class="section-title">Theming System</h2>
+            <p class="section-desc">
+              基于 CSS 变量的主题系统，支持浅色/深色/高对比度三种模式，运行时即时切换。
+            </p>
+          </div>
+
+          <div class="theme-switcher-demo">
+            <div class="theme-options">
+              <button class="theme-card is-active" data-theme-mode="light">
+                <div class="theme-preview theme-preview-light">
+                  <div class="tp-sidebar"></div>
+                  <div class="tp-main">
+                    <div class="tp-bar"></div>
+                    <div class="tp-cards">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-info">
+                  <i class="ph-fill ph-sun"></i>
+                  <div>
+                    <strong>浅色模式</strong>
+                    <span>Light</span>
+                  </div>
+                </div>
+              </button>
+              <button class="theme-card" data-theme-mode="dark">
+                <div class="theme-preview theme-preview-dark">
+                  <div class="tp-sidebar"></div>
+                  <div class="tp-main">
+                    <div class="tp-bar"></div>
+                    <div class="tp-cards">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="theme-info">
+                  <i class="ph-fill ph-moon"></i>
+                  <div>
+                    <strong>深色模式</strong>
+                    <span>Dark</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            <div class="token-preview-card">
+              <div class="token-header">
+                <h4>Design Tokens</h4>
+                <span class="badge badge-primary">CSS Variables</span>
+              </div>
+              <div class="token-code-block">
+                <pre><code>:root {
+  <span class="token-prop">--color-primary</span>: <span class="token-value">#6366f1</span>;
+  <span class="token-prop">--color-bg</span>: <span class="token-value">#ffffff</span>;
+  <span class="token-prop">--color-text</span>: <span class="token-value">#0f172a</span>;
+  <span class="token-prop">--radius-md</span>: <span class="token-value">12px</span>;
+  <span class="token-prop">--shadow-sm</span>: <span class="token-value">0 1px 2px rgba(0,0,0,0.05)</span>;
+  <span class="token-prop">--font-sans</span>: <span class="token-value">'Manrope', system-ui</span>;
+}</code></pre>
+              </div>
+              <div class="token-palette-row">
+                <div class="token-swatch-group">
+                  <span class="token-swatch-label">Primary</span>
+                  <div class="token-swatches">
+                    <span style="background: #eef2ff"></span>
+                    <span style="background: #c7d2fe"></span>
+                    <span style="background: #6366f1"></span>
+                    <span style="background: #4338ca"></span>
+                  </div>
+                </div>
+                <div class="token-swatch-group">
+                  <span class="token-swatch-label">Neutral</span>
+                  <div class="token-swatches">
+                    <span style="background: #f8fafc"></span>
+                    <span style="background: #e2e8f0"></span>
+                    <span style="background: #64748b"></span>
+                    <span style="background: #0f172a"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cta">
+        <div class="container">
+          <div class="cta-card">
+            <div class="cta-content">
+              <h2>开始使用 Aurora Design System</h2>
+              <p>无论是初创团队还是大型企业，Aurora 都能帮助您快速构建一致、美观、易用的产品体验。</p>
+              <div class="cta-actions">
+                <a class="btn btn-white btn-lg" href="#">
+                  <i class="ph ph-book-open"></i>
+                  阅读文档
+                </a>
+                <a class="btn btn-white-ghost btn-lg" href="#">
+                  <i class="ph ph-github-logo"></i>
+                  查看源码
+                </a>
+              </div>
+            </div>
+            <div class="cta-decoration">
+              <div class="cta-orb"></div>
+              <div class="cta-icons">
+                <i class="ph-fill ph-asterisk cta-icon cta-icon-1"></i>
+                <i class="ph-fill ph-sparkle cta-icon cta-icon-2"></i>
+                <i class="ph-fill ph-lightning cta-icon cta-icon-3"></i>
+                <i class="ph-fill ph-star cta-icon cta-icon-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/i18next@23.16.8/dist/umd/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.5.2/i18nextHttpBackend.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/i18nextBrowserLanguageDetector.min.js"></script>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="brand">
+              <div class="brand-logo">
+                <i class="ph-fill ph-asterisk"></i>
+              </div>
+              <span class="brand-name">Aurora</span>
+            </div>
+            <p>为企业级产品打造的专业设计系统</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h5>资源</h5>
+              <a href="#">文档</a>
+              <a href="#">组件</a>
+              <a href="#">图标</a>
+              <a href="#">Figma 资源</a>
+            </div>
+            <div class="footer-col">
+              <h5>开发</h5>
+              <a href="#">快速开始</a>
+              <a href="#">安装指南</a>
+              <a href="#">主题定制</a>
+              <a href="#">更新日志</a>
+            </div>
+            <div class="footer-col">
+              <h5>社区</h5>
+              <a href="#">GitHub</a>
+              <a href="#">Discord</a>
+              <a href="#">贡献指南</a>
+              <a href="#">问题反馈</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Aurora Design System. MIT License.</p>
+          <div class="footer-social">
+            <a href="#" class="icon-button"><i class="ph ph-github-logo"></i></a>
+            <a href="#" class="icon-button"><i class="ph ph-twitter-logo"></i></a>
+            <a href="#" class="icon-button"><i class="ph ph-discord-logo"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="assets/app.js"></script>
   </body>
 </html>
