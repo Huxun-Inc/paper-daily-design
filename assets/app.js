@@ -874,6 +874,172 @@
             <div class="mini-auth-btn">开始刷今日论文</div>
           </div>
         `
+      },
+      'onboarding-register': {
+        title: 'Register',
+        subtitle: '注册页 · Auth 03',
+        device: 'mobile',
+        hasNotch: true,
+        hasNavBar: false,
+        content: `
+          <div class="mini-auth-container" style="text-align: left;">
+            <div class="mini-auth-logo" style="margin: 0 0 var(--space-md);">S</div>
+            <div class="mini-onboarding-title">创建你的研究口味</div>
+            <div class="mini-onboarding-desc">我们只问必要的信息，真正的偏好会在你使用时慢慢学出来。</div>
+            <div class="mini-input-group">
+              <label>昵称</label>
+              <div class="mini-input" style="text-align: left;">Ziming</div>
+            </div>
+            <div class="mini-input-group">
+              <label>邮箱</label>
+              <div class="mini-input" style="text-align: left;">researcher@example.com</div>
+            </div>
+            <div class="mini-input-group">
+              <label>密码</label>
+              <div class="mini-input" style="text-align: left;">••••••••</div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: var(--space-md); font-size: 10px; color: var(--ink-muted);">
+              <div style="width: 14px; height: 14px; border: 1px solid var(--line); border-radius: 4px; flex-shrink: 0; margin-top: 1px; background: var(--brand); display: flex; align-items: center; justify-content: center;">
+                <i class="ph ph-check" style="font-size: 10px; color: white;"></i>
+              </div>
+              <span>我同意服务条款。评论和系统行为均视为研究数据，用于改进推荐算法。</span>
+            </div>
+            <div class="mini-auth-btn">创建账号</div>
+            <div style="text-align: center; margin-top: var(--space-sm); font-size: 10px; color: var(--ink-muted);">
+              已有账号？<span style="color: var(--brand);">登录</span>
+            </div>
+          </div>
+        `
+      },
+      'onboarding-survey': {
+        title: 'Quick Survey',
+        subtitle: '快速校准 · Onboarding 06',
+        device: 'mobile',
+        hasNotch: true,
+        hasNavBar: false,
+        content: `
+          <div class="mini-auth-container" style="text-align: left;">
+            <div class="mini-step-indicator">2 / 3</div>
+            <div class="mini-onboarding-title">快速校准推荐系统</div>
+            <div class="mini-onboarding-desc">像刷卡片一样告诉系统：给更多、先收藏、还是不感兴趣。</div>
+            <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-md); margin-bottom: var(--space-md);">
+              <div class="mini-paper-source" style="margin-bottom: 6px;"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
+              <div class="mini-paper-title" style="font-size: 13px; margin-bottom: 6px;">Training language agents to browse papers with persistent memory</div>
+              <div class="mini-paper-desc">像研究员一样持续阅读文献，不是每次都从头来。</div>
+              <div style="margin-top: var(--space-sm); font-size: 10px; color: var(--ink-muted);">
+                加入你：与 Physics 兴趣匹配
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-md);">
+              <div style="flex: 1; text-align: center; padding: var(--space-sm); border: 1px solid var(--line); border-radius: var(--radius-md); font-size: 10px; color: var(--ink-muted);">
+                不感兴趣
+              </div>
+              <div style="flex: 1; text-align: center; padding: var(--space-sm); border: 1px solid var(--brand); border-radius: var(--radius-md); font-size: 10px; color: var(--brand); background: var(--brand-soft);">
+                收藏
+              </div>
+              <div style="flex: 1; text-align: center; padding: var(--space-sm); border: 1px solid var(--brand); border-radius: var(--radius-md); font-size: 10px; color: white; background: var(--brand);">
+                更多类似
+              </div>
+            </div>
+            <div class="mini-auth-btn">进入今日简报</div>
+            <div style="text-align: center; margin-top: var(--space-sm); font-size: 10px; color: var(--ink-muted);">
+              不允许只选，只在 App 内显示
+            </div>
+          </div>
+        `
+      },
+      'desktop-macos': {
+        title: 'macOS App',
+        subtitle: '桌面应用 · macOS',
+        device: 'desktop',
+        content: `
+          <div style="width: 100%; height: 100%; background: var(--surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+            <div style="height: 38px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 16px; gap: 8px; border-bottom: 1px solid var(--line);">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57;"></div>
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e;"></div>
+              <div style="width: 12px; height: 12px; border-radius: 50%; background: #28c840;"></div>
+              <div style="flex: 1; text-align: center; font-size: 12px; color: var(--ink-muted);">PaperDaily</div>
+            </div>
+            <div style="flex: 1; display: flex;">
+              <div style="width: 200px; background: var(--surface); border-right: 1px solid var(--line); padding: 12px; font-size: 10px;">
+                <div style="font-weight: 600; margin-bottom: 8px; color: var(--ink-muted);">研究频道</div>
+                <div style="padding: 6px 8px; background: var(--brand-soft); color: var(--brand); border-radius: 6px; margin-bottom: 4px; font-weight: 500;">
+                  今日简报
+                </div>
+                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
+                  AI / LLM
+                </div>
+                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
+                  Physics
+                </div>
+                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
+                  Bio Medicine
+                </div>
+                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
+                  稍后读
+                </div>
+                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px;">
+                  收藏专题
+                </div>
+              </div>
+              <div style="flex: 1; padding: 16px; overflow: hidden; border-right: 1px solid var(--line);">
+                <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Daily Papers</div>
+                <div style="font-size: 10px; color: var(--ink-muted); margin-bottom: 12px;">为你精选 · 偏好 AI reasoning, AI safety, multimodal learning</div>
+                <div style="margin-bottom: 10px;">
+                  <div class="mini-paper-card" style="padding: 10px; background: var(--brand-soft); border: 1px solid var(--brand-line); border-radius: 8px;">
+                    <div class="mini-rank" style="background: var(--brand); color: white;">★</div>
+                    <div class="mini-paper-body">
+                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
+                      <div class="mini-paper-title">A new scaling law for reasoning in large language models</div>
+                      <div class="mini-paper-desc">模型推理能力提升规律变得可预测，改变训练预算规划方式。</div>
+                    </div>
+                    <div class="mini-bookmark"><i class="ph-fill ph-star" style="color: var(--brand);"></i></div>
+                  </div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <div class="mini-paper-card" style="padding: 10px;">
+                    <div class="mini-rank">02</div>
+                    <div class="mini-paper-body">
+                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>Nature</div>
+                      <div class="mini-paper-title">A reversible gene switch for safer cell therapies</div>
+                      <div class="mini-paper-desc">基因治疗新开关，降低临床风险。</div>
+                    </div>
+                    <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mini-paper-card" style="padding: 10px;">
+                    <div class="mini-rank">03</div>
+                    <div class="mini-paper-body">
+                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>Science</div>
+                      <div class="mini-paper-title">Global methane emissions higher than thought</div>
+                      <div class="mini-paper-desc">卫星观测揭示甲烷排放增长超预期。</div>
+                    </div>
+                    <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div style="width: 220px; padding: 16px; font-size: 10px;">
+                <div style="font-weight: 600; margin-bottom: 8px;">Why this matters</div>
+                <div class="mini-key-finding" style="margin-bottom: 12px;">
+                  <div class="mini-key-finding-label"><i class="ph-fill ph-key"></i> Key Finding</div>
+                  <p style="font-size: 10px;">推理能力随算力和数据质量可预测提升。</p>
+                </div>
+                <div style="margin-bottom: 8px; font-weight: 500;">In Plain English</div>
+                <ul style="margin: 0; padding-left: 16px; font-size: 10px; color: var(--ink-soft); line-height: 1.6;">
+                  <li>更大的模型推理更好</li>
+                  <li>关系是可预测的</li>
+                  <li>数据质量很重要</li>
+                </ul>
+                <div style="margin-top: 12px;">
+                  <div style="background: var(--ink); color: var(--paper); padding: 8px 12px; border-radius: 6px; font-size: 10px; display: flex; align-items: center; gap: 6px;">
+                    <i class="ph-fill ph-sparkle"></i> 听论文摘要
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
       }
     };
 
