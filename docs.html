@@ -3,36 +3,43 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="ScholarDaily Design documentation site with philosophy, component demos, and page examples."
-    />
-    <title>ScholarDaily Design Docs</title>
+    <meta name="description" content="PaperDaily Design 设计系统文档 — 论文日报设计规范、组件演示和页面案例。" />
+    <title>PaperDaily Design — 设计文档</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body data-page="docs">
-    <a class="skip-link" href="#docsMain">Skip to content</a>
+    <a class="skip-link" href="#docsMain">跳转到主要内容</a>
 
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="brand" href="index.html" aria-label="ScholarDaily Design home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>ScholarDaily Design</span>
+        <a class="brand" href="index.html" aria-label="PaperDaily Design 首页">
+          <div class="brand-mark">P</div>
+          <span class="brand-name">PaperDaily Design</span>
         </a>
 
         <div class="toolbar">
           <button class="toolbar-button mobile-only" id="sidebarToggle" type="button" aria-expanded="false" aria-controls="docsSidebar">
+            <i class="ph ph-list"></i>
             <span data-i18n="docs.menu">目录</span>
           </button>
-          <select id="languageSelect" aria-label="Language">
+          <select id="languageSelect" aria-label="语言">
             <option value="zh">中文</option>
             <option value="en">English</option>
             <option value="ar">العربية</option>
           </select>
-          <button class="toolbar-button" id="themeToggle" type="button" aria-pressed="false">
-            <span data-i18n="theme.toggle">暗色</span>
+          <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+            <i class="ph ph-sun" data-theme-icon="sun"></i>
+            <i class="ph-fill ph-moon" data-theme-icon="moon"></i>
           </button>
-          <a class="toolbar-link" href="index.html" data-i18n="docs.backHome">首页</a>
+          <a class="toolbar-link" href="index.html">
+            <i class="ph ph-house"></i>
+            <span data-i18n="docs.backHome">首页</span>
+          </a>
         </div>
       </div>
     </header>
@@ -74,11 +81,17 @@
           <p class="eyebrow" data-i18n="docs.heroEyebrow">Design Guidelines</p>
           <h1 data-i18n="docs.heroTitle">论文日报设计规范站</h1>
           <p class="hero-text" data-i18n="docs.heroCopy">
-            这是一个偏大厂风格的规范站，左侧目录、右侧文档和动态 demo 分开，方便持续往里加组件和页面模板。
+            PaperDaily Design 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
           </p>
           <div class="doc-hero-actions">
-            <a class="primary-button" href="#components-paper-card" data-i18n="docs.openComponents">看组件</a>
-            <a class="secondary-button" href="#pages-feed" data-i18n="docs.openPages">看页面案例</a>
+            <a class="primary-button" href="#components-paper-card">
+              <i class="ph ph-squares-four"></i>
+              <span data-i18n="docs.openComponents">看组件</span>
+            </a>
+            <a class="secondary-button" href="#pages-feed">
+              <i class="ph ph-device-tablet-speaker"></i>
+              <span data-i18n="docs.openPages">看页面案例</span>
+            </a>
           </div>
         </section>
 
@@ -91,17 +104,17 @@
             <article class="rule-card">
               <span>01</span>
               <h3 data-i18n="docs.ruleOneTitle">先让人刷得动</h3>
-              <p data-i18n="docs.ruleOneCopy">组件默认服务快速判断，不默认服务学术展示。</p>
+              <p data-i18n="docs.ruleOneCopy">组件默认服务快速判断，不默认服务学术展示。每张卡片只承载一个主判断：要不要读。</p>
             </article>
             <article class="rule-card">
               <span>02</span>
               <h3 data-i18n="docs.ruleTwoTitle">专业感来自结构</h3>
-              <p data-i18n="docs.ruleTwoCopy">不用 New Roman 或学术味 serif，靠清楚层级和证据链建立可信度。</p>
+              <p data-i18n="docs.ruleTwoCopy">不用 Times New Roman 或学术味 serif，靠清楚层级、证据链和完整来源建立可信度。</p>
             </article>
             <article class="rule-card">
               <span>03</span>
-              <h3 data-i18n="docs.ruleThreeTitle">Demo 必须能点</h3>
-              <p data-i18n="docs.ruleThreeCopy">每个常用组件都要给真实状态切换，不只给一张静态图。</p>
+              <h3 data-i18n="docs.ruleThreeTitle">有瘾性但不廉价</h3>
+              <p data-i18n="docs.ruleThreeCopy">让用户持续发现价值，而不是靠噪音和刺激。反馈很轻，节奏清楚，每篇都通向下一篇。</p>
             </article>
           </div>
         </section>
@@ -110,7 +123,7 @@
           <div class="doc-section-head">
             <p class="eyebrow">Components</p>
             <h2>Paper Card</h2>
-            <p data-i18n="docs.paperCardCopy">用一张卡片解决“值不值得读、值不值得存、为什么推给我”。</p>
+            <p data-i18n="docs.paperCardCopy">用一张卡片解决"值不值得读、值不值得存、为什么推给我"。</p>
           </div>
 
           <div class="doc-grid">
@@ -131,16 +144,18 @@
               <article class="paper-card-demo is-featured" id="paperCardDemo">
                 <div class="paper-card-rank">01</div>
                 <div class="paper-card-body">
-                  <p class="paper-card-source">ArXiv AI · because you followed reasoning</p>
+                  <p class="paper-card-source">ArXiv AI · 因为你收藏了 reasoning</p>
                   <h3>A new scaling law for reasoning in large language models</h3>
-                  <p class="paper-card-summary" data-i18n="docs.paperCardDemoCopy">摘要要像内容产品，不像数据库字段。</p>
+                  <p class="paper-card-summary" data-i18n="docs.paperCardDemoCopy">更多高质量数据和算力会稳定提升 reasoning 表现，提升规律可预测。</p>
                   <div class="token-row">
                     <span>reasoning</span>
                     <span>scaling</span>
                     <span>LLM</span>
                   </div>
                 </div>
-                <button class="bookmark-button" type="button" data-bookmark>☆</button>
+                <button class="bookmark-button" type="button" data-bookmark>
+                  <i class="ph ph-bookmark-simple"></i>
+                </button>
               </article>
             </div>
           </div>
@@ -193,7 +208,10 @@
 
             <div class="demo-box">
               <button class="command-trigger" type="button" id="commandOpenButton">
-                <span data-i18n="docs.commandButton">Open Command Bar</span>
+                <span>
+                  <i class="ph ph-magnifying-glass"></i>
+                  Open Command Bar
+                </span>
                 <kbd>⌘K</kbd>
               </button>
             </div>
@@ -217,7 +235,10 @@
             </div>
 
             <div class="demo-box">
-              <button class="secondary-button" type="button" id="sheetOpenButton" data-i18n="docs.openSheet">Open Sheet</button>
+              <button class="secondary-button" type="button" id="sheetOpenButton">
+                <i class="ph ph-rows"></i>
+                <span data-i18n="docs.openSheet">Open Sheet</span>
+              </button>
             </div>
           </div>
         </section>
@@ -241,8 +262,11 @@
             <div class="demo-box">
               <article class="ai-answer-card" id="aiAnswerCard">
                 <div class="ai-answer-top">
-                  <span class="ai-badge">AI</span>
-                  <button class="ghost-button" type="button" id="citationToggle" data-i18n="docs.toggleCitation">Show Citations</button>
+                  <span class="ai-badge">
+                    <i class="ph-fill ph-sparkle"></i>
+                    AI
+                  </span>
+                  <button class="ghost-button" type="button" id="citationToggle" data-i18n="docs.toggleCitation">显示引用</button>
                 </div>
                 <p data-i18n="docs.aiAnswerText">
                   这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。
@@ -269,8 +293,14 @@
           </div>
 
           <div class="page-demo-tabs">
-            <button class="page-tab is-active" type="button" data-page-demo="feed-mobile">Mobile</button>
-            <button class="page-tab" type="button" data-page-demo="feed-web">Web</button>
+            <button class="page-tab is-active" type="button" data-page-demo="feed-mobile">
+              <i class="ph ph-device-mobile"></i>
+              Mobile
+            </button>
+            <button class="page-tab" type="button" data-page-demo="feed-web">
+              <i class="ph ph-desktop"></i>
+              Web
+            </button>
           </div>
 
           <div class="page-demo-frame is-active" data-page-panel="feed-mobile">
@@ -310,7 +340,7 @@
                 <article class="paper-card-demo compact is-featured">
                   <div class="paper-card-rank">01</div>
                   <div class="paper-card-body">
-                    <p class="paper-card-source">Because you saved scaling law</p>
+                    <p class="paper-card-source">因为你收藏了 scaling law</p>
                     <h3>Reasoning law update</h3>
                     <p class="paper-card-summary">桌面端保持列表效率，不牺牲推荐解释。</p>
                   </div>
@@ -338,9 +368,9 @@
               <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划。</p>
             </div>
             <div class="bullet-stack">
-              <p><strong>Plain English.</strong> Bigger models reason better when data quality also improves.</p>
-              <p><strong>Why it matters.</strong> Teams can plan compute budgets with less guesswork.</p>
-              <p><strong>Next action.</strong> Compare with your saved reasoning benchmark papers.</p>
+              <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
+              <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
+              <p><strong>Next step.</strong> 与你收藏的 benchmark 论文做对比。</p>
             </div>
           </div>
         </section>
@@ -400,13 +430,23 @@
     <div class="overlay hidden" id="commandOverlay">
       <div class="command-dialog">
         <div class="command-input-row">
+          <i class="ph ph-magnifying-glass" style="color: var(--ink-muted);"></i>
           <input id="commandInput" type="text" placeholder="Search docs, pages, or actions" />
           <button class="ghost-button" type="button" id="commandCloseButton">Esc</button>
         </div>
         <div class="command-results" id="commandResults">
-          <button type="button" data-command-target="#components-paper-card">Go to Paper Card</button>
-          <button type="button" data-command-target="#components-ai">Open AI Answer Block</button>
-          <button type="button" data-command-target="#pages-copilot">Jump to Research Copilot</button>
+          <button type="button" data-command-target="#components-paper-card">
+            <i class="ph ph-file-text"></i>
+            Go to Paper Card
+          </button>
+          <button type="button" data-command-target="#components-ai">
+            <i class="ph-fill ph-sparkle"></i>
+            Open AI Answer Block
+          </button>
+          <button type="button" data-command-target="#pages-copilot">
+            <i class="ph ph-chat-circle"></i>
+            Jump to Research Copilot
+          </button>
         </div>
       </div>
     </div>
@@ -415,10 +455,22 @@
       <div class="sheet-dialog">
         <div class="sheet-handle"></div>
         <strong data-i18n="docs.sheetTitle">论文操作</strong>
-        <button type="button" data-i18n="docs.sheetActionSave">收藏论文</button>
-        <button type="button" data-i18n="docs.sheetActionMore">更多类似</button>
-        <button type="button" data-i18n="docs.sheetActionHide">不感兴趣</button>
-        <button class="ghost-button" type="button" id="sheetCloseButton" data-i18n="docs.sheetClose">关闭</button>
+        <button type="button">
+          <i class="ph-fill ph-bookmark-simple"></i>
+          <span data-i18n="docs.sheetActionSave">收藏论文</span>
+        </button>
+        <button type="button">
+          <i class="ph ph-arrows-clockwise"></i>
+          <span data-i18n="docs.sheetActionMore">更多类似</span>
+        </button>
+        <button type="button">
+          <i class="ph ph-eye-slash"></i>
+          <span data-i18n="docs.sheetActionHide">不感兴趣</span>
+        </button>
+        <button class="ghost-button" type="button" id="sheetCloseButton">
+          <i class="ph ph-x"></i>
+          <span data-i18n="docs.sheetClose">关闭</span>
+        </button>
       </div>
     </div>
 

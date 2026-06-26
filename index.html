@@ -3,17 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Aurora Design System — 专业级企业产品设计系统，包含完整的设计令牌、组件库、图标系统和设计规范。" />
-    <title>Aurora Design System</title>
+    <meta name="description" content="PaperDaily 设计系统 — 把论文变成可刷、可懂、可继续探索的研究信息流产品。清醒、亲和、灵动、专业。" />
+    <title>PaperDaily Design — 论文日报设计系统</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body data-page="landing">
@@ -21,32 +17,29 @@
 
     <header class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="index.html" aria-label="Aurora Design System 首页">
-          <div class="brand-logo">
-            <i class="ph-fill ph-asterisk"></i>
-          </div>
-          <span class="brand-name">Aurora</span>
-          <span class="brand-badge">v2.0</span>
+        <a class="brand" href="index.html" aria-label="PaperDaily Design 首页">
+          <div class="brand-mark">P</div>
+          <span class="brand-name">PaperDaily Design</span>
         </a>
 
         <nav class="navbar-nav" aria-label="主导航">
-          <a href="#foundations" class="nav-link">设计规范</a>
+          <a href="#principles" class="nav-link">设计哲学</a>
           <a href="#components" class="nav-link">组件</a>
-          <a href="#icons" class="nav-link">图形</a>
-          <a href="#theming" class="nav-link">主题</a>
+          <a href="#tokens" class="nav-link">设计令牌</a>
+          <a href="#pages" class="nav-link">页面</a>
         </nav>
 
         <div class="navbar-actions">
-          <button class="icon-button" id="searchButton" aria-label="搜索">
+          <button class="icon-button" aria-label="搜索">
             <i class="ph ph-magnifying-glass"></i>
           </button>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
             <i class="ph ph-sun" data-theme-icon="sun"></i>
             <i class="ph-fill ph-moon" data-theme-icon="moon"></i>
           </button>
-          <a class="btn btn-primary btn-sm" href="#">
-            <i class="ph ph-github-logo"></i>
-            GitHub
+          <a class="btn btn-primary btn-sm" href="docs.html">
+            <i class="ph ph-book-open"></i>
+            查看文档
           </a>
         </div>
       </div>
@@ -55,21 +48,19 @@
     <main id="main">
       <section class="hero">
         <div class="container">
-          <div class="hero-inner">
-            <div class="hero-badge">
+          <div class="hero-copy">
+            <div class="hero-tag">
               <i class="ph-fill ph-sparkle"></i>
-              <span>Aurora Design System v2.0 发布</span>
-              <i class="ph ph-arrow-right"></i>
+              <span>v1.0 Design System</span>
             </div>
             <h1 class="hero-title">
-              为企业级产品打造的
-              <span class="hero-title-accent">设计系统</span>
+              把论文变成<br /><em>可刷、可懂、可探索</em>的信息流
             </h1>
             <p class="hero-subtitle">
-              一套完整的设计语言，包含 180+ 精心设计的组件、2,000+ 开源图标、完善的设计令牌系统，以及可直接用于生产的代码实现。
+              PaperDaily 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary btn-lg" href="#foundations">
+              <a class="btn btn-primary btn-lg" href="docs.html">
                 开始使用
                 <i class="ph ph-arrow-right"></i>
               </a>
@@ -78,666 +69,308 @@
                 浏览组件
               </a>
             </div>
-            <div class="hero-meta">
-              <div class="meta-item">
-                <div class="meta-value">180+</div>
-                <div class="meta-label">组件</div>
+            <div class="hero-points">
+              <div class="hero-point">
+                <i class="ph-fill ph-check-circle"></i>
+                <span>清醒 · 结构明确，重点清晰</span>
               </div>
-              <div class="meta-divider"></div>
-              <div class="meta-item">
-                <div class="meta-value">2,000+</div>
-                <div class="meta-label">图标</div>
+              <div class="hero-point">
+                <i class="ph-fill ph-check-circle"></i>
+                <span>亲和 · 减少学术压迫感</span>
               </div>
-              <div class="meta-divider"></div>
-              <div class="meta-item">
-                <div class="meta-value">3</div>
-                <div class="meta-label">主题模式</div>
-              </div>
-              <div class="meta-divider"></div>
-              <div class="meta-item">
-                <div class="meta-value">WCAG 2.1</div>
-                <div class="meta-label">无障碍级</div>
+              <div class="hero-point">
+                <i class="ph-fill ph-check-circle"></i>
+                <span>灵动 · 交互轻，反馈快</span>
               </div>
             </div>
           </div>
 
           <div class="hero-visual">
-            <div class="hero-card">
-              <div class="card-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hero-card-frame">
+              <div class="frame-header">
+                <span class="frame-title">Today · 12 papers</span>
+                <div class="frame-actions">
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                </div>
               </div>
-              <div class="card-preview-grid">
-                <div class="preview-comp preview-button">
-                  <button class="btn btn-primary">主要按钮</button>
-                  <button class="btn btn-secondary">次要按钮</button>
-                  <button class="btn btn-ghost">幽灵按钮</button>
-                </div>
-                <div class="preview-comp preview-card">
-                  <div class="mini-card">
-                    <div class="mini-card-icon"><i class="ph-fill ph-lightning"></i></div>
-                    <div class="mini-card-body">
-                      <strong>性能优化</strong>
-                      <p>极速加载体验</p>
+              <div class="frame-body">
+                <div class="paper-card-mini">
+                  <div class="paper-rank">01</div>
+                  <div class="paper-info">
+                    <div class="paper-source">ArXiv AI · 你收藏过 reasoning</div>
+                    <div class="paper-title">A new scaling law for reasoning in large language models</div>
+                    <div class="paper-tags">
+                      <span class="paper-tag">reasoning</span>
+                      <span class="paper-tag">scaling</span>
                     </div>
                   </div>
-                  <div class="mini-card">
-                    <div class="mini-card-icon accent"><i class="ph-fill ph-shield-check"></i></div>
-                    <div class="mini-card-body">
-                      <strong>安全可靠</strong>
-                      <p>企业级安全标准</p>
+                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
+                </div>
+                <div class="paper-card-mini">
+                  <div class="paper-rank">02</div>
+                  <div class="paper-info">
+                    <div class="paper-source">Nature · Biomed</div>
+                    <div class="paper-title">Engineered cell therapies with improved safety profiles</div>
+                    <div class="paper-tags">
+                      <span class="paper-tag">biotech</span>
+                      <span class="paper-tag">cell therapy</span>
                     </div>
                   </div>
+                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
-                <div class="preview-comp preview-input">
-                  <div class="input-field">
-                    <i class="ph ph-envelope"></i>
-                    <input type="text" placeholder="输入邮箱地址" />
+                <div class="paper-card-mini">
+                  <div class="paper-rank">03</div>
+                  <div class="paper-info">
+                    <div class="paper-source">Physics · 本周升温</div>
+                    <div class="paper-title">Quantum error correction breakthrough in surface codes</div>
+                    <div class="paper-tags">
+                      <span class="paper-tag">quantum</span>
+                      <span class="paper-tag">error correction</span>
+                    </div>
                   </div>
-                  <div class="toggle-row">
-                    <div class="toggle is-on"><span></span></div>
-                    <span>启用通知</span>
-                  </div>
-                </div>
-                <div class="preview-comp preview-badges">
-                  <span class="badge badge-primary"><i class="ph-fill ph-check-circle"></i>成功</span>
-                  <span class="badge badge-warning"><i class="ph-fill ph-warning"></i>警告</span>
-                  <span class="badge badge-error"><i class="ph-fill ph-x-circle"></i>错误</span>
+                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="hero-gradient-orb orb-1"></div>
-        <div class="hero-gradient-orb orb-2"></div>
       </section>
 
-      <section id="foundations" class="section section-foundations">
+      <section id="principles" class="section section-muted">
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">
-              <i class="ph ph-ruler"></i>
-              <span>设计规范</span>
+              <i class="ph ph-lightbulb"></i>
+              <span>Design Philosophy</span>
             </div>
-            <h2 class="section-title">Design Foundations</h2>
+            <h2 class="section-title">设计哲学</h2>
             <p class="section-desc">
-              从排版、色彩到间距，每一个设计决策都经过精心打磨，确保跨平台一致性。
+              清醒、亲和、灵动、专业。我们不做论文数据库皮肤，也不做空洞学术感。专业感来自信息质量和清楚层级，而不是深色、玻璃和公式。
             </p>
           </div>
 
-          <div class="foundations-grid">
-            <div class="foundation-card" data-foundation="typography">
-              <div class="foundation-header">
-                <div class="foundation-icon">
-                  <i class="ph ph-text-t"></i>
-                </div>
-                <div>
-                  <h3>排版系统</h3>
-                  <p>Typography</p>
-                </div>
-              </div>
-              <div class="type-samples">
-                <div class="type-sample type-display">Aa</div>
-                <div class="type-meta">
-                  <div><strong>Manrope</strong> · 无衬线体</div>
-                  <div>用于界面与正文</div>
-                </div>
-                <div class="type-scale">
-                  <div class="scale-row">
-                    <span class="scale-label">Display</span>
-                    <span class="scale-weight">800</span>
-                    <span class="scale-size">72px</span>
-                  </div>
-                  <div class="scale-row">
-                    <span class="scale-label">H1</span>
-                    <span class="scale-weight">700</span>
-                    <span class="scale-size">48px</span>
-                  </div>
-                  <div class="scale-row">
-                    <span class="scale-label">Body</span>
-                    <span class="scale-weight">400</span>
-                    <span class="scale-size">16px</span>
-                  </div>
-                </div>
-              </div>
+          <div class="principles-grid">
+            <div class="principle-card">
+              <div class="principle-num">01</div>
+              <h3>先让人刷得动</h3>
+              <p>组件默认服务快速判断，不默认服务学术展示。每张卡片只承载一个主判断：要不要读。</p>
             </div>
-
-            <div class="foundation-card" data-foundation="colors">
-              <div class="foundation-header">
-                <div class="foundation-icon">
-                  <i class="ph ph-palette"></i>
-                </div>
-                <div>
-                  <h3>色彩系统</h3>
-                  <p>Color Palette</p>
-                </div>
-              </div>
-              <div class="color-palette">
-                <div class="color-row">
-                  <div class="swatch" style="background: var(--brand-50)"><span>50</span></div>
-                  <div class="swatch" style="background: var(--brand-100)"><span>100</span></div>
-                  <div class="swatch" style="background: var(--brand-200)"><span>200</span></div>
-                  <div class="swatch" style="background: var(--brand-500)"><span>500</span></div>
-                  <div class="swatch" style="background: var(--brand-600)"><span>600</span></div>
-                  <div class="swatch" style="background: var(--brand-700)"><span>700</span></div>
-                  <div class="swatch" style="background: var(--brand-900)"><span>900</span></div>
-                </div>
-                <div class="semantic-colors">
-                  <div class="semantic-item">
-                    <span class="semantic-dot" style="background: var(--success-500)"></span>
-                    <span>Success</span>
-                  </div>
-                  <div class="semantic-item">
-                    <span class="semantic-dot" style="background: var(--warning-500)"></span>
-                    <span>Warning</span>
-                  </div>
-                  <div class="semantic-item">
-                    <span class="semantic-dot" style="background: var(--error-500)"></span>
-                    <span>Error</span>
-                  </div>
-                  <div class="semantic-item">
-                    <span class="semantic-dot" style="background: var(--info-500)"></span>
-                    <span>Info</span>
-                  </div>
-                </div>
-              </div>
+            <div class="principle-card">
+              <div class="principle-num">02</div>
+              <h3>专业感来自结构</h3>
+              <p>不用 Times New Roman 或学术味 serif，靠清楚层级、证据链和完整来源建立可信度。</p>
             </div>
-
-            <div class="foundation-card" data-foundation="spacing">
-              <div class="foundation-header">
-                <div class="foundation-icon">
-                  <i class="ph ph-squares-four"></i>
-                </div>
-                <div>
-                  <h3>间距系统</h3>
-                  <p>Spacing Scale</p>
-                </div>
-              </div>
-              <div class="spacing-scale">
-                <div class="spacing-item">
-                  <span class="spacing-block" style="width: 4px; height: 4px"></span>
-                  <div>
-                    <strong>xs</strong>
-                    <span>4px</span>
-                  </div>
-                </div>
-                <div class="spacing-item">
-                  <span class="spacing-block" style="width: 8px; height: 8px"></span>
-                  <div>
-                    <strong>sm</strong>
-                    <span>8px</span>
-                  </div>
-                </div>
-                <div class="spacing-item">
-                  <span class="spacing-block" style="width: 16px; height: 16px"></span>
-                  <div>
-                    <strong>md</strong>
-                    <span>16px</span>
-                  </div>
-                </div>
-                <div class="spacing-item">
-                  <span class="spacing-block" style="width: 24px; height: 24px"></span>
-                  <div>
-                    <strong>lg</strong>
-                    <span>24px</span>
-                  </div>
-                </div>
-                <div class="spacing-item">
-                  <span class="spacing-block" style="width: 32px; height: 32px"></span>
-                  <div>
-                    <strong>xl</strong>
-                    <span>32px</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="foundation-card" data-foundation="elevation">
-              <div class="foundation-header">
-                <div class="foundation-icon">
-                  <i class="ph ph-stack"></i>
-                </div>
-                <div>
-                  <h3>阴影层级</h3>
-                  <p>Elevation</p>
-                </div>
-              </div>
-              <div class="elevation-demo">
-                <div class="elev-card elev-sm">
-                  <span>sm</span>
-                </div>
-                <div class="elev-card elev-md">
-                  <span>md</span>
-                </div>
-                <div class="elev-card elev-lg">
-                  <span>lg</span>
-                </div>
-                <div class="elev-card elev-xl">
-                  <span>xl</span>
-                </div>
-              </div>
+            <div class="principle-card">
+              <div class="principle-num">03</div>
+              <h3>有瘾性但不廉价</h3>
+              <p>让用户持续发现价值，而不是靠噪音和刺激。反馈很轻，节奏清楚，每篇都通向下一篇。</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="components" class="section section-components">
+      <section id="components" class="section">
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">
               <i class="ph ph-layout"></i>
-              <span>组件库</span>
+              <span>Components</span>
             </div>
-            <h2 class="section-title">Components</h2>
+            <h2 class="section-title">核心组件</h2>
             <p class="section-desc">
-              180+ 高质量 React 组件，支持主题定制、无障碍访问，每一个组件都经过严格测试。
+              围绕论文信息流场景设计的组件系统，支持推荐反馈、多语言、暗黑模式和完整的无障碍访问。
             </p>
           </div>
 
-          <div class="component-tabs">
-            <button class="comp-tab is-active" data-tab="buttons">按钮</button>
-            <button class="comp-tab" data-tab="forms">表单</button>
-            <button class="comp-tab" data-tab="feedback">反馈</button>
-            <button class="comp-tab" data-tab="data">数据展示</button>
-            <button class="comp-tab" data-tab="navigation">导航</button>
-          </div>
+          <div class="components-showcase">
+            <div class="comp-block">
+              <div class="comp-block-head">
+                <div>
+                  <div class="comp-block-title">Paper Card</div>
+                  <div class="comp-block-desc">论文卡片 · 快速判断读不读</div>
+                </div>
+                <i class="ph ph-file-text" style="color: var(--ink-muted); font-size: 20px;"></i>
+              </div>
+              <div class="comp-block-body">
+                <article class="paper-card-demo is-featured">
+                  <div class="paper-card-rank">01</div>
+                  <div class="paper-card-body">
+                    <p class="paper-card-source">ArXiv AI · 因为你收藏了 scaling law</p>
+                    <h3>A new scaling law for reasoning in large language models</h3>
+                    <p class="paper-card-summary">更多高质量数据和算力会稳定提升 reasoning 表现，提升规律可预测。</p>
+                    <div class="token-row">
+                      <span>reasoning</span>
+                      <span>scaling</span>
+                      <span>LLM</span>
+                    </div>
+                  </div>
+                  <button class="bookmark-button" type="button">
+                    <i class="ph ph-bookmark-simple"></i>
+                  </button>
+                </article>
+              </div>
+            </div>
 
-          <div class="component-showcase">
-            <div class="comp-panel is-active" data-panel="buttons">
-              <div class="demo-block">
-                <h4>按钮类型</h4>
-                <div class="demo-row">
-                  <button class="btn btn-primary">Primary</button>
-                  <button class="btn btn-secondary">Secondary</button>
-                  <button class="btn btn-ghost">Ghost</button>
-                  <button class="btn btn-outline">Outline</button>
-                  <button class="btn btn-destructive">Destructive</button>
+            <div class="comp-block">
+              <div class="comp-block-head">
+                <div>
+                  <div class="comp-block-title">Key Finding</div>
+                  <div class="comp-block-desc">关键发现 · 详情页理解锚点</div>
+                </div>
+                <i class="ph ph-lightbulb" style="color: var(--ink-muted); font-size: 20px;"></i>
+              </div>
+              <div class="comp-block-body">
+                <div class="summary-block">
+                  <strong>Key Finding</strong>
+                  <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
+                </div>
+                <div style="height: 16px;"></div>
+                <div class="bullet-stack">
+                  <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
+                  <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
+                  <p><strong>Next step.</strong> 与你收藏的 benchmark 论文做对比。</p>
                 </div>
               </div>
-              <div class="demo-block">
-                <h4>按钮尺寸</h4>
-                <div class="demo-row demo-row-center">
-                  <button class="btn btn-primary btn-xs">Extra Small</button>
-                  <button class="btn btn-primary btn-sm">Small</button>
-                  <button class="btn btn-primary btn-md">Medium</button>
-                  <button class="btn btn-primary btn-lg">Large</button>
+            </div>
+
+            <div class="comp-block">
+              <div class="comp-block-head">
+                <div>
+                  <div class="comp-block-title">Badge & Status</div>
+                  <div class="comp-block-desc">状态标记 · 推荐反馈系统</div>
                 </div>
+                <i class="ph ph-tag" style="color: var(--ink-muted); font-size: 20px;"></i>
               </div>
-              <div class="demo-block">
-                <h4>图标按钮</h4>
-                <div class="demo-row">
-                  <button class="btn btn-primary"><i class="ph ph-plus"></i>新建</button>
-                  <button class="btn btn-secondary"><i class="ph ph-download-simple"></i>下载</button>
-                  <button class="btn btn-ghost"><i class="ph ph-pencil-simple"></i>编辑</button>
-                  <button class="btn btn-icon btn-primary"><i class="ph-fill ph-heart"></i></button>
-                  <button class="btn btn-icon btn-secondary"><i class="ph ph-bell"></i></button>
-                  <button class="btn btn-icon btn-ghost"><i class="ph ph-dots-three"></i></button>
+              <div class="comp-block-body">
+                <div class="badge-row">
+                  <span class="badge badge-primary">推荐</span>
+                  <span class="badge badge-success">已收藏</span>
+                  <span class="badge badge-neutral">已读</span>
+                  <span class="badge badge-warning">今日重点</span>
+                  <span class="badge badge-danger">不感兴趣</span>
                 </div>
-              </div>
-              <div class="demo-block">
-                <h4>按钮状态</h4>
-                <div class="demo-row">
-                  <button class="btn btn-primary" disabled>Disabled</button>
-                  <button class="btn btn-primary btn-loading">
-                    <i class="ph ph-spinner"></i>Loading
+                <div style="height: 20px;"></div>
+                <div class="button-demo-row">
+                  <button class="btn btn-primary btn-sm">主要操作</button>
+                  <button class="btn btn-secondary btn-sm">次要操作</button>
+                  <button class="btn btn-ghost btn-sm">幽灵按钮</button>
+                  <button class="btn btn-icon btn-primary">
+                    <i class="ph-fill ph-heart"></i>
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="comp-panel" data-panel="forms">
-              <div class="demo-grid-2">
-                <div class="demo-block">
-                  <h4>输入框</h4>
-                  <div class="form-field">
-                    <label>用户名</label>
-                    <div class="input-field">
-                      <i class="ph ph-user"></i>
-                      <input type="text" placeholder="请输入用户名" />
-                    </div>
-                  </div>
-                  <div class="form-field">
-                    <label>密码</label>
-                    <div class="input-field input-error">
-                      <i class="ph ph-lock"></i>
-                      <input type="password" placeholder="请输入密码" value="123" />
-                      <i class="ph ph-warning-circle error-icon"></i>
-                    </div>
-                    <div class="field-error">密码长度至少为 8 位</div>
-                  </div>
+            <div class="comp-block">
+              <div class="comp-block-head">
+                <div>
+                  <div class="comp-block-title">AI Answer</div>
+                  <div class="comp-block-desc">AI 回答 · 证据链透明</div>
                 </div>
-                <div class="demo-block">
-                  <h4>选择控件</h4>
-                  <div class="form-row">
-                    <label class="checkbox">
-                      <input type="checkbox" checked />
-                      <span class="checkbox-box"><i class="ph-fill ph-check"></i></span>
-                      记住我
-                    </label>
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <span class="checkbox-box"><i class="ph-fill ph-check"></i></span>
-                      接收邮件通知
-                    </label>
-                  </div>
-                  <div class="form-row">
-                    <label class="radio">
-                      <input type="radio" name="demo-radio" checked />
-                      <span class="radio-circle"></span>
-                      免费版
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="demo-radio" />
-                      <span class="radio-circle"></span>
-                      专业版
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="demo-radio" />
-                      <span class="radio-circle"></span>
-                      企业版
-                    </label>
-                  </div>
-                  <div class="form-row">
-                    <div class="toggle is-on" data-toggle-demo><span></span></div>
-                    <span class="toggle-label">深色模式</span>
-                  </div>
-                </div>
+                <i class="ph ph-sparkle" style="color: var(--ink-muted); font-size: 20px;"></i>
               </div>
-            </div>
-
-            <div class="comp-panel" data-panel="feedback">
-              <div class="demo-grid-2">
-                <div class="demo-block">
-                  <h4>徽章 Badges</h4>
-                  <div class="demo-row demo-row-wrap">
-                    <span class="badge badge-primary"><i class="ph-fill ph-check-circle"></i>Primary</span>
-                    <span class="badge badge-success"><i class="ph-fill ph-check"></i>Success</span>
-                    <span class="badge badge-warning"><i class="ph-fill ph-warning"></i>Warning</span>
-                    <span class="badge badge-error"><i class="ph-fill ph-x-circle"></i>Error</span>
-                    <span class="badge badge-info"><i class="ph-fill ph-info"></i>Info</span>
-                    <span class="badge badge-neutral">Neutral</span>
+              <div class="comp-block-body">
+                <article class="ai-answer-card" style="padding: 0; border: none;">
+                  <div class="ai-answer-top">
+                    <span class="ai-badge">AI</span>
+                    <button class="ghost-button" type="button" style="height: 24px; font-size: 11px;">显示引用</button>
                   </div>
-                </div>
-                <div class="demo-block">
-                  <h4>提示条 Alerts</h4>
-                  <div class="alert alert-success">
-                    <i class="ph-fill ph-check-circle"></i>
-                    <div>
-                      <strong>操作成功</strong>
-                      <p>您的更改已成功保存。</p>
-                    </div>
-                    <button class="alert-close"><i class="ph ph-x"></i></button>
+                  <p>这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
+                  <div class="citation-list" style="display: flex;">
+                    <button type="button">[1] Scaling Law</button>
+                    <button type="button">[2] Chinchilla</button>
+                    <button type="button">[3] Data Quality</button>
                   </div>
-                  <div class="alert alert-warning">
-                    <i class="ph-fill ph-warning"></i>
-                    <div>
-                      <strong>注意</strong>
-                      <p>您的试用版将在 3 天后过期。</p>
-                    </div>
+                  <div class="ai-actions">
+                    <button class="chip-button is-active" type="button">生成对比表</button>
+                    <button class="chip-button" type="button">加入分析队列</button>
                   </div>
-                  <div class="alert alert-error">
-                    <i class="ph-fill ph-x-circle"></i>
-                    <div>
-                      <strong>错误</strong>
-                      <p>网络连接失败，请检查后重试。</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="demo-block">
-                <h4>进度与加载</h4>
-                <div class="demo-row demo-row-col">
-                  <div class="progress-track">
-                    <div class="progress-fill" style="width: 68%"></div>
-                  </div>
-                  <div class="demo-row">
-                    <div class="spinner spinner-sm"></div>
-                    <div class="spinner"></div>
-                    <div class="spinner spinner-lg"></div>
-                    <button class="btn btn-primary btn-loading">
-                      <i class="ph ph-spinner"></i>处理中
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="comp-panel" data-panel="data">
-              <div class="demo-block">
-                <h4>卡片 Cards</h4>
-                <div class="cards-demo">
-                  <div class="ds-card">
-                    <div class="ds-card-media">
-                      <i class="ph-fill ph-rocket-launch"></i>
-                    </div>
-                    <div class="ds-card-body">
-                      <span class="card-tag">Featured</span>
-                      <h5>快速部署</h5>
-                      <p>一键部署到云端，支持 Vercel、Netlify、AWS 等多个平台。</p>
-                    </div>
-                    <div class="ds-card-footer">
-                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
-                    </div>
-                  </div>
-                  <div class="ds-card">
-                    <div class="ds-card-media accent-green">
-                      <i class="ph-fill ph-chart-line-up"></i>
-                    </div>
-                    <div class="ds-card-body">
-                      <span class="card-tag tag-green">Analytics</span>
-                      <h5>数据分析</h5>
-                      <p>实时数据监控，可视化报表，助您做出明智决策。</p>
-                    </div>
-                    <div class="ds-card-footer">
-                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
-                    </div>
-                  </div>
-                  <div class="ds-card">
-                    <div class="ds-card-media accent-purple">
-                      <i class="ph-fill ph-users-three"></i>
-                    </div>
-                    <div class="ds-card-body">
-                      <span class="card-tag tag-purple">Team</span>
-                      <h5>团队协作</h5>
-                      <p>多人实时协作，权限精细化管理，提升团队效率。</p>
-                    </div>
-                    <div class="ds-card-footer">
-                      <a href="#">了解更多 <i class="ph ph-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="demo-block">
-                <h4>Avatar 头像</h4>
-                <div class="demo-row">
-                  <div class="avatar avatar-sm">A</div>
-                  <div class="avatar">B</div>
-                  <div class="avatar avatar-lg"><img src="https://api.dicebear.com/7.x/initials/svg?seed=Aurora&backgroundColor=6366f1" alt="" /></div>
-                  <div class="avatar-group">
-                    <div class="avatar avatar-sm" style="background: #f59e0b">A</div>
-                    <div class="avatar avatar-sm" style="background: #10b981">B</div>
-                    <div class="avatar avatar-sm" style="background: #8b5cf6">C</div>
-                    <div class="avatar avatar-sm" style="background: #ef4444">+5</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="comp-panel" data-panel="navigation">
-              <div class="demo-block">
-                <h4>标签页 Tabs</h4>
-                <div class="tabs-demo" data-tabs-demo>
-                  <div class="tabs-header">
-                    <button class="tab-btn is-active" data-tab-btn="t1">概览</button>
-                    <button class="tab-btn" data-tab-btn="t2">设置</button>
-                    <button class="tab-btn" data-tab-btn="t3">集成</button>
-                    <button class="tab-btn" data-tab-btn="t4">API</button>
-                  </div>
-                  <div class="tabs-content">
-                    <div class="tab-panel is-active" data-tab-panel="t1">
-                      <p>这里是概览面板，展示产品的核心功能和使用统计。</p>
-                    </div>
-                    <div class="tab-panel" data-tab-panel="t2">
-                      <p>设置面板允许您配置账户偏好、通知选项和安全设置。</p>
-                    </div>
-                    <div class="tab-panel" data-tab-panel="t3">
-                      <p>集成面板展示所有第三方服务连接状态。</p>
-                    </div>
-                    <div class="tab-panel" data-tab-panel="t4">
-                      <p>API 文档提供完整的接口说明和代码示例。</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="demo-block">
-                <h4>面包屑 & 分页</h4>
-                <nav class="breadcrumb">
-                  <a href="#"><i class="ph ph-house"></i>首页</a>
-                  <i class="ph ph-caret-right"></i>
-                  <a href="#">组件</a>
-                  <i class="ph ph-caret-right"></i>
-                  <span>导航</span>
-                </nav>
-                <div class="pagination">
-                  <button class="page-btn" disabled><i class="ph ph-caret-left"></i></button>
-                  <button class="page-btn is-active">1</button>
-                  <button class="page-btn">2</button>
-                  <button class="page-btn">3</button>
-                  <span class="page-ellipsis">...</span>
-                  <button class="page-btn">12</button>
-                  <button class="page-btn"><i class="ph ph-caret-right"></i></button>
-                </div>
+                </article>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="icons" class="section section-icons">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-eyebrow">
-              <i class="ph ph-star"></i>
-              <span>图形</span>
-            </div>
-            <h2 class="section-title">Icon Library</h2>
-            <p class="section-desc">
-              使用 <strong>Phosphor Icons</strong> 专业图标库，提供 6 种风格、2,000+ 矢量图标，支持自定义尺寸与颜色。
-            </p>
-          </div>
-
-          <div class="icon-styles">
-            <button class="icon-style-btn is-active" data-icon-weight="regular">Regular</button>
-            <button class="icon-style-btn" data-icon-weight="fill">Fill</button>
-            <button class="icon-style-btn" data-icon-weight="duotone">Duotone</button>
-            <button class="icon-style-btn" data-icon-weight="thin">Thin</button>
-            <button class="icon-style-btn" data-icon-weight="light">Light</button>
-            <button class="icon-style-btn" data-icon-weight="bold">Bold</button>
-          </div>
-
-          <div class="icon-search-bar">
-            <i class="ph ph-magnifying-glass"></i>
-            <input type="text" id="iconSearch" placeholder="搜索图标名称..." />
-          </div>
-
-          <div class="icon-grid" id="iconGrid">
-          </div>
-
-          <div class="icon-footer-note">
-            <i class="ph ph-info"></i>
-            <span>以上为精选图标，完整图标库包含 2,000+ 图标，支持 6 种粗细风格。</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="theming" class="section section-theming">
+      <section id="tokens" class="section section-muted">
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">
               <i class="ph ph-paint-brush"></i>
-              <span>主题</span>
+              <span>Design Tokens</span>
             </div>
-            <h2 class="section-title">Theming System</h2>
+            <h2 class="section-title">设计令牌</h2>
             <p class="section-desc">
-              基于 CSS 变量的主题系统，支持浅色/深色/高对比度三种模式，运行时即时切换。
+              基于「纸张白、墨黑、蓝色知识锚点」建立的视觉基础。克制用色，留白充足，阅读压力小。
             </p>
           </div>
 
-          <div class="theme-switcher-demo">
-            <div class="theme-options">
-              <button class="theme-card is-active" data-theme-mode="light">
-                <div class="theme-preview theme-preview-light">
-                  <div class="tp-sidebar"></div>
-                  <div class="tp-main">
-                    <div class="tp-bar"></div>
-                    <div class="tp-cards">
-                      <span></span><span></span><span></span>
-                    </div>
-                  </div>
+          <div class="tokens-grid">
+            <div class="token-card">
+              <h3>色彩系统</h3>
+              <div class="token-row-list">
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--paper);"></div>
+                  <span class="token-name">--paper</span>
+                  <span class="token-value">#F7F8FA</span>
                 </div>
-                <div class="theme-info">
-                  <i class="ph-fill ph-sun"></i>
-                  <div>
-                    <strong>浅色模式</strong>
-                    <span>Light</span>
-                  </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--surface);"></div>
+                  <span class="token-name">--surface</span>
+                  <span class="token-value">#FFFFFF</span>
                 </div>
-              </button>
-              <button class="theme-card" data-theme-mode="dark">
-                <div class="theme-preview theme-preview-dark">
-                  <div class="tp-sidebar"></div>
-                  <div class="tp-main">
-                    <div class="tp-bar"></div>
-                    <div class="tp-cards">
-                      <span></span><span></span><span></span>
-                    </div>
-                  </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--ink);"></div>
+                  <span class="token-name">--ink</span>
+                  <span class="token-value">#111111</span>
                 </div>
-                <div class="theme-info">
-                  <i class="ph-fill ph-moon"></i>
-                  <div>
-                    <strong>深色模式</strong>
-                    <span>Dark</span>
-                  </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--brand);"></div>
+                  <span class="token-name">--brand</span>
+                  <span class="token-value">#0756C9</span>
                 </div>
-              </button>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--success);"></div>
+                  <span class="token-name">--success</span>
+                  <span class="token-value">#16A36A</span>
+                </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--warning);"></div>
+                  <span class="token-name">--warning</span>
+                  <span class="token-value">#D97706</span>
+                </div>
+              </div>
             </div>
 
-            <div class="token-preview-card">
-              <div class="token-header">
-                <h4>Design Tokens</h4>
-                <span class="badge badge-primary">CSS Variables</span>
-              </div>
-              <div class="token-code-block">
-                <pre><code>:root {
-  <span class="token-prop">--color-primary</span>: <span class="token-value">#6366f1</span>;
-  <span class="token-prop">--color-bg</span>: <span class="token-value">#ffffff</span>;
-  <span class="token-prop">--color-text</span>: <span class="token-value">#0f172a</span>;
-  <span class="token-prop">--radius-md</span>: <span class="token-value">12px</span>;
-  <span class="token-prop">--shadow-sm</span>: <span class="token-value">0 1px 2px rgba(0,0,0,0.05)</span>;
-  <span class="token-prop">--font-sans</span>: <span class="token-value">'Manrope', system-ui</span>;
-}</code></pre>
-              </div>
-              <div class="token-palette-row">
-                <div class="token-swatch-group">
-                  <span class="token-swatch-label">Primary</span>
-                  <div class="token-swatches">
-                    <span style="background: #eef2ff"></span>
-                    <span style="background: #c7d2fe"></span>
-                    <span style="background: #6366f1"></span>
-                    <span style="background: #4338ca"></span>
-                  </div>
+            <div class="token-card">
+              <h3>排版系统</h3>
+              <div class="token-row-list">
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--brand-soft); display: grid; place-items: center; color: var(--brand); font-weight: 800; font-size: 14px;">Aa</div>
+                  <span class="token-name">Display · 48px</span>
+                  <span class="token-value">800</span>
                 </div>
-                <div class="token-swatch-group">
-                  <span class="token-swatch-label">Neutral</span>
-                  <div class="token-swatches">
-                    <span style="background: #f8fafc"></span>
-                    <span style="background: #e2e8f0"></span>
-                    <span style="background: #64748b"></span>
-                    <span style="background: #0f172a"></span>
-                  </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink); font-weight: 700; font-size: 13px;">Aa</div>
+                  <span class="token-name">Headline · 28px</span>
+                  <span class="token-value">700</span>
+                </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink); font-weight: 600; font-size: 11px;">Aa</div>
+                  <span class="token-name">Title · 18px</span>
+                  <span class="token-value">600</span>
+                </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink-soft); font-weight: 400; font-size: 10px;">Aa</div>
+                  <span class="token-name">Body · 15px</span>
+                  <span class="token-value">400</span>
+                </div>
+                <div class="token-item">
+                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink-muted); font-weight: 500; font-size: 9px;">Aa</div>
+                  <span class="token-name">Caption · 12px</span>
+                  <span class="token-value">500</span>
                 </div>
               </div>
             </div>
@@ -745,30 +378,165 @@
         </div>
       </section>
 
-      <section class="section section-cta">
+      <section id="pages" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">
+              <i class="ph ph-device-tablet-speaker"></i>
+              <span>Page Templates</span>
+            </div>
+            <h2 class="section-title">页面模板</h2>
+            <p class="section-desc">
+              从信息流到详情页，从 AI 工作台到引导流程，覆盖产品核心场景的页面设计参考。
+            </p>
+          </div>
+
+          <div class="pages-showcase">
+            <div class="page-card">
+              <div class="page-card-preview">
+                <div class="page-mock">
+                  <div class="mock-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mock-content">
+                    <div class="mock-line short"></div>
+                    <div class="mock-card">
+                      <div class="mock-card-side"></div>
+                      <div class="mock-card-body">
+                        <div class="mock-line long"></div>
+                        <div class="mock-line medium"></div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-side"></div>
+                      <div class="mock-card-body">
+                        <div class="mock-line long"></div>
+                        <div class="mock-line short"></div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-side"></div>
+                      <div class="mock-card-body">
+                        <div class="mock-line medium"></div>
+                        <div class="mock-line long"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-card-footer">
+                <h3>Feed Page</h3>
+                <p>首页信息流，一屏可刷的论文卡片列表，支持推荐反馈和快速收藏。</p>
+              </div>
+            </div>
+
+            <div class="page-card">
+              <div class="page-card-preview">
+                <div class="page-mock">
+                  <div class="mock-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mock-content">
+                    <div class="mock-line long"></div>
+                    <div class="mock-line medium"></div>
+                    <div class="mock-card">
+                      <div class="mock-card-body" style="flex: 1;">
+                        <div class="mock-line short" style="background: var(--brand); opacity: 0.6;"></div>
+                        <div class="mock-line long"></div>
+                      </div>
+                    </div>
+                    <div class="mock-line medium"></div>
+                    <div class="mock-line short"></div>
+                    <div class="mock-line long"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-card-footer">
+                <h3>Detail Page</h3>
+                <p>论文详情页，前半屏回答四件事：讲什么、发现、为什么重要、下一步做什么。</p>
+              </div>
+            </div>
+
+            <div class="page-card">
+              <div class="page-card-preview">
+                <div class="page-mock">
+                  <div class="mock-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mock-content" style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 6px;">
+                    <div style="background: var(--surface-muted); border-radius: 4px;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <div class="mock-line short"></div>
+                      <div class="mock-card" style="padding: 6px;">
+                        <div class="mock-line medium"></div>
+                        <div class="mock-line long"></div>
+                      </div>
+                    </div>
+                    <div style="background: var(--surface-muted); border-radius: 4px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-card-footer">
+                <h3>Research Copilot</h3>
+                <p>AI 研究工作台，三栏布局：上下文、对话、证据链，像生产力工具不像聊天页。</p>
+              </div>
+            </div>
+
+            <div class="page-card">
+              <div class="page-card-preview">
+                <div class="page-mock">
+                  <div class="mock-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mock-content" style="display: grid; place-items: center;">
+                    <div style="text-align: center; width: 80%;">
+                      <div class="mock-line medium" style="margin: 0 auto 8px;"></div>
+                      <div class="mock-line short" style="margin: 0 auto 12px;"></div>
+                      <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
+                        <div style="width: 50px; height: 24px; background: var(--brand-soft); border-radius: 999px;"></div>
+                        <div style="width: 70px; height: 24px; background: var(--surface-muted); border-radius: 999px;"></div>
+                        <div style="width: 60px; height: 24px; background: var(--surface-muted); border-radius: 999px;"></div>
+                        <div style="width: 50px; height: 24px; background: var(--brand-soft); border-radius: 999px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-card-footer">
+                <h3>Onboarding</h3>
+                <p>注册和兴趣引导，只收集必要信息，画像不要一次问完，先建立进入感。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
         <div class="container">
           <div class="cta-card">
             <div class="cta-content">
-              <h2>开始使用 Aurora Design System</h2>
-              <p>无论是初创团队还是大型企业，Aurora 都能帮助您快速构建一致、美观、易用的产品体验。</p>
+              <h2>开始构建你的研究信息流</h2>
+              <p>无论你是在做学术工具、研究平台还是知识产品，PaperDaily Design 都能帮你快速建立一致、清晰、有亲和力的产品体验。</p>
               <div class="cta-actions">
-                <a class="btn btn-white btn-lg" href="#">
+                <a class="btn btn-primary btn-lg" href="docs.html">
                   <i class="ph ph-book-open"></i>
-                  阅读文档
+                  阅读设计文档
                 </a>
-                <a class="btn btn-white-ghost btn-lg" href="#">
+                <a class="btn btn-secondary btn-lg" href="#components">
                   <i class="ph ph-github-logo"></i>
-                  查看源码
+                  查看组件源码
                 </a>
               </div>
             </div>
-            <div class="cta-decoration">
-              <div class="cta-orb"></div>
-              <div class="cta-icons">
-                <i class="ph-fill ph-asterisk cta-icon cta-icon-1"></i>
-                <i class="ph-fill ph-sparkle cta-icon cta-icon-2"></i>
-                <i class="ph-fill ph-lightning cta-icon cta-icon-3"></i>
-                <i class="ph-fill ph-star cta-icon cta-icon-4"></i>
+            <div class="cta-visual">
+              <div class="cta-icon">
+                <i class="ph-fill ph-file-text"></i>
+              </div>
+              <div class="cta-icon alt">
+                <i class="ph-fill ph-sparkle"></i>
+              </div>
+              <div class="cta-icon success">
+                <i class="ph-fill ph-bookmark-simple"></i>
               </div>
             </div>
           </div>
@@ -781,23 +549,21 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <div class="brand">
-              <div class="brand-logo">
-                <i class="ph-fill ph-asterisk"></i>
-              </div>
-              <span class="brand-name">Aurora</span>
+              <div class="brand-mark">P</div>
+              <span class="brand-name">PaperDaily Design</span>
             </div>
-            <p>为企业级产品打造的专业设计系统</p>
+            <p>把论文变成可刷、可懂、可继续探索的研究信息流产品。</p>
           </div>
           <div class="footer-links">
             <div class="footer-col">
-              <h5>资源</h5>
-              <a href="#">文档</a>
-              <a href="#">组件</a>
-              <a href="#">图标</a>
-              <a href="#">Figma 资源</a>
+              <h5>设计资源</h5>
+              <a href="docs.html">设计文档</a>
+              <a href="#components">组件库</a>
+              <a href="#tokens">设计令牌</a>
+              <a href="#pages">页面模板</a>
             </div>
             <div class="footer-col">
-              <h5>开发</h5>
+              <h5>开发资源</h5>
               <a href="#">快速开始</a>
               <a href="#">安装指南</a>
               <a href="#">主题定制</a>
@@ -806,18 +572,18 @@
             <div class="footer-col">
               <h5>社区</h5>
               <a href="#">GitHub</a>
-              <a href="#">Discord</a>
+              <a href="#">反馈建议</a>
               <a href="#">贡献指南</a>
-              <a href="#">问题反馈</a>
+              <a href="#">Figma 资源</a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 Aurora Design System. MIT License.</p>
+          <p>© 2026 PaperDaily Design. MIT License.</p>
           <div class="footer-social">
             <a href="#" class="icon-button"><i class="ph ph-github-logo"></i></a>
             <a href="#" class="icon-button"><i class="ph ph-twitter-logo"></i></a>
-            <a href="#" class="icon-button"><i class="ph ph-discord-logo"></i></a>
+            <a href="#" class="icon-button"><i class="ph ph-globe"></i></a>
           </div>
         </div>
       </div>
