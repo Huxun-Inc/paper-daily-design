@@ -70,6 +70,13 @@
   --glass-border: rgba(255, 255, 255, 0.5);
   --glass-blur: 20px;
 
+  --neu-light: #FFFFFF;
+  --neu-dark: #D9DCE2;
+  --neu-shadow: 6px 6px 12px var(--neu-dark), -6px -6px 12px var(--neu-light);
+  --neu-shadow-sm: 4px 4px 8px var(--neu-dark), -4px -4px 8px var(--neu-light);
+  --neu-shadow-inset: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+  --neu-shadow-inset-sm: inset 2px 2px 4px var(--neu-dark), inset -2px -2px 4px var(--neu-light);
+
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
@@ -152,6 +159,13 @@
   --glass-bg-strong: rgba(23, 24, 28, 0.85);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: 20px;
+
+  --neu-light: #1E1F23;
+  --neu-dark: #0E0F12;
+  --neu-shadow: 6px 6px 12px var(--neu-dark), -6px -6px 12px var(--neu-light);
+  --neu-shadow-sm: 4px 4px 8px var(--neu-dark), -4px -4px 8px var(--neu-light);
+  --neu-shadow-inset: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+  --neu-shadow-inset-sm: inset 2px 2px 4px var(--neu-dark), inset -2px -2px 4px var(--neu-light);
 }
 
 html {
@@ -782,10 +796,11 @@ img {
   display: flex;
   gap: var(--space-md);
   padding: var(--space-md);
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--paper);
+  border: none;
   border-radius: var(--radius-lg);
   position: relative;
+  box-shadow: var(--neu-shadow-sm);
 }
 
 .paper-card-demo.is-featured .paper-card-rank {
@@ -1465,23 +1480,33 @@ img {
 
 [data-nav-item] {
   display: block;
-  padding: 6px var(--space-sm) 6px var(--space-lg);
+  padding: 8px var(--space-sm) 8px var(--space-md);
   font-size: 13px;
   color: var(--ink-soft);
   border-radius: var(--radius-md);
-  transition: all 150ms;
-  margin-bottom: 2px;
+  transition: all 200ms var(--ease-out);
+  margin-bottom: 4px;
+  background: transparent;
+  position: relative;
 }
 
 [data-nav-item]:hover {
-  background: var(--surface-hover);
   color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--neu-shadow-sm);
+  transform: translateY(-1px);
+}
+
+[data-nav-item]:active {
+  box-shadow: var(--neu-shadow-inset-sm);
+  transform: translateY(0);
 }
 
 [data-nav-item].is-active {
-  background: var(--brand-soft);
+  background: var(--paper);
   color: var(--brand);
   font-weight: 500;
+  box-shadow: var(--neu-shadow-inset-sm);
 }
 
 .docs-main {
@@ -1553,18 +1578,24 @@ img {
   gap: var(--space-2xs);
   height: 40px;
   padding: 0 var(--space-md);
-  background: var(--surface);
+  background: var(--paper);
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: var(--radius-md);
   font-size: 14px;
   font-weight: 500;
-  transition: all 150ms var(--ease-out);
+  transition: all 200ms var(--ease-out);
+  box-shadow: var(--neu-shadow-sm);
 }
 
 .secondary-button:hover {
-  background: var(--surface-hover);
-  border-color: var(--line-strong);
+  box-shadow: var(--neu-shadow);
+  transform: translateY(-1px);
+}
+
+.secondary-button:active {
+  box-shadow: var(--neu-shadow-inset-sm);
+  transform: translateY(0);
 }
 
 .ghost-button {
@@ -1627,10 +1658,17 @@ img {
 }
 
 .rule-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--paper);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
+  box-shadow: var(--neu-shadow-sm);
+  transition: all 200ms var(--ease-out);
+}
+
+.rule-card:hover {
+  box-shadow: var(--neu-shadow);
+  transform: translateY(-2px);
 }
 
 .rule-card span {
@@ -1694,10 +1732,11 @@ img {
 
 .demo-box {
   order: 2;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--paper);
+  border: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: var(--neu-shadow-sm);
 }
 
 .demo-toolbar {
@@ -2177,19 +2216,24 @@ img {
 }
 
 .page-card {
-  background: var(--surface);
-  border: 1px solid var(--line-soft);
+  background: var(--paper);
+  border: none;
   border-radius: var(--radius-xl);
   overflow: hidden;
   cursor: pointer;
   transition: all 250ms var(--ease-out);
   position: relative;
+  box-shadow: var(--neu-shadow-sm);
 }
 
 .page-card:hover {
-  border-color: var(--brand-line);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--neu-shadow);
+  transform: translateY(-2px);
+}
+
+.page-card:active {
+  box-shadow: var(--neu-shadow-inset-sm);
+  transform: translateY(0);
 }
 
 .page-card:hover .page-card-thumb-inner {
@@ -2199,7 +2243,6 @@ img {
 .page-card-thumb {
   aspect-ratio: 9 / 16;
   background: var(--paper);
-  border-bottom: 1px solid var(--line-soft);
   overflow: hidden;
   position: relative;
 }
