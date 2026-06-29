@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="PaperDaily 设计系统 — 把论文变成可刷、可懂、可继续探索的研究信息流产品。清醒、亲和、灵动、专业。" />
     <title>PaperDaily Design — 论文日报设计系统</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%230756C9%22/><text x=%2250%22 y=%2268%22 font-family=%22sans-serif%22 font-size=%2260%22 font-weight=%22800%22 text-anchor=%22middle%22 fill=%22white%22>P</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -23,10 +24,9 @@
         </a>
 
         <nav class="navbar-nav" aria-label="主导航">
-          <a href="#principles" class="nav-link">设计哲学</a>
-          <a href="#components" class="nav-link">组件</a>
-          <a href="#tokens" class="nav-link">设计令牌</a>
-          <a href="#pages" class="nav-link">页面</a>
+          <a href="docs.html#philosophy" class="nav-link">设计哲学</a>
+          <a href="docs.html#components-paper-card" class="nav-link">组件</a>
+          <a href="docs.html#pages" class="nav-link">页面案例</a>
         </nav>
 
         <div class="navbar-actions">
@@ -49,88 +49,111 @@
       <section class="hero">
         <div class="container">
           <div class="hero-copy">
-            <div class="hero-tag">
-              <i class="ph-fill ph-sparkle"></i>
-              <span>v1.0 Design System</span>
-            </div>
             <h1 class="hero-title">
-              把论文变成<br /><em>可刷、可懂、可探索</em>的信息流
+              论文日报<br /><em>设计系统</em>
             </h1>
             <p class="hero-subtitle">
-              PaperDaily 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
+              PaperDaily Design 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary btn-lg" href="docs.html">
-                开始使用
+                查看文档
                 <i class="ph ph-arrow-right"></i>
               </a>
-              <a class="btn btn-secondary btn-lg" href="#components">
-                <i class="ph ph-squares-four"></i>
-                浏览组件
+              <a class="btn btn-secondary btn-lg" href="docs.html#components-paper-card">
+                查看组件
               </a>
-            </div>
-            <div class="hero-points">
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>清醒 · 结构明确，重点清晰</span>
-              </div>
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>亲和 · 减少学术压迫感</span>
-              </div>
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>灵动 · 交互轻，反馈快</span>
-              </div>
             </div>
           </div>
 
           <div class="hero-visual">
-            <div class="hero-card-frame">
-              <div class="frame-header">
-                <span class="frame-title">Today · 12 papers</span>
-                <div class="frame-actions">
-                  <span class="frame-dot"></span>
-                  <span class="frame-dot"></span>
-                  <span class="frame-dot"></span>
-                </div>
+            <div class="component-showcase">
+              <div class="showcase-tabs">
+                <button class="showcase-tab is-active" data-showcase-tab="paper-card">Paper Card</button>
+                <button class="showcase-tab" data-showcase-tab="key-finding">Key Finding</button>
+                <button class="showcase-tab" data-showcase-tab="ai-answer">AI Answer</button>
               </div>
-              <div class="frame-body">
-                <div class="paper-card-mini">
-                  <div class="paper-rank">01</div>
-                  <div class="paper-info">
-                    <div class="paper-source">ArXiv AI · 你收藏过 reasoning</div>
-                    <div class="paper-title">A new scaling law for reasoning in large language models</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">reasoning</span>
-                      <span class="paper-tag">scaling</span>
+              <div class="showcase-frame">
+                <div class="showcase-pane is-active" data-showcase-pane="paper-card">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item is-active">Paper Card</div>
+                    <div class="mini-nav-item">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item">AI Answer</div>
+                  </div>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">Paper Card</h3>
+                    <article class="mini-paper-card">
+                      <div class="mini-paper-rank">01</div>
+                      <div class="mini-paper-body">
+                        <p class="mini-paper-source">ArXiv AI · because you saved reasoning papers</p>
+                        <h4>A new scaling law for reasoning in large language models</h4>
+                        <p class="mini-paper-desc">三秒内知道值不值得点开，十秒内知道值不值得收藏。</p>
+                        <div class="mini-paper-tags">
+                          <span>reasoning</span>
+                          <span>benchmark</span>
+                          <span>LLM</span>
+                        </div>
+                      </div>
+                      <button class="mini-bookmark"><i class="ph ph-star"></i></button>
+                    </article>
+                    <div class="mini-action-row">
+                      <button class="mini-action-btn primary">推荐</button>
+                      <button class="mini-action-btn">已读</button>
+                      <button class="mini-action-btn">收藏</button>
+                      <button class="mini-action-btn">更多类似</button>
                     </div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
-                <div class="paper-card-mini">
-                  <div class="paper-rank">02</div>
-                  <div class="paper-info">
-                    <div class="paper-source">Nature · Biomed</div>
-                    <div class="paper-title">Engineered cell therapies with improved safety profiles</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">biotech</span>
-                      <span class="paper-tag">cell therapy</span>
+
+                <div class="showcase-pane" data-showcase-pane="key-finding">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item">Paper Card</div>
+                    <div class="mini-nav-item is-active">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item">AI Answer</div>
+                  </div>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">Key Finding</h3>
+                    <div class="mini-key-finding">
+                      <div class="mini-kf-label"><i class="ph-fill ph-key"></i> Key Finding</div>
+                      <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
+                    </div>
+                    <div class="mini-bullet-stack">
+                      <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
+                      <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
                     </div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
-                <div class="paper-card-mini">
-                  <div class="paper-rank">03</div>
-                  <div class="paper-info">
-                    <div class="paper-source">Physics · 本周升温</div>
-                    <div class="paper-title">Quantum error correction breakthrough in surface codes</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">quantum</span>
-                      <span class="paper-tag">error correction</span>
-                    </div>
+
+                <div class="showcase-pane" data-showcase-pane="ai-answer">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item">Paper Card</div>
+                    <div class="mini-nav-item">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item is-active">AI Answer</div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">AI Answer</h3>
+                    <article class="mini-ai-card">
+                      <div class="mini-ai-top">
+                        <span class="mini-ai-badge">AI</span>
+                        <button class="mini-citation-toggle">显示引用</button>
+                      </div>
+                      <p>这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
+                      <div class="mini-citation-list">
+                        <button>[1] Scaling Law</button>
+                        <button>[2] Chinchilla</button>
+                        <button>[3] Data Quality</button>
+                      </div>
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,413 +161,42 @@
         </div>
       </section>
 
-      <section id="principles" class="section section-muted">
+      <section class="section features-section">
         <div class="container">
-          <div class="section-header">
-            <div class="section-eyebrow">
-              <i class="ph ph-lightbulb"></i>
-              <span>Design Philosophy</span>
-            </div>
-            <h2 class="section-title">设计哲学</h2>
-            <p class="section-desc">
-              清醒、亲和、灵动、专业。我们不做论文数据库皮肤，也不做空洞学术感。专业感来自信息质量和清楚层级，而不是深色、玻璃和公式。
-            </p>
-          </div>
-
-          <div class="principles-grid">
-            <div class="principle-card">
-              <div class="principle-num">01</div>
-              <h3>先让人刷得动</h3>
-              <p>组件默认服务快速判断，不默认服务学术展示。每张卡片只承载一个主判断：要不要读。</p>
-            </div>
-            <div class="principle-card">
-              <div class="principle-num">02</div>
-              <h3>专业感来自结构</h3>
-              <p>不用 Times New Roman 或学术味 serif，靠清楚层级、证据链和完整来源建立可信度。</p>
-            </div>
-            <div class="principle-card">
-              <div class="principle-num">03</div>
-              <h3>有瘾性但不廉价</h3>
-              <p>让用户持续发现价值，而不是靠噪音和刺激。反馈很轻，节奏清楚，每篇都通向下一篇。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="components" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-eyebrow">
-              <i class="ph ph-layout"></i>
-              <span>Components</span>
-            </div>
-            <h2 class="section-title">核心组件</h2>
-            <p class="section-desc">
-              围绕论文信息流场景设计的组件系统，支持推荐反馈、多语言、暗黑模式和完整的无障碍访问。
-            </p>
-          </div>
-
-          <div class="components-showcase">
-            <div class="comp-block">
-              <div class="comp-block-head">
-                <div>
-                  <div class="comp-block-title">Paper Card</div>
-                  <div class="comp-block-desc">论文卡片 · 快速判断读不读</div>
-                </div>
-                <i class="ph ph-file-text" style="color: var(--ink-muted); font-size: 20px;"></i>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ph ph-file-text"></i>
               </div>
-              <div class="comp-block-body">
-                <article class="paper-card-demo is-featured">
-                  <div class="paper-card-rank">01</div>
-                  <div class="paper-card-body">
-                    <p class="paper-card-source">ArXiv AI · 因为你收藏了 scaling law</p>
-                    <h3>A new scaling law for reasoning in large language models</h3>
-                    <p class="paper-card-summary">更多高质量数据和算力会稳定提升 reasoning 表现，提升规律可预测。</p>
-                    <div class="token-row">
-                      <span>reasoning</span>
-                      <span>scaling</span>
-                      <span>LLM</span>
-                    </div>
-                  </div>
-                  <button class="bookmark-button" type="button">
-                    <i class="ph ph-bookmark-simple"></i>
-                  </button>
-                </article>
-              </div>
+              <h3>清晰的信息层级</h3>
+              <p>每张卡片只承载一个主判断，先让人刷得动，再考虑深度阅读。</p>
             </div>
-
-            <div class="comp-block">
-              <div class="comp-block-head">
-                <div>
-                  <div class="comp-block-title">Key Finding</div>
-                  <div class="comp-block-desc">关键发现 · 详情页理解锚点</div>
-                </div>
-                <i class="ph ph-lightbulb" style="color: var(--ink-muted); font-size: 20px;"></i>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ph ph-sparkle"></i>
               </div>
-              <div class="comp-block-body">
-                <div class="summary-block">
-                  <strong>Key Finding</strong>
-                  <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
-                </div>
-                <div style="height: 16px;"></div>
-                <div class="bullet-stack">
-                  <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
-                  <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
-                  <p><strong>Next step.</strong> 与你收藏的 benchmark 论文做对比。</p>
-                </div>
-              </div>
+              <h3>AI 原生体验</h3>
+              <p>AI 回答、摘要、对比等组件内置证据链，让智能辅助可信可追溯。</p>
             </div>
-
-            <div class="comp-block">
-              <div class="comp-block-head">
-                <div>
-                  <div class="comp-block-title">Badge & Status</div>
-                  <div class="comp-block-desc">状态标记 · 推荐反馈系统</div>
-                </div>
-                <i class="ph ph-tag" style="color: var(--ink-muted); font-size: 20px;"></i>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ph ph-palette"></i>
               </div>
-              <div class="comp-block-body">
-                <div class="badge-row">
-                  <span class="badge badge-primary">推荐</span>
-                  <span class="badge badge-success">已收藏</span>
-                  <span class="badge badge-neutral">已读</span>
-                  <span class="badge badge-warning">今日重点</span>
-                  <span class="badge badge-danger">不感兴趣</span>
-                </div>
-                <div style="height: 20px;"></div>
-                <div class="button-demo-row">
-                  <button class="btn btn-primary btn-sm">主要操作</button>
-                  <button class="btn btn-secondary btn-sm">次要操作</button>
-                  <button class="btn btn-ghost btn-sm">幽灵按钮</button>
-                  <button class="btn btn-icon btn-primary">
-                    <i class="ph-fill ph-heart"></i>
-                  </button>
-                </div>
-              </div>
+              <h3>克制的视觉语言</h3>
+              <p>基于纸张白、墨黑、蓝色知识锚点建立视觉基础，阅读压力小。</p>
             </div>
-
-            <div class="comp-block">
-              <div class="comp-block-head">
-                <div>
-                  <div class="comp-block-title">AI Answer</div>
-                  <div class="comp-block-desc">AI 回答 · 证据链透明</div>
-                </div>
-                <i class="ph ph-sparkle" style="color: var(--ink-muted); font-size: 20px;"></i>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ph ph-device-tablet"></i>
               </div>
-              <div class="comp-block-body">
-                <article class="ai-answer-card" style="padding: 0; border: none;">
-                  <div class="ai-answer-top">
-                    <span class="ai-badge">AI</span>
-                    <button class="ghost-button" type="button" style="height: 24px; font-size: 11px;">显示引用</button>
-                  </div>
-                  <p>这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
-                  <div class="citation-list" style="display: flex;">
-                    <button type="button">[1] Scaling Law</button>
-                    <button type="button">[2] Chinchilla</button>
-                    <button type="button">[3] Data Quality</button>
-                  </div>
-                  <div class="ai-actions">
-                    <button class="chip-button is-active" type="button">生成对比表</button>
-                    <button class="chip-button" type="button">加入分析队列</button>
-                  </div>
-                </article>
-              </div>
+              <h3>多端页面模板</h3>
+              <p>覆盖信息流、详情页、AI 工作台、注册引导等核心产品场景。</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="tokens" class="section section-muted">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-eyebrow">
-              <i class="ph ph-paint-brush"></i>
-              <span>Design Tokens</span>
-            </div>
-            <h2 class="section-title">设计令牌</h2>
-            <p class="section-desc">
-              基于「纸张白、墨黑、蓝色知识锚点」建立的视觉基础。克制用色，留白充足，阅读压力小。
-            </p>
-          </div>
-
-          <div class="tokens-grid">
-            <div class="token-card">
-              <h3>色彩系统</h3>
-              <div class="token-row-list">
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--paper);"></div>
-                  <span class="token-name">--paper</span>
-                  <span class="token-value">#F7F8FA</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--surface);"></div>
-                  <span class="token-name">--surface</span>
-                  <span class="token-value">#FFFFFF</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--ink);"></div>
-                  <span class="token-name">--ink</span>
-                  <span class="token-value">#111111</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--brand);"></div>
-                  <span class="token-name">--brand</span>
-                  <span class="token-value">#0756C9</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--success);"></div>
-                  <span class="token-name">--success</span>
-                  <span class="token-value">#16A36A</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--warning);"></div>
-                  <span class="token-name">--warning</span>
-                  <span class="token-value">#D97706</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="token-card">
-              <h3>排版系统</h3>
-              <div class="token-row-list">
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--brand-soft); display: grid; place-items: center; color: var(--brand); font-weight: 800; font-size: 14px;">Aa</div>
-                  <span class="token-name">Display · 48px</span>
-                  <span class="token-value">800</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink); font-weight: 700; font-size: 13px;">Aa</div>
-                  <span class="token-name">Headline · 28px</span>
-                  <span class="token-value">700</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink); font-weight: 600; font-size: 11px;">Aa</div>
-                  <span class="token-name">Title · 18px</span>
-                  <span class="token-value">600</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink-soft); font-weight: 400; font-size: 10px;">Aa</div>
-                  <span class="token-name">Body · 15px</span>
-                  <span class="token-value">400</span>
-                </div>
-                <div class="token-item">
-                  <div class="token-swatch" style="background: var(--surface-muted); display: grid; place-items: center; color: var(--ink-muted); font-weight: 500; font-size: 9px;">Aa</div>
-                  <span class="token-name">Caption · 12px</span>
-                  <span class="token-value">500</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="pages" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-eyebrow">
-              <i class="ph ph-device-tablet-speaker"></i>
-              <span>Page Templates</span>
-            </div>
-            <h2 class="section-title">页面模板</h2>
-            <p class="section-desc">
-              从信息流到详情页，从 AI 工作台到引导流程，覆盖产品核心场景的页面设计参考。
-            </p>
-          </div>
-
-          <div class="pages-showcase">
-            <div class="page-card">
-              <div class="page-card-preview">
-                <div class="page-mock">
-                  <div class="mock-topbar">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="mock-content">
-                    <div class="mock-line short"></div>
-                    <div class="mock-card">
-                      <div class="mock-card-side"></div>
-                      <div class="mock-card-body">
-                        <div class="mock-line long"></div>
-                        <div class="mock-line medium"></div>
-                      </div>
-                    </div>
-                    <div class="mock-card">
-                      <div class="mock-card-side"></div>
-                      <div class="mock-card-body">
-                        <div class="mock-line long"></div>
-                        <div class="mock-line short"></div>
-                      </div>
-                    </div>
-                    <div class="mock-card">
-                      <div class="mock-card-side"></div>
-                      <div class="mock-card-body">
-                        <div class="mock-line medium"></div>
-                        <div class="mock-line long"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="page-card-footer">
-                <h3>Feed Page</h3>
-                <p>首页信息流，一屏可刷的论文卡片列表，支持推荐反馈和快速收藏。</p>
-              </div>
-            </div>
-
-            <div class="page-card">
-              <div class="page-card-preview">
-                <div class="page-mock">
-                  <div class="mock-topbar">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="mock-content">
-                    <div class="mock-line long"></div>
-                    <div class="mock-line medium"></div>
-                    <div class="mock-card">
-                      <div class="mock-card-body" style="flex: 1;">
-                        <div class="mock-line short" style="background: var(--brand); opacity: 0.6;"></div>
-                        <div class="mock-line long"></div>
-                      </div>
-                    </div>
-                    <div class="mock-line medium"></div>
-                    <div class="mock-line short"></div>
-                    <div class="mock-line long"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="page-card-footer">
-                <h3>Detail Page</h3>
-                <p>论文详情页，前半屏回答四件事：讲什么、发现、为什么重要、下一步做什么。</p>
-              </div>
-            </div>
-
-            <div class="page-card">
-              <div class="page-card-preview">
-                <div class="page-mock">
-                  <div class="mock-topbar">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="mock-content" style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 6px;">
-                    <div style="background: var(--surface-muted); border-radius: 4px;"></div>
-                    <div style="display: flex; flex-direction: column; gap: 4px;">
-                      <div class="mock-line short"></div>
-                      <div class="mock-card" style="padding: 6px;">
-                        <div class="mock-line medium"></div>
-                        <div class="mock-line long"></div>
-                      </div>
-                    </div>
-                    <div style="background: var(--surface-muted); border-radius: 4px;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="page-card-footer">
-                <h3>Research Copilot</h3>
-                <p>AI 研究工作台，三栏布局：上下文、对话、证据链，像生产力工具不像聊天页。</p>
-              </div>
-            </div>
-
-            <div class="page-card">
-              <div class="page-card-preview">
-                <div class="page-mock">
-                  <div class="mock-topbar">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="mock-content" style="display: grid; place-items: center;">
-                    <div style="text-align: center; width: 80%;">
-                      <div class="mock-line medium" style="margin: 0 auto 8px;"></div>
-                      <div class="mock-line short" style="margin: 0 auto 12px;"></div>
-                      <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
-                        <div style="width: 50px; height: 24px; background: var(--brand-soft); border-radius: 999px;"></div>
-                        <div style="width: 70px; height: 24px; background: var(--surface-muted); border-radius: 999px;"></div>
-                        <div style="width: 60px; height: 24px; background: var(--surface-muted); border-radius: 999px;"></div>
-                        <div style="width: 50px; height: 24px; background: var(--brand-soft); border-radius: 999px;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="page-card-footer">
-                <h3>Onboarding</h3>
-                <p>注册和兴趣引导，只收集必要信息，画像不要一次问完，先建立进入感。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section">
-        <div class="container">
-          <div class="cta-card">
-            <div class="cta-content">
-              <h2>开始构建你的研究信息流</h2>
-              <p>无论你是在做学术工具、研究平台还是知识产品，PaperDaily Design 都能帮你快速建立一致、清晰、有亲和力的产品体验。</p>
-              <div class="cta-actions">
-                <a class="btn btn-primary btn-lg" href="docs.html">
-                  <i class="ph ph-book-open"></i>
-                  阅读设计文档
-                </a>
-                <a class="btn btn-secondary btn-lg" href="#components">
-                  <i class="ph ph-github-logo"></i>
-                  查看组件源码
-                </a>
-              </div>
-            </div>
-            <div class="cta-visual">
-              <div class="cta-icon">
-                <i class="ph-fill ph-file-text"></i>
-              </div>
-              <div class="cta-icon alt">
-                <i class="ph-fill ph-sparkle"></i>
-              </div>
-              <div class="cta-icon success">
-                <i class="ph-fill ph-bookmark-simple"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
+      <footer class="footer">
       <div class="container">
         <div class="footer-inner">
           <div class="footer-brand">
@@ -558,33 +210,14 @@
             <div class="footer-col">
               <h5>设计资源</h5>
               <a href="docs.html">设计文档</a>
-              <a href="#components">组件库</a>
-              <a href="#tokens">设计令牌</a>
-              <a href="#pages">页面模板</a>
-            </div>
-            <div class="footer-col">
-              <h5>开发资源</h5>
-              <a href="#">快速开始</a>
-              <a href="#">安装指南</a>
-              <a href="#">主题定制</a>
-              <a href="#">更新日志</a>
-            </div>
-            <div class="footer-col">
-              <h5>社区</h5>
-              <a href="#">GitHub</a>
-              <a href="#">反馈建议</a>
-              <a href="#">贡献指南</a>
-              <a href="#">Figma 资源</a>
+              <a href="docs.html#components-paper-card">组件库</a>
+              <a href="docs.html#tokens">设计令牌</a>
+              <a href="docs.html#pages">页面模板</a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
           <p>© 2026 PaperDaily Design. MIT License.</p>
-          <div class="footer-social">
-            <a href="#" class="icon-button"><i class="ph ph-github-logo"></i></a>
-            <a href="#" class="icon-button"><i class="ph ph-twitter-logo"></i></a>
-            <a href="#" class="icon-button"><i class="ph ph-globe"></i></a>
-          </div>
         </div>
       </div>
     </footer>
