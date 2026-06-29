@@ -398,7 +398,7 @@
     const pageTemplates = {
       'mobile-feed': {
         title: 'Daily Papers',
-        subtitle: '首页信息流 · iOS',
+        subtitle: '首页信息流 · 移动端',
         device: 'mobile',
         hasNotch: true,
         hasNavBar: true,
@@ -454,7 +454,7 @@
       },
       'mobile-reader': {
         title: 'Paper Reader',
-        subtitle: '论文详情页 · iOS',
+        subtitle: '论文详情页 · 移动端',
         device: 'mobile',
         hasNotch: true,
         hasNavBar: false,
@@ -493,7 +493,7 @@
       },
       'mobile-dashboard': {
         title: 'Data Dashboard',
-        subtitle: '数据面板 · iOS',
+        subtitle: '数据面板 · 移动端',
         device: 'mobile',
         hasNotch: true,
         hasNavBar: true,
@@ -562,7 +562,7 @@
       },
       'mobile-saved': {
         title: 'Saved Papers',
-        subtitle: '收藏夹 · iOS',
+        subtitle: '收藏夹 · 移动端',
         device: 'mobile',
         hasNotch: true,
         hasNavBar: true,
@@ -1050,11 +1050,29 @@
       titleEl.textContent = template.title;
       subtitleEl.textContent = template.subtitle;
 
-      let deviceClass = '';
       let contentHtml = '';
+      const isDesktop = template.device === 'desktop';
 
-      if (template.device === 'mobile') {
-        deviceClass = '';
+      if (isDesktop) {
+        panel.classList.add('is-desktop-window');
+        contentHtml = `
+          <div class="desktop-window">
+            <div class="desktop-window-titlebar">
+              <div class="desktop-window-traffic">
+                <span class="traffic-light close"></span>
+                <span class="traffic-light minimize"></span>
+                <span class="traffic-light maximize"></span>
+              </div>
+              <div class="desktop-window-title">${template.title}</div>
+              <div style="width: 52px;"></div>
+            </div>
+            <div class="desktop-window-content">
+              ${template.content}
+            </div>
+          </div>
+        `;
+      } else {
+        panel.classList.remove('is-desktop-window');
         contentHtml = `<div class="page-preview-device">`;
         if (template.hasNotch) {
           contentHtml += `<div class="device-notch"></div>`;
@@ -1084,9 +1102,6 @@
           `;
         }
         contentHtml += '</div>';
-      } else {
-        deviceClass = 'is-desktop';
-        contentHtml = `<div class="page-preview-device is-desktop">${template.content}</div>`;
       }
 
       bodyEl.innerHTML = contentHtml;
@@ -1099,6 +1114,7 @@
     function closePreview() {
       overlay.classList.remove('is-open');
       panel.classList.remove('is-open');
+      panel.classList.remove('is-desktop-window');
       document.body.style.overflow = '';
     }
 
