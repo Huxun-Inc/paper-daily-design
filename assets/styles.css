@@ -1918,9 +1918,10 @@ img {
 
 [data-nav-item].is-active {
   background: var(--paper);
-  color: var(--brand);
-  font-weight: 500;
-  box-shadow: var(--neu-shadow-inset-sm);
+  color: var(--ink);
+  font-weight: 700;
+  box-shadow: var(--neu-shadow-sm);
+  transform: translateY(-1px);
 }
 
 .docs-main {
