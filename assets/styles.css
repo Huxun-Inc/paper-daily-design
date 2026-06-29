@@ -1703,7 +1703,32 @@ img {
 
 .footer-social {
   display: flex;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+  color: var(--ink-soft);
+  transition: all 200ms var(--ease-out);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--brand);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-icon i {
+  font-size: 20px;
 }
 
 /* ============== Docs Page Styles ============== */
@@ -3733,8 +3758,8 @@ img {
     padding: var(--space-3xl) 0;
   }
 
-  .footer-links {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-social {
+    justify-content: flex-start;
   }
 
   .footer-bottom {
@@ -3772,8 +3797,8 @@ img {
 }
 
 @media (max-width: 480px) {
-  .footer-links {
-    grid-template-columns: 1fr;
+  .footer-social {
+    justify-content: center;
   }
 
   .hero-points {
