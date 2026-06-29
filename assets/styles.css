@@ -1894,8 +1894,8 @@ img {
 }
 
 [data-nav-item]:active {
-  box-shadow: var(--neu-shadow-inset-sm);
-  transform: translateY(0);
+  transform: translateY(0) scale(0.97);
+  background: var(--surface-muted);
 }
 
 [data-nav-item].is-active {
