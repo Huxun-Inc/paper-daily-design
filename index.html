@@ -49,88 +49,111 @@
       <section class="hero">
         <div class="container">
           <div class="hero-copy">
-            <div class="hero-tag">
-              <i class="ph-fill ph-sparkle"></i>
-              <span>v1.0 Design System</span>
-            </div>
             <h1 class="hero-title">
-              把论文变成<br /><em>可刷、可懂、可探索</em>的信息流
+              论文日报<br /><em>设计系统</em>
             </h1>
             <p class="hero-subtitle">
-              PaperDaily 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
+              PaperDaily Design 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary btn-lg" href="docs.html">
-                开始使用
+                查看文档
                 <i class="ph ph-arrow-right"></i>
               </a>
               <a class="btn btn-secondary btn-lg" href="#components">
-                <i class="ph ph-squares-four"></i>
-                浏览组件
+                查看组件
               </a>
-            </div>
-            <div class="hero-points">
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>清醒 · 结构明确，重点清晰</span>
-              </div>
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>亲和 · 减少学术压迫感</span>
-              </div>
-              <div class="hero-point">
-                <i class="ph-fill ph-check-circle"></i>
-                <span>灵动 · 交互轻，反馈快</span>
-              </div>
             </div>
           </div>
 
           <div class="hero-visual">
-            <div class="hero-card-frame">
-              <div class="frame-header">
-                <span class="frame-title">Today · 12 papers</span>
-                <div class="frame-actions">
-                  <span class="frame-dot"></span>
-                  <span class="frame-dot"></span>
-                  <span class="frame-dot"></span>
-                </div>
+            <div class="component-showcase">
+              <div class="showcase-tabs">
+                <button class="showcase-tab is-active" data-showcase-tab="paper-card">Paper Card</button>
+                <button class="showcase-tab" data-showcase-tab="key-finding">Key Finding</button>
+                <button class="showcase-tab" data-showcase-tab="ai-answer">AI Answer</button>
               </div>
-              <div class="frame-body">
-                <div class="paper-card-mini">
-                  <div class="paper-rank">01</div>
-                  <div class="paper-info">
-                    <div class="paper-source">ArXiv AI · 你收藏过 reasoning</div>
-                    <div class="paper-title">A new scaling law for reasoning in large language models</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">reasoning</span>
-                      <span class="paper-tag">scaling</span>
+              <div class="showcase-frame">
+                <div class="showcase-pane is-active" data-showcase-pane="paper-card">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item is-active">Paper Card</div>
+                    <div class="mini-nav-item">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item">AI Answer</div>
+                  </div>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">Paper Card</h3>
+                    <article class="mini-paper-card">
+                      <div class="mini-paper-rank">01</div>
+                      <div class="mini-paper-body">
+                        <p class="mini-paper-source">ArXiv AI · because you saved reasoning papers</p>
+                        <h4>A new scaling law for reasoning in large language models</h4>
+                        <p class="mini-paper-desc">三秒内知道值不值得点开，十秒内知道值不值得收藏。</p>
+                        <div class="mini-paper-tags">
+                          <span>reasoning</span>
+                          <span>benchmark</span>
+                          <span>LLM</span>
+                        </div>
+                      </div>
+                      <button class="mini-bookmark"><i class="ph ph-star"></i></button>
+                    </article>
+                    <div class="mini-action-row">
+                      <button class="mini-action-btn primary">推荐</button>
+                      <button class="mini-action-btn">已读</button>
+                      <button class="mini-action-btn">收藏</button>
+                      <button class="mini-action-btn">更多类似</button>
                     </div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
-                <div class="paper-card-mini">
-                  <div class="paper-rank">02</div>
-                  <div class="paper-info">
-                    <div class="paper-source">Nature · Biomed</div>
-                    <div class="paper-title">Engineered cell therapies with improved safety profiles</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">biotech</span>
-                      <span class="paper-tag">cell therapy</span>
+
+                <div class="showcase-pane" data-showcase-pane="key-finding">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item">Paper Card</div>
+                    <div class="mini-nav-item is-active">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item">AI Answer</div>
+                  </div>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">Key Finding</h3>
+                    <div class="mini-key-finding">
+                      <div class="mini-kf-label"><i class="ph-fill ph-key"></i> Key Finding</div>
+                      <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
+                    </div>
+                    <div class="mini-bullet-stack">
+                      <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
+                      <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
                     </div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
                 </div>
-                <div class="paper-card-mini">
-                  <div class="paper-rank">03</div>
-                  <div class="paper-info">
-                    <div class="paper-source">Physics · 本周升温</div>
-                    <div class="paper-title">Quantum error correction breakthrough in surface codes</div>
-                    <div class="paper-tags">
-                      <span class="paper-tag">quantum</span>
-                      <span class="paper-tag">error correction</span>
-                    </div>
+
+                <div class="showcase-pane" data-showcase-pane="ai-answer">
+                  <div class="mini-sidebar">
+                    <div class="mini-sidebar-title">GUIDE</div>
+                    <div class="mini-nav-item">Paper Card</div>
+                    <div class="mini-nav-item">Summary Block</div>
+                    <div class="mini-nav-item">Command Bar</div>
+                    <div class="mini-nav-item is-active">AI Answer</div>
                   </div>
-                  <i class="ph ph-bookmark-simple paper-bookmark"></i>
+                  <div class="mini-content">
+                    <div class="mini-content-tag">Component</div>
+                    <h3 class="mini-content-title">AI Answer</h3>
+                    <article class="mini-ai-card">
+                      <div class="mini-ai-top">
+                        <span class="mini-ai-badge">AI</span>
+                        <button class="mini-citation-toggle">显示引用</button>
+                      </div>
+                      <p>这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
+                      <div class="mini-citation-list">
+                        <button>[1] Scaling Law</button>
+                        <button>[2] Chinchilla</button>
+                        <button>[3] Data Quality</button>
+                      </div>
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -562,29 +585,10 @@
               <a href="#tokens">设计令牌</a>
               <a href="#pages">页面模板</a>
             </div>
-            <div class="footer-col">
-              <h5>开发资源</h5>
-              <a href="#">快速开始</a>
-              <a href="#">安装指南</a>
-              <a href="#">主题定制</a>
-              <a href="#">更新日志</a>
-            </div>
-            <div class="footer-col">
-              <h5>社区</h5>
-              <a href="#">GitHub</a>
-              <a href="#">反馈建议</a>
-              <a href="#">贡献指南</a>
-              <a href="#">Figma 资源</a>
-            </div>
           </div>
         </div>
         <div class="footer-bottom">
           <p>© 2026 PaperDaily Design. MIT License.</p>
-          <div class="footer-social">
-            <a href="#" class="icon-button"><i class="ph ph-github-logo"></i></a>
-            <a href="#" class="icon-button"><i class="ph ph-twitter-logo"></i></a>
-            <a href="#" class="icon-button"><i class="ph ph-globe"></i></a>
-          </div>
         </div>
       </div>
     </footer>
