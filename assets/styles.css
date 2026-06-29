@@ -1595,7 +1595,7 @@ img {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
 }
 
@@ -1608,7 +1608,7 @@ img {
 .feature-icon {
   width: 48px;
   height: 48px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background: var(--brand-soft);
   color: var(--brand);
   display: grid;
