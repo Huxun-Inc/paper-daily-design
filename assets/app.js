@@ -664,7 +664,7 @@
                 <div style="width: 32px; height: 32px; background: var(--brand); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 14px;">S</div>
               </div>
               <h3>把论文推荐系统，调成你的研究口味。</h3>
-              <p>登录后同步收藏、阅读进度、关键词偏好和推荐反馈。桌面端高效整理，移动端轻松刷。</p>
+              <p>登录后同步收藏、阅读进度、关键词偏好和推荐反馈。桌面端高效整理，移动端轻松阅读。</p>
               <div class="mini-split-card">
                 <div class="mini-split-card-icon"><i class="ph ph-newspaper"></i></div>
                 <div class="mini-split-card-text">
@@ -703,7 +703,7 @@
         content: `
           <div class="mini-auth-container" style="text-align: left;">
             <div class="mini-auth-logo" style="margin: 0 0 var(--space-md);">S</div>
-            <div class="mini-onboarding-title">让论文像信息流一样好刷，但仍然可靠</div>
+            <div class="mini-onboarding-title">让论文像信息流一样好读，但仍然可靠</div>
             <div class="mini-onboarding-desc">每天 5 到 12 篇高质量论文，先给你白话关键结论，再给原文、作者和可验证来源。</div>
             <div style="border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-sm); margin-bottom: var(--space-md); background: var(--surface);">
               <div class="mini-paper-source" style="margin-bottom: 4px;"><span class="mini-paper-source-dot"></span>今日简报</div>
@@ -871,7 +871,7 @@
                 </div>
               </div>
             </div>
-            <div class="mini-auth-btn">开始刷今日论文</div>
+            <div class="mini-auth-btn">开启今日阅读</div>
           </div>
         `
       },
@@ -921,7 +921,7 @@
           <div class="mini-auth-container" style="text-align: left;">
             <div class="mini-step-indicator">2 / 3</div>
             <div class="mini-onboarding-title">快速校准推荐系统</div>
-            <div class="mini-onboarding-desc">像刷卡片一样告诉系统：给更多、先收藏、还是不感兴趣。</div>
+            <div class="mini-onboarding-desc">快速标记你的兴趣偏好：给更多、先收藏、还是不感兴趣。</div>
             <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-md); margin-bottom: var(--space-md);">
               <div class="mini-paper-source" style="margin-bottom: 6px;"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
               <div class="mini-paper-title" style="font-size: 13px; margin-bottom: 6px;">Training language agents to browse papers with persistent memory</div>

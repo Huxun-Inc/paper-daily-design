@@ -59,6 +59,11 @@
           </details>
 
           <details open data-nav-group>
+            <summary data-i18n="docs.groupTokens">设计令牌</summary>
+            <a href="#tokens-radius" data-nav-item>圆角规范</a>
+          </details>
+
+          <details open data-nav-group>
             <summary data-i18n="docs.groupComponents">组件</summary>
             <a href="#components-paper-card" data-nav-item data-i18n="docs.navPaperCard">Paper Card</a>
             <a href="#components-summary" data-nav-item data-i18n="docs.navSummaryBlock">Summary Block</a>
@@ -80,9 +85,9 @@
       <main class="docs-main" id="docsMain">
         <section class="doc-hero" id="intro">
           <p class="eyebrow" data-i18n="docs.heroEyebrow">Design Guidelines</p>
-          <h1 data-i18n="docs.heroTitle">论文日报设计规范站</h1>
-          <p class="hero-text" data-i18n="docs.heroCopy">
-            PaperDaily Design 是一套为研究信息流产品打造的设计系统。像高级内容 App 一样顺滑，同时保持学术可信度；像好杂志一样有编辑感，同时支持高频使用。
+          <h1>为研究者打造的高质量论文信息流</h1>
+          <p class="hero-text">
+            PaperDaily 面向每天需要追踪前沿论文、会议动态与研究趋势的用户，将复杂的学术信息组织成清晰、可信、可持续浏览的信息体验。精准推荐、实干 AI、舒服交互，让前沿研究像一款精心策划的知识杂志一样自然、克制、好读。
           </p>
           <div class="doc-hero-actions">
             <a class="primary-button" href="#components-paper-card">
@@ -99,23 +104,115 @@
         <section class="doc-section" id="philosophy-core">
           <div class="doc-section-head">
             <p class="eyebrow" data-i18n="docs.philosophyEyebrow">Philosophy</p>
-            <h2 data-i18n="docs.philosophyTitle">设计思路只留三件事</h2>
+            <h2 data-i18n="docs.philosophyTitle">设计哲学：三个核心</h2>
+            <p>PaperDaily 面向每天需要追踪前沿论文、会议动态与研究趋势的用户，将复杂的学术信息组织成清晰、可信、可持续浏览的信息体验。</p>
           </div>
           <div class="rule-grid">
             <article class="rule-card">
               <span>01</span>
-              <h3 data-i18n="docs.ruleOneTitle">先让人刷得动</h3>
-              <p data-i18n="docs.ruleOneCopy">组件默认服务快速判断，不默认服务学术展示。每张卡片只承载一个主判断：要不要读。</p>
+              <h3 data-i18n="docs.ruleOneTitle">精准推荐</h3>
+              <p data-i18n="docs.ruleOneCopy">让用户不必在海量论文中反复搜索，而是每天直接看到与自己研究方向、兴趣领域和阅读习惯相关的高价值内容。</p>
             </article>
             <article class="rule-card">
               <span>02</span>
-              <h3 data-i18n="docs.ruleTwoTitle">专业感来自结构</h3>
-              <p data-i18n="docs.ruleTwoCopy">不用 Times New Roman 或学术味 serif，靠清楚层级、证据链和完整来源建立可信度。</p>
+              <h3 data-i18n="docs.ruleTwoTitle">实干 AI</h3>
+              <p data-i18n="docs.ruleTwoCopy">AI 不停留在炫技层面，而是服务于真实研究场景：提炼论文重点、解释方法贡献、生成速读摘要，辅助用户判断是否值得深入阅读。</p>
             </article>
             <article class="rule-card">
               <span>03</span>
-              <h3 data-i18n="docs.ruleThreeTitle">有瘾性但不廉价</h3>
-              <p data-i18n="docs.ruleThreeCopy">让用户持续发现价值，而不是靠噪音和刺激。反馈很轻，节奏清楚，每篇都通向下一篇。</p>
+              <h3 data-i18n="docs.ruleThreeTitle">舒服交互</h3>
+              <p data-i18n="docs.ruleThreeCopy">界面保持克制、清晰、顺滑。浏览、阅读、收藏、继续阅读和方向追踪一气呵成，让研究信息像日常内容消费一样自然进入工作流。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="doc-section" id="tokens-radius">
+          <div class="doc-section-head">
+            <p class="eyebrow">Tokens</p>
+            <h2>圆角规范</h2>
+            <p>圆角是 PaperDaily Design 亲和力的核心来源。用柔软的曲线对冲学术内容的严肃感，让研究信息的消费体验更轻盈、更友好。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li><strong>亲和力优先</strong>：大圆角是 PaperDaily 的视觉基因，用柔软的曲线建立亲和、灵动、不尖锐的产品性格。</li>
+                <li><strong>费茨定律实践</strong>：圆角半径与点击热区关联——小圆角热区外扩至外接矩形，大圆角热区贴合视觉边界，兼顾美学与精准。</li>
+                <li><strong>Squircle 曲线</strong>：采用改良版 Lamé 曲线（类苹果 Squircle），转角曲率变化率连续，视觉更柔和、触感更自然。</li>
+                <li><strong>层级对应</strong>：元素越突出、越可交互，圆角越大；容器类元素圆角适中，形成清晰的视觉层次。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="radius-showcase">
+                <div class="radius-item">
+                  <div class="radius-preview radius-xs"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">xs</span>
+                    <span class="radius-value">6px · 热区外扩</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-sm"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">sm</span>
+                    <span class="radius-value">8px · 热区外扩</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-md"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">md</span>
+                    <span class="radius-value">12px · Squircle</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-lg"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">lg</span>
+                    <span class="radius-value">16px · Squircle</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-xl"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">xl</span>
+                    <span class="radius-value">20px · Squircle</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-2xl"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">2xl</span>
+                    <span class="radius-value">24px · Squircle</span>
+                  </div>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-preview radius-pill"></div>
+                  <div class="radius-info">
+                    <span class="radius-label">pill</span>
+                    <span class="radius-value">胶囊形 · 灵动</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rule-grid" style="margin-top: var(--space-2xl);">
+            <article class="rule-card">
+              <span>01</span>
+              <h3>费茨定律与热区</h3>
+              <p>半径 ≤ 6px 的小圆角元素，点击热区外扩至外接矩形，保证小尺寸按钮的点击准确率；大圆角元素热区贴合视觉边界，兼顾美学与精准。</p>
+            </article>
+            <article class="rule-card">
+              <span>02</span>
+              <h3>Squircle 连续曲率</h3>
+              <p>采用改良 Lamé 曲线替代标准圆角，转角处曲率变化率连续，没有突变点。视觉上接近圆弧但更柔和，手指触感更自然。</p>
+            </article>
+            <article class="rule-card">
+              <span>03</span>
+              <h3>亲和力设计目标</h3>
+              <p>用大圆角对冲论文内容的严肃感。PaperDaily 不做冰冷的学术工具，而是像一本精心策划的知识杂志——柔软、好读、让人愿意反复打开。</p>
             </article>
           </div>
         </section>
@@ -501,7 +598,7 @@
                     <div class="mini-split-auth">
                       <div class="mini-split-left">
                         <h3>把论文推荐系统，调成你的研究口味。</h3>
-                        <p>登录后同步收藏、阅读进度、关键词偏好和推荐反馈。桌面端高效整理，移动端轻松刷。</p>
+                        <p>登录后同步收藏、阅读进度、关键词偏好和推荐反馈。桌面端高效整理，移动端轻松阅读。</p>
                         <div class="mini-split-card">
                           <div class="mini-split-card-icon"><i class="ph ph-newspaper"></i></div>
                           <div class="mini-split-card-text">
@@ -600,7 +697,7 @@
                   <div class="page-card-thumb-inner">
                     <div class="mini-auth-container" style="text-align: left;">
                       <div class="mini-auth-logo" style="margin: 0 0 var(--space-md);">S</div>
-                      <div class="mini-onboarding-title">让论文像信息流一样好刷，但仍然可靠</div>
+                      <div class="mini-onboarding-title">让论文像信息流一样好读，但仍然可靠</div>
                       <div class="mini-onboarding-desc">每天 5 到 12 篇高质量论文，先给你白话关键结论，再给原文、作者和可验证来源。</div>
                       <div class="mini-paper-card" style="border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-sm); margin-bottom: var(--space-md);">
                         <div class="mini-paper-body">
@@ -747,7 +844,7 @@
                     <div class="mini-auth-container" style="text-align: left;">
                       <div class="mini-step-indicator">2 / 3</div>
                       <div class="mini-onboarding-title" style="font-size: 12px;">快速校准推荐</div>
-                      <div class="mini-onboarding-desc" style="font-size: 8px; margin-bottom: var(--space-sm);">像刷卡片一样告诉系统偏好。</div>
+                      <div class="mini-onboarding-desc" style="font-size: 8px; margin-bottom: var(--space-sm);">快速标记你的研究兴趣方向。</div>
                       <div style="background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 8px; margin-bottom: 8px;">
                         <div class="mini-paper-source" style="font-size: 8px; margin-bottom: 3px;"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
                         <div class="mini-paper-title" style="font-size: 9px; margin-bottom: 3px;">Training language agents with memory</div>
@@ -789,7 +886,7 @@
                           <div class="mini-paper-desc">工具调用型 agent 显著提升综述质量。</div>
                         </div>
                       </div>
-                      <div class="mini-auth-btn">开始刷今日论文</div>
+                      <div class="mini-auth-btn">开启今日阅读</div>
                     </div>
                   </div>
                 </div>
