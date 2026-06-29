@@ -263,7 +263,7 @@ img {
 .brand-mark {
   width: 28px;
   height: 28px;
-  border-radius: var(--radius-2xl);
+  border-radius: 50%;
   background: var(--brand);
   display: grid;
   place-items: center;
@@ -385,12 +385,10 @@ img {
 
 .btn-primary:hover {
   background: var(--brand-press);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  background: var(--brand-press);
 }
 
 .btn-secondary {
@@ -1838,6 +1836,12 @@ img {
   padding-top: var(--space-lg);
   height: calc(100vh - 48px - var(--space-lg));
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.docs-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar-search {
@@ -1904,7 +1908,7 @@ img {
   font-size: 13px;
   color: var(--ink-soft);
   border-radius: var(--radius-md);
-  transition: all 200ms var(--ease-out);
+  transition: all 150ms var(--ease-out);
   margin-bottom: 4px;
   background: transparent;
   position: relative;
@@ -1912,31 +1916,17 @@ img {
 
 [data-nav-item]:hover {
   color: var(--ink);
-  background: var(--paper);
-  box-shadow: 
-    0 4px 12px -2px rgba(0, 0, 0, 0.06),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transform: translateY(-1px);
+  background: var(--surface-hover);
 }
 
 [data-nav-item]:active {
-  transform: translateY(0) scale(0.97);
   background: var(--surface-muted);
-  box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.04),
-    inset 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 [data-nav-item].is-active {
   background: var(--paper);
   color: var(--ink);
   font-weight: 700;
-  box-shadow: 
-    0 4px 12px -2px rgba(0, 0, 0, 0.06),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transform: translateY(-1px);
 }
 
 .docs-main {
@@ -2950,7 +2940,7 @@ img {
 .page-preview-device {
   width: 280px;
   aspect-ratio: 9 / 19.5;
-  background: var(--surface);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius-2xl);
   overflow: hidden;
