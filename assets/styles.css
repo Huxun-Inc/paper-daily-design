@@ -888,23 +888,15 @@ img {
 }
 
 .mini-key-finding {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
+  border-left: 3px solid var(--brand);
+  padding: var(--space-sm) var(--space-md);
   margin-bottom: var(--space-md);
+  background: var(--surface-muted);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .mini-kf-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--brand);
-  margin-bottom: var(--space-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: none;
 }
 
 .mini-kf-label i {
@@ -913,8 +905,9 @@ img {
 
 .mini-key-finding p {
   font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.6;
+  color: var(--ink);
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 .mini-bullet-stack {
@@ -2961,19 +2954,14 @@ img {
 
 .mini-key-finding {
   margin: var(--space-sm) var(--space-md);
-  padding: var(--space-sm);
-  background: var(--brand-soft);
-  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  border-left: 2px solid var(--brand);
+  background: var(--surface-muted);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .mini-key-finding-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--brand);
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  display: none;
 }
 
 .mini-key-finding-label i {
@@ -2982,8 +2970,9 @@ img {
 
 .mini-key-finding p {
   font-size: 11px;
-  color: var(--ink-soft);
-  line-height: 1.5;
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .mini-plain-english {
