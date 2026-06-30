@@ -8,9 +8,8 @@
     if (saved) {
       applyTheme(saved);
     } else {
-      // 首次访问时，根据系统主题自动设置
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(systemDark ? 'dark' : 'light');
+      // 设计系统默认呈现日报纸张感，主题切换后再记住用户选择。
+      applyTheme('light');
     }
 
     // 监听系统主题变化（仅当用户未手动设置时）
@@ -40,7 +39,7 @@
     // 更新 theme-color meta 标签（手机 Chrome 地址栏颜色）
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      const color = theme === 'dark' ? '#17181C' : '#F7F8FA';
+      const color = theme === 'dark' ? '#17282E' : '#FFF6D6';
       metaThemeColor.setAttribute('content', color);
     }
   }
@@ -263,6 +262,15 @@
         }, 200);
       });
     });
+
+    const resultButtons = Array.from(results.querySelectorAll('button[data-command-target]'));
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      resultButtons.forEach(btn => {
+        const label = btn.textContent.trim().toLowerCase();
+        btn.hidden = query.length > 0 && !label.includes(query);
+      });
+    });
   }
 
   function initBottomSheet() {
@@ -336,6 +344,32 @@
       if (sidebar.contains(e.target) || toggleBtn.contains(e.target)) return;
       sidebar.classList.remove('is-open');
       toggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function initSettingsToggle() {
+    const toggleBtn = document.getElementById('settingsToggle');
+    const panel = document.getElementById('toolbarSettings');
+    if (!toggleBtn || !panel) return;
+
+    function close() {
+      panel.classList.remove('is-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('is-open');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!panel.classList.contains('is-open')) return;
+      if (panel.contains(e.target) || toggleBtn.contains(e.target)) return;
+      close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
     });
   }
 
@@ -1262,8 +1296,124 @@
     const searchBtn = document.getElementById('searchButton');
     if (!searchBtn) return;
     searchBtn.addEventListener('click', () => {
-      window.location.href = 'docs.html#sidebarFilter';
+      window.location.href = 'docs.html#icon-system';
     });
+  }
+
+  function initIconBrowser() {
+    const input = document.getElementById('iconSearchInput');
+    const grid = document.getElementById('iconGrid');
+    const count = document.getElementById('iconCount');
+    const empty = document.getElementById('iconEmpty');
+    if (!input || !grid || !count || !empty) return;
+
+    const icons = [
+      ['magnifying-glass', '搜索 search find'],
+      ['house', '首页 home'],
+      ['newspaper', '日报 news paper'],
+      ['file-text', '论文 document paper'],
+      ['bookmark-simple', '收藏 save bookmark'],
+      ['star', '星标 favorite'],
+      ['sparkle', 'AI summary magic'],
+      ['brain', '智能 brain'],
+      ['chat-circle', '对话 chat copilot'],
+      ['quotes', '引用 citation quote'],
+      ['warning', '警告 warning alert'],
+      ['info', '信息 info'],
+      ['lightbulb', '提示 tip idea'],
+      ['text-b', '加粗 bold'],
+      ['text-italic', '斜体 italic'],
+      ['list-bullets', '列表 bullets'],
+      ['code', '代码 code'],
+      ['gear-six', '设置 settings'],
+      ['sliders', '筛选 filter settings'],
+      ['funnel', '过滤 filter'],
+      ['globe', '语言 i18n international'],
+      ['translate', '翻译 translate language'],
+      ['text-aa', '字号 accessibility'],
+      ['moon', '暗色 dark theme'],
+      ['sun', '亮色 light theme'],
+      ['caret-left', '返回 back'],
+      ['arrow-right', '前进 next'],
+      ['caret-double-down', '下滑 scroll'],
+      ['dots-three', '更多 more'],
+      ['dots-three-circle', '更多 more menu'],
+      ['share-network', '分享 share'],
+      ['download-simple', '下载 download'],
+      ['upload-simple', '上传 upload'],
+      ['copy', '复制 copy'],
+      ['check', '完成 check'],
+      ['x', '关闭 close'],
+      ['plus', '新增 add'],
+      ['minus', '减少 remove'],
+      ['calendar', '日期 calendar'],
+      ['clock', '时间 time'],
+      ['chart-bar', '数据 chart'],
+      ['hash', '标签 tag hash'],
+      ['tag', '标签 tag'],
+      ['users', '作者 users'],
+      ['user-circle', '账户 profile'],
+      ['bell', '通知 notification'],
+      ['eye', '阅读 read view'],
+      ['eye-slash', '隐藏 hide'],
+      ['arrows-clockwise', '刷新 refresh'],
+      ['arrows-left-right', '双向 rtl direction'],
+      ['device-mobile', '移动端 mobile'],
+      ['desktop', '桌面端 desktop'],
+      ['github-logo', 'GitHub'],
+      ['atom', '物理 science'],
+      ['dna', '生物 bio'],
+      ['binoculars', '发现 discover']
+    ];
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+    }
+
+    function render() {
+      const query = input.value.trim().toLowerCase();
+      const filtered = icons.filter(([name, keywords]) => {
+        const haystack = `${name} ${keywords}`.toLowerCase();
+        return query === '' || haystack.includes(query);
+      });
+
+      grid.innerHTML = '';
+      filtered.forEach(([name]) => {
+        const card = document.createElement('button');
+        card.className = 'icon-card';
+        card.type = 'button';
+        card.setAttribute('aria-label', `复制 ${name}`);
+        card.innerHTML = `
+          <i class="ph ph-${name}"></i>
+          <span class="icon-name">${name}</span>
+          <span class="copy-toast">Copied</span>
+        `;
+        card.addEventListener('click', async () => {
+          await copyText(`ph ph-${name}`);
+          card.classList.add('copied');
+          window.setTimeout(() => card.classList.remove('copied'), 900);
+        });
+        grid.appendChild(card);
+      });
+
+      empty.hidden = filtered.length > 0;
+      count.textContent = query ? `${filtered.length} / ${icons.length}` : `常用 ${filtered.length}`;
+    }
+
+    input.addEventListener('input', render);
+    render();
   }
 
   function initGlobeLottie() {
@@ -1292,12 +1442,14 @@
     initBottomSheet();
     initCitationToggle();
     initSidebarToggle();
+    initSettingsToggle();
     initSidebarFilter();
     initDocNavActiveState();
     initPagePreview();
     initI18n();
     initShowcaseTabs();
     initSearchButton();
+    initIconBrowser();
     initGlobeLottie();
   }
 
