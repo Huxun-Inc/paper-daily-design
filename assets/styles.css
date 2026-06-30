@@ -595,6 +595,17 @@ img {
   margin-right: auto;
 }
 
+.hero-mission {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  max-width: 640px;
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-actions {
   display: flex;
   gap: var(--space-sm);
