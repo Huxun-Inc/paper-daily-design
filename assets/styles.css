@@ -116,6 +116,40 @@
   --font-micro-weight: 500;
 }
 
+/* 字号缩放 */
+[data-font-size="small"] {
+  --font-body-size: 13px;
+  --font-body-sm-size: 12px;
+  --font-caption-size: 11px;
+  --font-micro-size: 10px;
+  --font-display-size: 42px;
+  --font-headline-size: 26px;
+  --font-title1-size: 20px;
+  --font-title2-size: 16px;
+}
+
+[data-font-size="medium"] {
+  --font-body-size: 15px;
+  --font-body-sm-size: 14px;
+  --font-caption-size: 12px;
+  --font-micro-size: 11px;
+  --font-display-size: 48px;
+  --font-headline-size: 28px;
+  --font-title1-size: 22px;
+  --font-title2-size: 18px;
+}
+
+[data-font-size="large"] {
+  --font-body-size: 17px;
+  --font-body-sm-size: 16px;
+  --font-caption-size: 14px;
+  --font-micro-size: 13px;
+  --font-display-size: 52px;
+  --font-headline-size: 32px;
+  --font-title1-size: 24px;
+  --font-title2-size: 20px;
+}
+
 [data-theme="dark"] {
   color-scheme: dark;
 
@@ -383,6 +417,30 @@ img {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+}
+
+/* 字号选择器 */
+.font-size-select {
+  height: 32px;
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 150ms var(--ease-out);
+}
+
+.font-size-select:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.font-size-select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-soft);
 }
 
 .icon-button {

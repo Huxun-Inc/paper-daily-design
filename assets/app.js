@@ -45,6 +45,25 @@
     }
   }
 
+  function initFontSize() {
+    const fontSizeSelect = document.getElementById('fontSizeSelect');
+    if (!fontSizeSelect) return;
+
+    // 优先使用用户保存的字号，否则默认 medium
+    const saved = localStorage.getItem('paperdaily-font-size') || 'medium';
+    applyFontSize(saved);
+    fontSizeSelect.value = saved;
+
+    fontSizeSelect.addEventListener('change', (e) => {
+      applyFontSize(e.target.value);
+    });
+  }
+
+  function applyFontSize(size) {
+    root.dataset.fontSize = size;
+    localStorage.setItem('paperdaily-font-size', size);
+  }
+
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -1238,6 +1257,7 @@
 
   function init() {
     initTheme();
+    initFontSize();
     initSmoothScroll();
     initScrollSpy();
     initBookmarkButtons();
