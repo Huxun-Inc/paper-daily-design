@@ -65,55 +65,16 @@
             </div>
           </div>
         </div>
+        <div class="scroll-indicator">
+          <i class="ph ph-caret-double-down"></i>
+        </div>
       </section>
 
       <section class="mission-section">
         <div class="container">
           <div class="mission-globe-wrapper">
             <div class="mission-globe" id="missionGlobe">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="globe-svg">
-                <defs>
-                  <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#4F9EFD;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#0756C9;stop-opacity:1" />
-                  </linearGradient>
-                  <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#34D399;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#16A36A;stop-opacity:1" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                <circle cx="100" cy="100" r="85" fill="url(#oceanGrad)" filter="url(#glow)"/>
-                <g class="globe-continents">
-                  <path d="M65,50 Q80,40 95,48 Q110,55 105,70 Q100,85 80,82 Q60,79 58,65 Q56,52 65,50 Z" fill="url(#landGrad)"/>
-                  <path d="M115,60 Q130,55 142,65 Q150,78 140,90 Q128,100 112,92 Q105,82 115,60 Z" fill="url(#landGrad)"/>
-                  <path d="M70,105 Q85,98 100,105 Q112,115 105,130 Q95,145 78,138 Q62,130 65,118 Q68,108 70,105 Z" fill="url(#landGrad)"/>
-                  <path d="M120,115 Q135,110 145,120 Q148,135 135,142 Q120,148 115,138 Q112,125 120,115 Z" fill="url(#landGrad)"/>
-                  <path d="M45,75 Q55,70 62,78 Q65,90 55,95 Q42,98 38,88 Q35,78 45,75 Z" fill="url(#landGrad)"/>
-                </g>
-                <g class="globe-grid" stroke="rgba(255,255,255,0.15)" fill="none" stroke-width="1">
-                  <ellipse cx="100" cy="100" rx="85" ry="30"/>
-                  <ellipse cx="100" cy="100" rx="85" ry="55"/>
-                  <ellipse cx="100" cy="100" rx="85" ry="75"/>
-                  <line x1="15" y1="100" x2="185" y2="100"/>
-                  <ellipse cx="100" cy="100" rx="30" ry="85"/>
-                  <ellipse cx="100" cy="100" rx="55" ry="85"/>
-                  <ellipse cx="100" cy="100" rx="75" ry="85"/>
-                </g>
-                <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-              </svg>
-              <div class="globe-sparkles">
-                <span class="sparkle s1">✦</span>
-                <span class="sparkle s2">✧</span>
-                <span class="sparkle s3">✦</span>
-                <span class="sparkle s4">✧</span>
-              </div>
+              <div id="globeLottie" class="globe-lottie"></div>
             </div>
           </div>
           <div class="mission-content">
@@ -184,6 +145,7 @@
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.16.8/dist/umd/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.5.2/i18nextHttpBackend.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
     <script src="assets/app.js"></script>
   </body>
 </html>

@@ -1257,6 +1257,19 @@
     });
   }
 
+  function initGlobeLottie() {
+    const container = document.getElementById('globeLottie');
+    if (!container || typeof lottie === 'undefined') return;
+
+    lottie.loadAnimation({
+      container: container,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/globe.lottie.json'
+    });
+  }
+
   function init() {
     initTheme();
     initFontSize();
@@ -1276,6 +1289,7 @@
     initI18n();
     initShowcaseTabs();
     initSearchButton();
+    initGlobeLottie();
   }
 
   if (document.readyState === 'loading') {
