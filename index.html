@@ -14,26 +14,26 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body data-page="landing">
-    <a class="skip-link" href="#main">跳转到主要内容</a>
+    <a class="skip-link" href="#main" data-i18n="landing.skipLink">跳转到主要内容</a>
 
     <header class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="index.html" aria-label="PaperDaily Design 首页">
+        <a class="brand" href="index.html" aria-label="PaperDaily Design">
           <div class="brand-mark">P</div>
           <span class="brand-name">PaperDaily Design</span>
         </a>
 
-        <nav class="navbar-nav" aria-label="主导航">
-          <a href="docs.html#philosophy" class="nav-link">设计哲学</a>
-          <a href="docs.html#components-paper-card" class="nav-link">组件</a>
-          <a href="docs.html#pages" class="nav-link">页面案例</a>
+        <nav class="navbar-nav" aria-label="主导航" data-i18n-aria-label="landing.navAria">
+          <a href="docs.html#philosophy" class="nav-link" data-i18n="landing.navPhilosophy">设计哲学</a>
+          <a href="docs.html#components-paper-card" class="nav-link" data-i18n="landing.navComponents">组件</a>
+          <a href="docs.html#pages" class="nav-link" data-i18n="landing.navPages">页面案例</a>
         </nav>
 
         <div class="navbar-actions">
-          <button class="icon-button" aria-label="搜索">
+          <button class="icon-button" id="searchButton" aria-label="搜索" data-i18n="landing.searchAria">
             <i class="ph ph-magnifying-glass"></i>
           </button>
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题" data-i18n="landing.themeAria">
             <i class="ph ph-sun" data-theme-icon="sun"></i>
             <i class="ph-fill ph-moon" data-theme-icon="moon"></i>
           </button>
@@ -46,14 +46,14 @@
         <div class="container">
           <div class="hero-copy">
             <h1 class="hero-title">
-              为研究者打造的<br /><em>高质量论文信息流</em>
+              <span data-i18n="landing.heroTitle1">为研究者打造的</span><br /><em data-i18n="landing.heroTitle2">高质量论文信息流</em>
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n="landing.heroSubtitle">
               精准推荐、实干 AI、舒服交互，让前沿研究像一款精心策划的知识杂志一样自然、克制、好读。
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary btn-lg" href="docs.html">
-                查看文档
+                <span data-i18n="landing.heroCtaDocs">查看文档</span>
                 <i class="ph ph-arrow-right"></i>
               </a>
               <a class="btn btn-secondary btn-lg" href="https://github.com/Huxun-Inc/paper-daily-design" target="_blank" rel="noopener">
@@ -87,7 +87,7 @@
                       <div class="mini-paper-body">
                         <p class="mini-paper-source">ArXiv AI · because you saved reasoning papers</p>
                         <h4>A new scaling law for reasoning in large language models</h4>
-                        <p class="mini-paper-desc">三秒内知道值不值得点开，十秒内知道值不值得收藏。</p>
+                        <p class="mini-paper-desc" data-i18n="landing.previewSummary">三秒内知道值不值得点开，十秒内知道值不值得收藏。</p>
                         <div class="mini-paper-tags">
                           <span>reasoning</span>
                           <span>benchmark</span>
@@ -97,10 +97,10 @@
                       <button class="mini-bookmark"><i class="ph ph-star"></i></button>
                     </article>
                     <div class="mini-action-row">
-                      <button class="mini-action-btn primary">推荐</button>
-                      <button class="mini-action-btn">已读</button>
-                      <button class="mini-action-btn">收藏</button>
-                      <button class="mini-action-btn">更多类似</button>
+                      <button class="mini-action-btn primary" data-i18n="landing.actionRecommend">推荐</button>
+                      <button class="mini-action-btn" data-i18n="landing.actionRead">已读</button>
+                      <button class="mini-action-btn" data-i18n="landing.actionSave">收藏</button>
+                      <button class="mini-action-btn" data-i18n="landing.actionMore">更多类似</button>
                     </div>
                   </div>
                 </div>
@@ -118,11 +118,11 @@
                     <h3 class="mini-content-title">Key Finding</h3>
                     <div class="mini-key-finding">
                       <div class="mini-kf-label"><i class="ph-fill ph-key"></i> Key Finding</div>
-                      <p>推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
+                      <p data-i18n="landing.kfCopy">推理表现的上升趋势变得可估计，这会改变训练预算和评估计划的制定方式。</p>
                     </div>
                     <div class="mini-bullet-stack">
-                      <p><strong>Plain English.</strong> 更大的模型加上更好的数据，推理能力会稳步提升。</p>
-                      <p><strong>Why it matters.</strong> 团队可以更准确地规划算力预算，减少盲目试错。</p>
+                      <p><strong>Plain English.</strong> <span data-i18n="landing.kfPlainEnglish">更大的模型加上更好的数据，推理能力会稳步提升。</span></p>
+                      <p><strong>Why it matters.</strong> <span data-i18n="landing.kfWhyItMatters">团队可以更准确地规划算力预算，减少盲目试错。</span></p>
                     </div>
                   </div>
                 </div>
@@ -141,9 +141,9 @@
                     <article class="mini-ai-card">
                       <div class="mini-ai-top">
                         <span class="mini-ai-badge">AI</span>
-                        <button class="mini-citation-toggle">显示引用</button>
+                        <button class="mini-citation-toggle" data-i18n="landing.actionCitations">显示引用</button>
                       </div>
-                      <p>这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
+                      <p data-i18n="landing.aiAnswerCopy">这篇论文真正的新意不是更大的模型，而是把 reasoning 的提升规律写成了可以预测的函数。</p>
                       <div class="mini-citation-list">
                         <button>[1] Scaling Law</button>
                         <button>[2] Chinchilla</button>
@@ -165,22 +165,22 @@
               <div class="feature-icon">
                 <i class="ph ph-target"></i>
               </div>
-              <h3>精准推荐</h3>
-              <p>不必在海量论文中反复搜索，每天直接看到与自己研究方向、兴趣领域和阅读习惯相关的高价值内容。</p>
+              <h3 data-i18n="landing.feature1Title">精准推荐</h3>
+              <p data-i18n="landing.feature1Copy">不必在海量论文中反复搜索，每天直接看到与自己研究方向、兴趣领域和阅读习惯相关的高价值内容。</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">
                 <i class="ph-fill ph-sparkle"></i>
               </div>
-              <h3>实干 AI</h3>
-              <p>AI 不停留在炫技，而是提炼论文重点、解释方法贡献、生成速读摘要，帮你快速判断一篇论文值不值得读。</p>
+              <h3 data-i18n="landing.feature2Title">实干 AI</h3>
+              <p data-i18n="landing.feature2Copy">AI 不停留在炫技，而是提炼论文重点、解释方法贡献、生成速读摘要，帮你快速判断一篇论文值不值得读。</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">
                 <i class="ph-fill ph-heart"></i>
               </div>
-              <h3>舒服交互</h3>
-              <p>界面克制清晰顺滑，浏览、阅读、收藏、追踪一气呵成，让研究信息像日常内容消费一样自然进入工作流。</p>
+              <h3 data-i18n="landing.feature3Title">舒服交互</h3>
+              <p data-i18n="landing.feature3Copy">界面克制清晰顺滑，浏览、阅读、收藏、追踪一气呵成，让研究信息像日常内容消费一样自然进入工作流。</p>
             </div>
           </div>
         </div>
@@ -194,23 +194,26 @@
               <div class="brand-mark">P</div>
               <span class="brand-name">PaperDaily Design</span>
             </div>
-            <p>精准推荐、实干 AI、舒服交互，让前沿研究像一款精心策划的知识杂志。</p>
+            <p data-i18n="landing.footerDesc">精准推荐、实干 AI、舒服交互，让前沿研究像一款精心策划的知识杂志。</p>
           </div>
           <div class="footer-social">
             <a href="https://github.com" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub">
               <i class="ph ph-github-logo"></i>
             </a>
-            <a href="https://example.com" class="social-icon" target="_blank" rel="noopener" aria-label="主站官网">
+            <a href="https://example.com" class="social-icon" target="_blank" rel="noopener" aria-label="主站官网" data-i18n-aria-label="landing.footerHomeAria">
               <i class="ph ph-globe"></i>
             </a>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 PaperDaily Design. MIT License.</p>
+          <p data-i18n="landing.footerCopy">© 2026 PaperDaily Design. MIT License.</p>
         </div>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.16.8/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.5.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="assets/app.js"></script>
   </body>
 </html>
