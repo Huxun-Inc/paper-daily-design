@@ -12,6 +12,14 @@
   font-display: block;
 }
 
+@font-face {
+  font-family: 'ArialUnicodeMS';
+  src: url('global-knowledge-lottie/fonts/ArialUnicode.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
 :root {
   color-scheme: light;
   font-size: 16px;

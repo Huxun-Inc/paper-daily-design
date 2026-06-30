@@ -730,7 +730,11 @@
         content: `
           <div class="mini-desktop-shell">
             <div class="mini-desktop-sidebar">
-              <h5>${pt('desktopFeedChannels', '研究频道')}</h5>
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding: 0 4px;">
+                <div style="width: 28px; height: 28px; background: var(--brand); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 12px;">S</div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--ink);">ScholarDaily</div>
+              </div>
+              <div style="font-size: 10px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; padding: 0 4px;">${pt('desktopFeedChannels', '研究频道')}</div>
               <div class="mini-desktop-nav-item is-active"><i class="ph ph-sparkle"></i> ${pt('desktopFeedNavToday', '今日简报')}</div>
               <div class="mini-desktop-nav-item"><i class="ph ph-brain"></i> AI / LLM</div>
               <div class="mini-desktop-nav-item"><i class="ph ph-atom"></i> Physics</div>
@@ -739,34 +743,45 @@
               <div class="mini-desktop-nav-item"><i class="ph ph-binoculars"></i> ${pt('desktopFeedNavCollections', '收藏专题')}</div>
             </div>
             <div class="mini-desktop-feed">
-              <div style="margin-bottom: var(--space-sm);">
-                <div style="font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 2px;">Daily Papers</div>
-                <div style="font-size: 10px; color: var(--ink-muted);">${pt('desktopFeedSubtitleText', '为你精选：AI / LLM、AI safety、multimodal learning')}</div>
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Daily Papers</div>
+                <div style="font-size: 11px; color: var(--ink-muted);">${pt('desktopFeedSubtitleText', '为你精选：AI / LLM、AI safety、multimodal learning')}</div>
               </div>
-              <div class="mini-paper-card" style="border: 1px solid var(--line-soft); border-radius: var(--radius-md); margin-bottom: var(--space-xs);">
-                <div class="mini-rank" style="color: var(--amber-500);">★</div>
-                <div class="mini-paper-body">
-                  <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>ArXiv AI · ${pt('desktopFeedBecauseSaved', '因为你收藏了 reasoning')}</div>
-                  <div class="mini-paper-title">A new scaling law for reasoning in large language models</div>
-                  <div class="mini-paper-desc">${pt('desktopFeedDesc1', '模型推理能力提升规律变得可预测，改变训练预算规划方式。')}</div>
+              <div style="display: flex; flex-direction: column; gap: 2px;">
+                <div class="mini-paper-card" style="border: 1px solid var(--line-soft); border-radius: 12px; padding: 12px 14px; background: var(--paper);">
+                  <div class="mini-rank" style="background: var(--ink); color: var(--paper); width: 24px; height: 24px; font-size: 10px;">★</div>
+                  <div class="mini-paper-body">
+                    <div class="mini-paper-source" style="font-size: 10px;"><span class="mini-paper-source-dot"></span>ArXiv AI · ${pt('desktopFeedBecauseSaved', '因为你收藏了 reasoning')}</div>
+                    <div class="mini-paper-title" style="font-size: 12px;">A new scaling law for reasoning in large language models</div>
+                    <div class="mini-paper-desc" style="font-size: 11px;">${pt('desktopFeedDesc1', '模型推理能力提升规律变得可预测，改变训练预算规划方式。')}</div>
+                  </div>
+                  <div class="mini-bookmark"><i class="ph-fill ph-star" style="color: var(--amber-500);"></i></div>
                 </div>
-                <div class="mini-bookmark"><i class="ph ph-star"></i></div>
-              </div>
-              <div class="mini-paper-card" style="border-bottom: none;">
-                <div class="mini-rank">02</div>
-                <div class="mini-paper-body">
-                  <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>Nature</div>
-                  <div class="mini-paper-title">A reversible gene switch for safer cell therapies</div>
-                  <div class="mini-paper-desc">${pt('desktopFeedDesc2', '精确控制治疗开关，提升临床安全性。')}</div>
+                <div class="mini-paper-card" style="border: 1px solid transparent; border-radius: 12px; padding: 12px 14px; background: transparent;">
+                  <div class="mini-rank" style="color: var(--ink-muted);">02</div>
+                  <div class="mini-paper-body">
+                    <div class="mini-paper-source" style="font-size: 10px;"><span class="mini-paper-source-dot"></span>Nature</div>
+                    <div class="mini-paper-title" style="font-size: 12px;">A reversible gene switch for safer cell therapies</div>
+                    <div class="mini-paper-desc" style="font-size: 11px;">${pt('desktopFeedDesc2', '精确控制治疗开关，提升临床安全性。')}</div>
+                  </div>
+                  <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
                 </div>
-                <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
+                <div class="mini-paper-card" style="border: 1px solid transparent; border-radius: 12px; padding: 12px 14px; background: transparent;">
+                  <div class="mini-rank" style="color: var(--ink-muted);">03</div>
+                  <div class="mini-paper-body">
+                    <div class="mini-paper-source" style="font-size: 10px;"><span class="mini-paper-source-dot"></span>Science</div>
+                    <div class="mini-paper-title" style="font-size: 12px;">Global methane emissions higher than thought</div>
+                    <div class="mini-paper-desc" style="font-size: 11px;">卫星观测揭示甲烷排放增长超预期。</div>
+                  </div>
+                  <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
+                </div>
               </div>
             </div>
             <div class="mini-desktop-detail">
-              <h5><i class="ph-fill ph-sparkle" style="color: var(--violet);"></i> ${pt('desktopFeedKeyFinding', '关键发现')}</h5>
-              <p style="margin-bottom: var(--space-sm);">${pt('desktopFeedKeyFindingDesc', '推理能力提升曲线可估 → 训练预算规划方式改变。')}</p>
-              <h5>Plain English</h5>
-              <p>${pt('desktopFeedPlainEnglish', '更大模型 + 更好数据 = 推理能力稳定提升。')}</p>
+              <div style="font-size: 10px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;"><i class="ph-fill ph-sparkle" style="color: var(--violet);"></i> ${pt('desktopFeedKeyFinding', '关键发现')}</div>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 16px;">${pt('desktopFeedKeyFindingDesc', '推理能力提升曲线可估 → 训练预算规划方式改变。')}</p>
+              <div style="font-size: 10px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Plain English</div>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--ink-soft);">${pt('desktopFeedPlainEnglish', '更大模型 + 更好数据 = 推理能力稳定提升。')}</p>
             </div>
           </div>
         `
@@ -1070,89 +1085,91 @@
         title: 'macOS App',
         subtitle: pt('desktopMacosSubtitle', '桌面应用 · macOS'),
         device: 'desktop',
+        noOuterTitlebar: true,
         content: `
           <div style="width: 100%; height: 100%; background: var(--surface); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="height: 38px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 16px; gap: 8px; border-bottom: 1px solid var(--line);">
-              <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57;"></div>
-              <div style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e;"></div>
-              <div style="width: 12px; height: 12px; border-radius: 50%; background: #28c840;"></div>
-              <div style="flex: 1; text-align: center; font-size: 12px; color: var(--ink-muted);">PaperDaily</div>
+            <div style="height: 52px; background: var(--surface-muted); display: flex; align-items: center; padding: 0 20px; gap: 10px; border-bottom: 1px solid var(--line);">
+              <div style="display: flex; gap: 8px;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #28c840;"></div>
+              </div>
+              <div style="flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: var(--ink);">PaperDaily</div>
+              <div style="width: 60px;"></div>
             </div>
             <div style="flex: 1; display: flex;">
-              <div style="width: 200px; background: var(--surface); border-right: 1px solid var(--line); padding: 12px; font-size: 10px;">
-                <div style="font-weight: 600; margin-bottom: 8px; color: var(--ink-muted);">${pt('desktopMacosChannels', '研究频道')}</div>
-                <div style="padding: 6px 8px; background: var(--brand-soft); color: var(--brand); border-radius: 6px; margin-bottom: 4px; font-weight: 500;">
-                  ${pt('desktopMacosNavToday', '今日简报')}
+              <div style="width: 220px; background: var(--surface); border-right: 1px solid var(--line); padding: 16px 12px; font-size: 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: var(--ink-muted); margin-bottom: 8px; padding: 0 8px; text-transform: uppercase; letter-spacing: 0.5px;">${pt('desktopMacosChannels', '研究频道')}</div>
+                <div style="padding: 8px 10px; background: var(--brand-soft); color: var(--brand); border-radius: 8px; margin-bottom: 2px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-sparkle"></i> ${pt('desktopMacosNavToday', '今日简报')}
                 </div>
-                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
-                  AI / LLM
+                <div style="padding: 8px 10px; color: var(--ink-soft); border-radius: 8px; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-brain"></i> AI / LLM
                 </div>
-                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
-                  Physics
+                <div style="padding: 8px 10px; color: var(--ink-soft); border-radius: 8px; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-atom"></i> Physics
                 </div>
-                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
-                  Bio Medicine
+                <div style="padding: 8px 10px; color: var(--ink-soft); border-radius: 8px; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-dna"></i> Bio Medicine
                 </div>
-                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px; margin-bottom: 4px;">
-                  ${pt('desktopMacosNavReadLater', '稍后读')}
+                <div style="padding: 8px 10px; color: var(--ink-soft); border-radius: 8px; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-bookmark-simple"></i> ${pt('desktopMacosNavReadLater', '稍后读')}
                 </div>
-                <div style="padding: 6px 8px; color: var(--ink-soft); border-radius: 6px;">
-                  ${pt('desktopMacosNavCollections', '收藏专题')}
+                <div style="padding: 8px 10px; color: var(--ink-soft); border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ph ph-binoculars"></i> ${pt('desktopMacosNavCollections', '收藏专题')}
                 </div>
               </div>
-              <div style="flex: 1; padding: 16px; overflow: hidden; border-right: 1px solid var(--line);">
-                <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Daily Papers</div>
-                <div style="font-size: 10px; color: var(--ink-muted); margin-bottom: 12px;">${pt('desktopMacosSubtitleText', '为你精选 · 偏好 AI reasoning, AI safety, multimodal learning')}</div>
-                <div style="margin-bottom: 10px;">
-                  <div class="mini-paper-card" style="padding: 10px; background: var(--brand-soft); border: 1px solid var(--brand-line); border-radius: 8px;">
-                    <div class="mini-rank" style="background: var(--brand); color: white;">★</div>
-                    <div class="mini-paper-body">
-                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
-                      <div class="mini-paper-title">A new scaling law for reasoning in large language models</div>
-                      <div class="mini-paper-desc">${pt('desktopMacosDesc1', '模型推理能力提升规律变得可预测，改变训练预算规划方式。')}</div>
-                    </div>
-                    <div class="mini-bookmark"><i class="ph-fill ph-star" style="color: var(--brand);"></i></div>
-                  </div>
+              <div style="flex: 1; padding: 20px 24px; overflow-y: auto; border-right: 1px solid var(--line);">
+                <div style="margin-bottom: 16px;">
+                  <div style="font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Daily Papers</div>
+                  <div style="font-size: 12px; color: var(--ink-muted);">${pt('desktopMacosSubtitleText', '为你精选 · 偏好 AI reasoning, AI safety, multimodal learning')}</div>
                 </div>
-                <div style="margin-bottom: 10px;">
-                  <div class="mini-paper-card" style="padding: 10px;">
-                    <div class="mini-rank">02</div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <div class="mini-paper-card" style="padding: 14px 16px; border: 1px solid var(--line-soft); border-radius: 12px; background: var(--paper);">
+                    <div class="mini-rank" style="background: var(--ink); color: var(--paper); width: 28px; height: 28px; font-size: 11px;">★</div>
                     <div class="mini-paper-body">
-                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>Nature</div>
-                      <div class="mini-paper-title">A reversible gene switch for safer cell therapies</div>
-                      <div class="mini-paper-desc">${pt('desktopMacosDesc2', '基因治疗新开关，降低临床风险。')}</div>
+                      <div class="mini-paper-source" style="font-size: 11px;"><span class="mini-paper-source-dot"></span>ArXiv AI</div>
+                      <div class="mini-paper-title" style="font-size: 14px;">A new scaling law for reasoning in large language models</div>
+                      <div class="mini-paper-desc" style="font-size: 12px;">${pt('desktopMacosDesc1', '模型推理能力提升规律变得可预测，改变训练预算规划方式。')}</div>
+                    </div>
+                    <div class="mini-bookmark"><i class="ph-fill ph-star" style="color: var(--amber-500);"></i></div>
+                  </div>
+                  <div class="mini-paper-card" style="padding: 14px 16px; border: 1px solid transparent; border-radius: 12px; background: transparent;">
+                    <div class="mini-rank" style="color: var(--ink-muted);">02</div>
+                    <div class="mini-paper-body">
+                      <div class="mini-paper-source" style="font-size: 11px;"><span class="mini-paper-source-dot"></span>Nature</div>
+                      <div class="mini-paper-title" style="font-size: 14px;">A reversible gene switch for safer cell therapies</div>
+                      <div class="mini-paper-desc" style="font-size: 12px;">${pt('desktopMacosDesc2', '基因治疗新开关，降低临床风险。')}</div>
                     </div>
                     <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
                   </div>
-                </div>
-                <div>
-                  <div class="mini-paper-card" style="padding: 10px;">
-                    <div class="mini-rank">03</div>
+                  <div class="mini-paper-card" style="padding: 14px 16px; border: 1px solid transparent; border-radius: 12px; background: transparent;">
+                    <div class="mini-rank" style="color: var(--ink-muted);">03</div>
                     <div class="mini-paper-body">
-                      <div class="mini-paper-source"><span class="mini-paper-source-dot"></span>Science</div>
-                      <div class="mini-paper-title">Global methane emissions higher than thought</div>
-                      <div class="mini-paper-desc">${pt('desktopMacosDesc3', '卫星观测揭示甲烷排放增长超预期。')}</div>
+                      <div class="mini-paper-source" style="font-size: 11px;"><span class="mini-paper-source-dot"></span>Science</div>
+                      <div class="mini-paper-title" style="font-size: 14px;">Global methane emissions higher than thought</div>
+                      <div class="mini-paper-desc" style="font-size: 12px;">${pt('desktopMacosDesc3', '卫星观测揭示甲烷排放增长超预期。')}</div>
                     </div>
                     <div class="mini-bookmark"><i class="ph ph-bookmark-simple"></i></div>
                   </div>
                 </div>
               </div>
-              <div style="width: 220px; padding: 16px; font-size: 10px;">
-                <div style="font-weight: 600; margin-bottom: 8px;">Why this matters</div>
-                <div class="mini-key-finding" style="margin-bottom: 12px;">
-                  <div class="mini-key-finding-label"><i class="ph-fill ph-key"></i> Key Finding</div>
-                  <p style="font-size: 10px;">${pt('desktopMacosKeyFinding', '推理能力随算力和数据质量可预测提升。')}</p>
+              <div style="width: 260px; padding: 20px; font-size: 12px; overflow-y: auto;">
+                <div style="font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Why this matters</div>
+                <div class="mini-key-finding" style="margin-bottom: 16px; padding: 12px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line-soft);">
+                  <div class="mini-key-finding-label" style="font-size: 11px; margin-bottom: 6px;"><i class="ph-fill ph-key"></i> Key Finding</div>
+                  <p style="font-size: 12px; line-height: 1.6; color: var(--ink-soft); margin: 0;">${pt('desktopMacosKeyFinding', '推理能力随算力和数据质量可预测提升。')}</p>
                 </div>
-                <div style="margin-bottom: 8px; font-weight: 500;">In Plain English</div>
-                <ul style="margin: 0; padding-left: 16px; font-size: 10px; color: var(--ink-soft); line-height: 1.6;">
+                <div style="font-size: 11px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">In Plain English</div>
+                <ul style="margin: 0; padding-left: 18px; font-size: 12px; color: var(--ink-soft); line-height: 1.8;">
                   <li>${pt('desktopMacosPlain1', '更大的模型推理更好')}</li>
                   <li>${pt('desktopMacosPlain2', '关系是可预测的')}</li>
                   <li>${pt('desktopMacosPlain3', '数据质量很重要')}</li>
                 </ul>
-                <div style="margin-top: 12px;">
-                  <div style="background: var(--ink); color: var(--paper); padding: 8px 12px; border-radius: 6px; font-size: 10px; display: flex; align-items: center; gap: 6px;">
+                <div style="margin-top: 20px;">
+                  <button style="width: 100%; background: var(--ink); color: var(--paper); border: none; padding: 10px 14px; border-radius: 10px; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
                     <i class="ph-fill ph-sparkle"></i> ${pt('desktopMacosListen', '听论文摘要')}
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1175,7 +1192,16 @@
 
       if (isDesktop) {
         panel.classList.add('is-desktop-window');
-        contentHtml = `
+        if (template.noOuterTitlebar) {
+          contentHtml = `
+          <div class="desktop-window is-native">
+            <div class="desktop-window-content">
+              ${template.content}
+            </div>
+          </div>
+        `;
+        } else {
+          contentHtml = `
           <div class="desktop-window">
             <div class="desktop-window-titlebar">
               <div class="desktop-window-traffic">
@@ -1191,6 +1217,7 @@
             </div>
           </div>
         `;
+        }
       } else {
         panel.classList.remove('is-desktop-window');
         contentHtml = `<div class="page-preview-device">`;
@@ -1447,42 +1474,48 @@
     const container = document.getElementById('globeLottie');
     if (!container || typeof lottie === 'undefined') return;
 
-    const animation = lottie.loadAnimation({
-      container: container,
-      renderer: 'canvas',
-      loop: true,
-      autoplay: true,
-      path: 'assets/global-knowledge-lottie/global-knowledge-earth.lottie.json',
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid meet',
-        progressiveLoad: true
+    async function loadAnimation() {
+      try {
+        await document.fonts.load('13px "Arial Unicode MS"');
+        await document.fonts.load('13px "ArialUnicodeMS"');
+        await document.fonts.ready;
+
+        const res = await fetch('assets/global-knowledge-lottie/animations/scene-1.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+
+        const animation = lottie.loadAnimation({
+          container: container,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData: data,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet'
+          }
+        });
+
+        animation.addEventListener('DOMLoaded', () => {
+          container.dataset.animationReady = 'true';
+          console.log('[Lottie] DOM loaded, layers:', animation.animationData?.layers?.length);
+        });
+
+        animation.addEventListener('data_failed', (err) => {
+          console.error('[Lottie] Data failed:', err);
+        });
+
+        animation.addEventListener('error', (err) => {
+          console.error('[Lottie] Error:', err);
+        });
+
+        window.__paperDailyLottie = window.__paperDailyLottie || [];
+        window.__paperDailyLottie.push(animation);
+      } catch (e) {
+        console.error('[Lottie] Load failed:', e);
       }
-    });
+    }
 
-    animation.addEventListener('DOMLoaded', () => {
-      container.dataset.animationReady = 'true';
-      animation.goToAndPlay(1, true);
-      console.log('[Lottie] DOM loaded, layers:', animation.animationData?.layers?.length);
-    });
-
-    animation.addEventListener('data_failed', (err) => {
-      console.error('[Lottie] Data failed:', err);
-    });
-
-    animation.addEventListener('config_ready', () => {
-      console.log('[Lottie] Config ready');
-    });
-
-    animation.addEventListener('data_ready', () => {
-      console.log('[Lottie] Data ready');
-    });
-
-    animation.addEventListener('error', (err) => {
-      console.error('[Lottie] Error:', err);
-    });
-
-    window.__paperDailyLottie = window.__paperDailyLottie || [];
-    window.__paperDailyLottie.push(animation);
+    loadAnimation();
   }
 
   function init() {
