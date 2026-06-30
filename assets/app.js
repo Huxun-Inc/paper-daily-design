@@ -1429,13 +1429,25 @@
     const container = document.getElementById('globeLottie');
     if (!container || typeof lottie === 'undefined') return;
 
-    lottie.loadAnimation({
+    const animation = lottie.loadAnimation({
       container: container,
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'assets/globe.lottie.json'
+      path: 'assets/global-knowledge-lottie/global-knowledge-earth.lottie.json',
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid meet',
+        progressiveLoad: true
+      }
     });
+
+    animation.addEventListener('DOMLoaded', () => {
+      container.dataset.animationReady = 'true';
+      animation.goToAndPlay(1, true);
+    });
+
+    window.__paperDailyLottie = window.__paperDailyLottie || [];
+    window.__paperDailyLottie.push(animation);
   }
 
   function init() {
