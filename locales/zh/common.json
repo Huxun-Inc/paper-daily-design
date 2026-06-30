@@ -255,6 +255,7 @@
   "docs.summaryTitle": "Key Finding",
   "docs.summaryTitleSection": "Summary Block",
   "docs.toggleCitation": "显示引用",
+  "docs.toggleCitationHide": "隐藏引用",
   "docs.toggleTheme": "切换主题",
   "landing.actionCitations": "显示引用",
   "landing.actionMore": "更多类似",

@@ -255,6 +255,7 @@
   "docs.summaryTitle": "Key Finding",
   "docs.summaryTitleSection": "Summary Block",
   "docs.toggleCitation": "Show Citations",
+  "docs.toggleCitationHide": "Hide Citations",
   "docs.toggleTheme": "Toggle theme",
   "landing.actionCitations": "Show citations",
   "landing.actionMore": "More like this",

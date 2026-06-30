@@ -298,16 +298,25 @@
     const list = document.getElementById('citationList');
     if (!toggle || !list) return;
 
+    function updateToggleText() {
+      if (typeof i18next === 'undefined') return;
+      const isHidden = list.hasAttribute('hidden');
+      toggle.textContent = isHidden
+        ? i18next.t('docs.toggleCitation')
+        : i18next.t('docs.toggleCitationHide');
+    }
+
     toggle.addEventListener('click', () => {
       const isHidden = list.hasAttribute('hidden');
       if (isHidden) {
         list.removeAttribute('hidden');
-        toggle.textContent = '隐藏引用';
       } else {
         list.setAttribute('hidden', '');
-        toggle.textContent = '显示引用';
       }
+      updateToggleText();
     });
+
+    updateToggleText();
   }
 
   function initSidebarToggle() {
