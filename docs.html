@@ -82,8 +82,8 @@
             <summary data-i18n="docs.groupPhilosophy">设计哲学</summary>
             <a href="#philosophy-core" data-nav-item data-i18n="docs.navPhilosophy">三个核心</a>
             <a href="#tokens-radius" data-nav-item data-i18n="docs.navRadius">圆角规范</a>
-            <a href="#tokens-typography" data-nav-item>Typography</a>
-            <a href="#tokens-colors" data-nav-item>Theme Colors</a>
+            <a href="#tokens-typography" data-nav-item data-i18n="docs.navTypography">字体排版</a>
+            <a href="#tokens-colors" data-nav-item data-i18n="docs.navColors">主题色彩</a>
             <a href="#accessibility" data-nav-item data-i18n="docs.navAccessibility">无障碍阅读</a>
           </details>
 
@@ -210,46 +210,64 @@
 
         <section class="doc-section" id="tokens-typography">
           <div class="doc-section-head">
-            <p class="eyebrow" data-i18n="docs.tokensEyebrow">Tokens</p>
-            <h2>Typography</h2>
-            <p data-i18n="docs.typographyDesc">低干扰排版：清楚、留白准确、层级少而稳定。大字号用于页面标题和英雄区，正文保持舒适的 15px 与 1.6 行高。</p>
+            <p class="eyebrow" data-i18n="docs.philosophyEyebrow">设计哲学</p>
+            <h2 data-i18n="docs.typographyTitle">字体排版</h2>
+            <p data-i18n="docs.typographyDesc">低干扰排版是 PaperDaily 的阅读底色。字号层级克制、字重对比分明、行高舒适透气——让论文内容本身成为主角，排版只是安静的支撑。</p>
           </div>
 
-          <div class="doc-grid">
-            <div class="doc-copy">
-              <ul class="doc-list">
-                <li data-i18n="docs.typographyRuleOne"><strong>层级克制</strong>：只有 Display / Heading / Body / Caption 四个层级，避免字号过多造成视觉噪音。</li>
-                <li data-i18n="docs.typographyRuleTwo"><strong>字重分明</strong>：标题用 700-800 粗体，正文用 400 常规，辅助文字用 500 中等，对比清晰但不刺眼。</li>
-                <li data-i18n="docs.typographyRuleThree"><strong>行高合理</strong>：大标题行高紧凑（1.15），正文行高宽松（1.60），保证长文阅读舒适度。</li>
-              </ul>
-            </div>
+          <div class="a11y-grid cols-3">
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-text-h-three"></i>
+              </div>
+              <h3 data-i18n="docs.typographyRuleOneTitle">层级克制</h3>
+              <p data-i18n="docs.typographyRuleOneDesc">只有 Display / Heading / Body / Caption 四个层级，避免字号过多造成视觉噪音。大标题拉开气场，正文安静可读，辅助信息不抢戏。</p>
+            </article>
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-text-b"></i>
+              </div>
+              <h3 data-i18n="docs.typographyRuleTwoTitle">字重分明</h3>
+              <p data-i18n="docs.typographyRuleTwoDesc">标题用 700-800 粗体建立层级，正文用 400 常规保证长文舒适，辅助文字用 500 中等保持清晰。对比明确但不刺眼。</p>
+            </article>
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-text-align-left"></i>
+              </div>
+              <h3 data-i18n="docs.typographyRuleThreeTitle">行高合理</h3>
+              <p data-i18n="docs.typographyRuleThreeDesc">大标题行高紧凑（1.15）保证气场，正文行高宽松（1.60）保证长文阅读舒适度，小标题行高适中（1.30-1.35）兼顾密度与呼吸感。</p>
+            </article>
+          </div>
 
-            <div class="demo-box">
-              <div class="typography-scale">
-                <div class="type-row is-hero">
-                  <strong data-i18n="docs.typeDisplayHero">Display Hero</strong>
-                  <span>48px / 800 / 1.15</span>
-                </div>
-                <div class="type-row is-display">
-                  <strong data-i18n="docs.typeDisplaySecondary">Display Secondary</strong>
-                  <span>42px / 800 / 1.15</span>
-                </div>
-                <div class="type-row is-heading">
-                  <strong data-i18n="docs.typeSectionHeading">Section Heading</strong>
-                  <span>28px / 700 / 1.30</span>
-                </div>
-                <div class="type-row is-subheading">
-                  <strong data-i18n="docs.typeSubheadingLarge">Sub-heading Large</strong>
-                  <span>22px / 700 / 1.35</span>
-                </div>
-                <div class="type-row">
-                  <strong data-i18n="docs.typeBody">Body Text</strong>
-                  <span>15px / 400 / 1.60</span>
-                </div>
-                <div class="type-row is-caption">
-                  <strong data-i18n="docs.typeCaption">Caption</strong>
-                  <span>12px / 500 / 1.50</span>
-                </div>
+          <div class="typo-showcase">
+            <div class="typo-showcase-head">
+              <span data-i18n="docs.typoShowcaseLabel">Typography Scale</span>
+              <strong data-i18n="docs.typoShowcaseTitle">字号对照</strong>
+            </div>
+            <div class="typography-scale is-large">
+              <div class="type-row is-hero">
+                <strong data-i18n="docs.typeDisplayHero">Display Hero</strong>
+                <span>48px / 800 / 1.15</span>
+              </div>
+              <div class="type-row is-display">
+                <strong data-i18n="docs.typeDisplaySecondary">Display Secondary</strong>
+                <span>42px / 800 / 1.15</span>
+              </div>
+              <div class="type-row is-heading">
+                <strong data-i18n="docs.typeSectionHeading">Section Heading</strong>
+                <span>28px / 700 / 1.30</span>
+              </div>
+              <div class="type-row is-subheading">
+                <strong data-i18n="docs.typeSubheadingLarge">Sub-heading Large</strong>
+                <span>22px / 700 / 1.35</span>
+              </div>
+              <div class="type-row">
+                <strong data-i18n="docs.typeBody">Body Text</strong>
+                <span>15px / 400 / 1.60</span>
+              </div>
+              <div class="type-row is-caption">
+                <strong data-i18n="docs.typeCaption">Caption</strong>
+                <span>12px / 500 / 1.50</span>
               </div>
             </div>
           </div>
@@ -257,102 +275,114 @@
 
         <section class="doc-section" id="tokens-colors">
           <div class="doc-section-head">
-            <p class="eyebrow" data-i18n="docs.tokensEyebrow">Tokens</p>
-            <h2>Theme Colors</h2>
-            <p data-i18n="docs.colorsDesc">底色保持白色与浅灰，极淡报纸黄只作为高亮信号，冰海青和深海青负责品牌识别。整体克制，不滥用饱和色。</p>
+            <p class="eyebrow" data-i18n="docs.philosophyEyebrow">设计哲学</p>
+            <h2 data-i18n="docs.colorsTitle">主题色彩</h2>
+            <p data-i18n="docs.colorsDesc">底色中性克制，品牌色精准落点，语义色各司其职。不靠彩色撑气氛，内容本身是主角。深海青与冰海青只在关键处落笔。</p>
           </div>
 
-          <div class="doc-grid">
-            <div class="doc-copy">
-              <ul class="doc-list">
-                <li data-i18n="docs.colorsRuleOne"><strong>底色中性</strong>：页面主背景是纸白与淡灰，不靠彩色撑气氛，内容本身是主角。</li>
-                <li data-i18n="docs.colorsRuleTwo"><strong>品牌克制</strong>：深海青与冰海青只用于品牌触点和关键行动，不铺满大区域。</li>
-                <li data-i18n="docs.colorsRuleThree"><strong>语义清晰</strong>：建议用苔绿、提醒用赭黄、风险用校对红，各司其职，不混用。</li>
-              </ul>
+          <div class="a11y-grid cols-3">
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-squares-four"></i>
+              </div>
+              <h3 data-i18n="docs.colorsRuleOneTitle">底色中性</h3>
+              <p data-i18n="docs.colorsRuleOneDesc">页面主背景是纸白与淡灰，不靠彩色撑气氛。内容本身是主角，背景只是安静的画布。</p>
+            </article>
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-paint-brush"></i>
+              </div>
+              <h3 data-i18n="docs.colorsRuleTwoTitle">品牌克制</h3>
+              <p data-i18n="docs.colorsRuleTwoDesc">深海青与冰海青只用于品牌触点和关键行动，不铺满大区域。出现即有意义，不滥用不失重。</p>
+            </article>
+            <article class="a11y-card">
+              <div class="a11y-icon">
+                <i class="ph ph-traffic-signal"></i>
+              </div>
+              <h3 data-i18n="docs.colorsRuleThreeTitle">语义清晰</h3>
+              <p data-i18n="docs.colorsRuleThreeDesc">建议用苔绿、提醒用赭黄、风险用校对红，各司其职不混用。色彩即信号，用色即表达。</p>
+            </article>
+          </div>
+
+          <div class="palette-showcase">
+            <div class="palette-showcase-group">
+              <h4 data-i18n="docs.colorGroupPrimary">主色</h4>
+              <div class="color-card-grid is-large">
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #1F3238;"></span>
+                  <strong data-i18n="docs.colorInk">墨黑</strong>
+                  <code>#1F3238</code>
+                  <p data-i18n="docs.colorInkDesc">正文与标题</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #FFFFFF;"></span>
+                  <strong data-i18n="docs.colorWhite">纸白</strong>
+                  <code>#FFFFFF</code>
+                  <p data-i18n="docs.colorWhiteDesc">页面主背景</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #264653;"></span>
+                  <strong data-i18n="docs.colorBrand">深海青</strong>
+                  <code>#264653</code>
+                  <p data-i18n="docs.colorBrandDesc">品牌主色</p>
+                </div>
+              </div>
             </div>
-
-            <div class="demo-box">
-              <div class="palette-group">
-                <h4 data-i18n="docs.colorGroupPrimary">Primary</h4>
-                <div class="color-card-grid">
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #1F3238;"></span>
-                    <strong data-i18n="docs.colorInk">Ink Black</strong>
-                    <code>#1F3238</code>
-                    <p data-i18n="docs.colorInkDesc">正文与标题</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #FFFFFF;"></span>
-                    <strong data-i18n="docs.colorWhite">Paper White</strong>
-                    <code>#FFFFFF</code>
-                    <p data-i18n="docs.colorWhiteDesc">页面主背景</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #264653;"></span>
-                    <strong data-i18n="docs.colorBrand">Deep Sea</strong>
-                    <code>#264653</code>
-                    <p data-i18n="docs.colorBrandDesc">品牌主色</p>
-                  </div>
+            <div class="palette-showcase-group">
+              <h4 data-i18n="docs.colorGroupNeutral">中性色</h4>
+              <div class="color-card-grid is-large">
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #F7F7F5;"></span>
+                  <strong data-i18n="docs.colorPage">页面灰</strong>
+                  <code>#F7F7F5</code>
+                  <p data-i18n="docs.colorPageDesc">淡灰底色</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #EDEDEA;"></span>
+                  <strong data-i18n="docs.colorLine">分割线</strong>
+                  <code>#EDEDEA</code>
+                  <p data-i18n="docs.colorLineDesc">分割线与描边</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #6B716F;"></span>
+                  <strong data-i18n="docs.colorMuted">辅助灰</strong>
+                  <code>#6B716F</code>
+                  <p data-i18n="docs.colorMutedDesc">辅助文字</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #FFF9E8;"></span>
+                  <strong data-i18n="docs.colorWarm">报纸黄</strong>
+                  <code>#FFF9E8</code>
+                  <p data-i18n="docs.colorWarmDesc">日报高亮底</p>
                 </div>
               </div>
-
-              <div class="palette-group">
-                <h4 data-i18n="docs.colorGroupNeutral">Neutrals</h4>
-                <div class="color-card-grid">
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #F7F7F5;"></span>
-                    <strong data-i18n="docs.colorPage">Page Gray</strong>
-                    <code>#F7F7F5</code>
-                    <p data-i18n="docs.colorPageDesc">淡灰底色</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #EDEDEA;"></span>
-                    <strong data-i18n="docs.colorLine">Soft Line</strong>
-                    <code>#EDEDEA</code>
-                    <p data-i18n="docs.colorLineDesc">分割线与描边</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #6B716F;"></span>
-                    <strong data-i18n="docs.colorMuted">Muted Text</strong>
-                    <code>#6B716F</code>
-                    <p data-i18n="docs.colorMutedDesc">辅助文字</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #FFF9E8;"></span>
-                    <strong data-i18n="docs.colorWarm">Warm Note</strong>
-                    <code>#FFF9E8</code>
-                    <p data-i18n="docs.colorWarmDesc">日报高亮底</p>
-                  </div>
+            </div>
+            <div class="palette-showcase-group">
+              <h4 data-i18n="docs.colorGroupAccent">语义强调</h4>
+              <div class="color-card-grid is-large">
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #A8DDDC;"></span>
+                  <strong data-i18n="docs.colorAqua">冰海青</strong>
+                  <code>#A8DDDC</code>
+                  <p data-i18n="docs.colorAquaDesc">成功与信息态</p>
                 </div>
-              </div>
-
-              <div class="palette-group">
-                <h4 data-i18n="docs.colorGroupAccent">Semantic Accents</h4>
-                <div class="color-card-grid">
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #A8DDDC;"></span>
-                    <strong data-i18n="docs.colorAqua">Ice Aqua</strong>
-                    <code>#A8DDDC</code>
-                    <p data-i18n="docs.colorAquaDesc">成功与信息态</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #6F7B52;"></span>
-                    <strong data-i18n="docs.colorMoss">Moss</strong>
-                    <code>#6F7B52</code>
-                    <p data-i18n="docs.colorMossDesc">建议与确认</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #C99B3B;"></span>
-                    <strong data-i18n="docs.colorOchre">Ochre</strong>
-                    <code>#C99B3B</code>
-                    <p data-i18n="docs.colorOchreDesc">提醒</p>
-                  </div>
-                  <div class="color-card">
-                    <span class="color-swatch" style="background: #B75D46;"></span>
-                    <strong data-i18n="docs.colorProof">Proof Red</strong>
-                    <code>#B75D46</code>
-                    <p data-i18n="docs.colorProofDesc">风险与校样</p>
-                  </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #6F7B52;"></span>
+                  <strong data-i18n="docs.colorMoss">苔藓绿</strong>
+                  <code>#6F7B52</code>
+                  <p data-i18n="docs.colorMossDesc">建议与确认</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #C99B3B;"></span>
+                  <strong data-i18n="docs.colorOchre">赭石黄</strong>
+                  <code>#C99B3B</code>
+                  <p data-i18n="docs.colorOchreDesc">提醒</p>
+                </div>
+                <div class="color-card">
+                  <span class="color-swatch" style="background: #B75D46;"></span>
+                  <strong data-i18n="docs.colorProof">校对红</strong>
+                  <code>#B75D46</code>
+                  <p data-i18n="docs.colorProofDesc">风险与校样</p>
                 </div>
               </div>
             </div>
