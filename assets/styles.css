@@ -118,48 +118,36 @@
 
 /* 字号缩放 */
 html[data-font-size="small"] {
-  font-size: 14px;
+  --font-body-size: 13px;
+  --font-body-sm-size: 12px;
+  --font-caption-size: 11px;
+  --font-micro-size: 10px;
+  --font-display-size: 36px;
+  --font-headline-size: 24px;
+  --font-title1-size: 18px;
+  --font-title2-size: 15px;
 }
 
 html[data-font-size="medium"] {
-  font-size: 16px;
+  --font-body-size: 15px;
+  --font-body-sm-size: 14px;
+  --font-caption-size: 12px;
+  --font-micro-size: 11px;
+  --font-display-size: 42px;
+  --font-headline-size: 28px;
+  --font-title1-size: 20px;
+  --font-title2-size: 17px;
 }
 
 html[data-font-size="large"] {
-  font-size: 18px;
-}
-
-[data-font-size="small"] {
-  --font-body-size: 0.875rem;
-  --font-body-sm-size: 0.75rem;
-  --font-caption-size: 0.6875rem;
-  --font-micro-size: 0.625rem;
-  --font-display-size: 2.625rem;
-  --font-headline-size: 1.625rem;
-  --font-title1-size: 1.25rem;
-  --font-title2-size: 1rem;
-}
-
-[data-font-size="medium"] {
-  --font-body-size: 0.9375rem;
-  --font-body-sm-size: 0.875rem;
-  --font-caption-size: 0.75rem;
-  --font-micro-size: 0.6875rem;
-  --font-display-size: 3rem;
-  --font-headline-size: 1.75rem;
-  --font-title1-size: 1.375rem;
-  --font-title2-size: 1.125rem;
-}
-
-[data-font-size="large"] {
-  --font-body-size: 1.0625rem;
-  --font-body-sm-size: 1rem;
-  --font-caption-size: 0.875rem;
-  --font-micro-size: 0.8125rem;
-  --font-display-size: 3.25rem;
-  --font-headline-size: 2rem;
-  --font-title1-size: 1.5rem;
-  --font-title2-size: 1.25rem;
+  --font-body-size: 17px;
+  --font-body-sm-size: 16px;
+  --font-caption-size: 14px;
+  --font-micro-size: 12px;
+  --font-display-size: 48px;
+  --font-headline-size: 32px;
+  --font-title1-size: 23px;
+  --font-title2-size: 19px;
 }
 
 [data-theme="dark"] {
