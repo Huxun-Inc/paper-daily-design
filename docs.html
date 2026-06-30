@@ -577,84 +577,116 @@
           </div>
         </section>
 
-        <section class="doc-section" id="components-common">
+        <section class="doc-section" id="components-breadcrumb">
           <div class="doc-section-head">
-            <p class="eyebrow" data-i18n="docs.componentsEyebrow">组件</p>
-            <h2 data-i18n="docs.commonUiTitle">常用控件</h2>
-            <p data-i18n="docs.commonUiDesc">对话框、Tooltip、面包屑、菜单和 Toast 这些基础反馈，决定整站是不是一套真正能落地的设计系统。</p>
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Breadcrumb</h2>
+            <p data-i18n="docs.breadcrumbDesc">面包屑导航提示用户当前位置，层级清晰、轻量不抢注意力。</p>
           </div>
 
           <div class="doc-grid">
             <div class="doc-copy">
               <ul class="doc-list">
-                <li data-i18n="docs.commonUiRuleOne">导航提示要轻，不要让辅助控件抢正文的戏。</li>
-                <li data-i18n="docs.commonUiRuleTwo">弹层内部依然维持白底或深底的清晰层级，避免彩色大铺底。</li>
-                <li data-i18n="docs.commonUiRuleThree">Tooltip、Toast、Dialog 都要在移动端和暗黑模式下可读。</li>
+                <li data-i18n="docs.breadcrumbRuleOne">导航提示要轻，不要让辅助控件抢正文的戏。</li>
+                <li data-i18n="docs.breadcrumbRuleTwo">分隔符用细箭头，不用粗竖线。</li>
+                <li data-i18n="docs.breadcrumbRuleThree">当前页用粗体，不做链接。</li>
               </ul>
             </div>
 
-            <div class="common-ui-stack">
-              <div class="demo-box">
-                <div class="demo-label" data-i18n="docs.commonBreadcrumbLabel">Breadcrumb</div>
-                <div class="demo-content">
-                  <div class="breadcrumb-demo" aria-label="Breadcrumb">
-                    <a href="#" data-i18n="docs.commonBreadcrumbHome">日报</a>
-                    <i class="ph ph-caret-right"></i>
-                    <a href="#" data-i18n="docs.commonBreadcrumbTopic">Agent</a>
-                    <i class="ph ph-caret-right"></i>
-                    <strong data-i18n="docs.commonBreadcrumbCurrent">综述工作台</strong>
-                  </div>
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="breadcrumb-demo" aria-label="Breadcrumb">
+                  <a href="#" data-i18n="docs.commonBreadcrumbHome">日报</a>
+                  <i class="ph ph-caret-right"></i>
+                  <a href="#" data-i18n="docs.commonBreadcrumbTopic">Agent</a>
+                  <i class="ph ph-caret-right"></i>
+                  <strong data-i18n="docs.commonBreadcrumbCurrent">综述工作台</strong>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="demo-box">
-                <div class="demo-label" data-i18n="docs.commonTooltipLabel">Tooltip</div>
-                <div class="demo-content">
-                  <div class="tooltip-demo">
-                    <button type="button"><i class="ph ph-info"></i></button>
-                    <div class="tooltip-bubble" data-i18n="docs.commonTooltipCopy">展示引用来源与模型推断的区别。</div>
-                  </div>
+        <section class="doc-section" id="components-tooltip">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Tooltip</h2>
+            <p data-i18n="docs.tooltipDesc">轻量提示气泡，鼠标悬停或聚焦时出现，解释图标或缩略信息。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.tooltipRuleOne">只放短句解释，不放大段内容。</li>
+                <li data-i18n="docs.tooltipRuleTwo">气泡用轻玻璃底，带细边框。</li>
+                <li data-i18n="docs.tooltipRuleThree">暗黑模式下保持可读，对比度足够。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="tooltip-demo">
+                  <button type="button"><i class="ph ph-info"></i></button>
+                  <div class="tooltip-bubble" data-i18n="docs.commonTooltipCopy">展示引用来源与模型推断的区别。</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="demo-box">
-                <div class="demo-label" data-i18n="docs.commonMenuLabel">Menu</div>
-                <div class="demo-content">
-                  <div class="menu-demo">
-                    <button type="button"><i class="ph ph-copy"></i><span data-i18n="docs.commonMenuCopy">复制摘要链接</span></button>
-                    <button type="button"><i class="ph ph-bell"></i><span data-i18n="docs.commonMenuNotify">关注作者更新</span></button>
-                    <button type="button" class="is-danger"><i class="ph ph-eye-slash"></i><span data-i18n="docs.commonMenuHide">减少这类内容</span></button>
-                  </div>
+        <section class="doc-section" id="components-menu">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Menu</h2>
+            <p data-i18n="docs.menuDesc">下拉菜单承载更多动作，图标+文字清晰分组，危险动作单独标识。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.menuRuleOne">菜单项左对齐图标和文字，间距一致。</li>
+                <li data-i18n="docs.menuRuleTwo">危险动作用强调色，放在菜单底部。</li>
+                <li data-i18n="docs.menuRuleThree">悬停态用轻底色，不用强色块。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="menu-demo">
+                  <button type="button"><i class="ph ph-copy"></i><span data-i18n="docs.commonMenuCopy">复制摘要链接</span></button>
+                  <button type="button"><i class="ph ph-bell"></i><span data-i18n="docs.commonMenuNotify">关注作者更新</span></button>
+                  <button type="button" class="is-danger"><i class="ph ph-eye-slash"></i><span data-i18n="docs.commonMenuHide">减少这类内容</span></button>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="demo-box">
-                <div class="demo-label" data-i18n="docs.commonDialogLabel">Dialog</div>
-                <div class="demo-content">
-                  <div class="dialog-stage">
-                    <div class="dialog-card-demo" role="dialog" aria-modal="true">
-                      <strong data-i18n="docs.commonDialogTitle">保存这组推荐偏好？</strong>
-                      <p data-i18n="docs.commonDialogCopy">系统会根据这 4 个方向和最近 7 天的阅读行为，重新生成你的明日简报。</p>
-                      <div class="dialog-actions">
-                        <button class="btn btn-ghost btn-sm" type="button" data-i18n="docs.commonDialogCancel">稍后</button>
-                        <button class="btn btn-primary btn-sm" type="button" data-i18n="docs.commonDialogConfirm">保存并刷新</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <section class="doc-section" id="components-dialog">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Dialog</h2>
+            <p data-i18n="docs.dialogDesc">模态对话框用于确认重要操作，标题、说明、动作按钮层级清晰。</p>
+          </div>
 
-              <div class="demo-box">
-                <div class="demo-label" data-i18n="docs.commonToastLabel">Toast</div>
-                <div class="demo-content">
-                  <div class="toast-stack-demo">
-                    <div class="toast-demo is-success">
-                      <i class="ph ph-check-circle"></i>
-                      <span data-i18n="docs.commonToastSaved">已加入阅读队列</span>
-                    </div>
-                    <div class="toast-demo is-info">
-                      <i class="ph ph-link"></i>
-                      <span data-i18n="docs.commonToastCopied">引用链接已复制</span>
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.dialogRuleOne">弹层内部维持白底或深底的清晰层级。</li>
+                <li data-i18n="docs.dialogRuleTwo">主动作在右，次动作在左，按钮顺序一致。</li>
+                <li data-i18n="docs.dialogRuleThree">移动端和暗黑模式下均可读。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="dialog-stage">
+                  <div class="dialog-card-demo" role="dialog" aria-modal="true">
+                    <strong data-i18n="docs.commonDialogTitle">保存这组推荐偏好？</strong>
+                    <p data-i18n="docs.commonDialogCopy">系统会根据这 4 个方向和最近 7 天的阅读行为，重新生成你的明日简报。</p>
+                    <div class="dialog-actions">
+                      <button class="btn btn-ghost btn-sm" type="button" data-i18n="docs.commonDialogCancel">稍后</button>
+                      <button class="btn btn-primary btn-sm" type="button" data-i18n="docs.commonDialogConfirm">保存并刷新</button>
                     </div>
                   </div>
                 </div>
@@ -663,117 +695,236 @@
           </div>
         </section>
 
-        <section class="doc-section" id="components-kit">
+        <section class="doc-section" id="components-toast">
           <div class="doc-section-head">
-            <p class="eyebrow" data-i18n="docs.componentsEyebrow">组件</p>
-            <h2 data-i18n="docs.componentKitTitle">组件矩阵</h2>
-            <p data-i18n="docs.componentKitDesc">把色彩、字体和状态落到真实控件里：筛选、输入、状态、列表、数据、通知都要能在同一套系统里成立。</p>
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Toast</h2>
+            <p data-i18n="docs.toastDesc">轻量反馈条，操作后短暂出现确认结果，不打断用户流程。</p>
           </div>
 
-          <div class="component-kit-grid">
-            <article class="kit-panel kit-panel-large">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitFiltersLabel">Filter</span>
-                <strong data-i18n="docs.kitFiltersTitle">研究方向筛选</strong>
-              </div>
-              <div class="filter-cloud" data-i18n-aria-label="docs.kitFilterAria" aria-label="研究方向筛选示例">
-                <button class="filter-pill is-active" type="button"><i class="ph ph-brain"></i><span data-i18n="docs.kitFilterAi">AI</span></button>
-                <button class="filter-pill" type="button"><i class="ph ph-dna"></i><span data-i18n="docs.kitFilterBio">Biology</span></button>
-                <button class="filter-pill is-warm" type="button"><i class="ph ph-lightning"></i><span data-i18n="docs.kitFilterHot">突破</span></button>
-                <button class="filter-pill is-cool" type="button"><i class="ph ph-waveform"></i><span data-i18n="docs.kitFilterAudio">Speech</span></button>
-                <button class="filter-pill is-danger" type="button"><i class="ph ph-x"></i><span data-i18n="docs.kitFilterHidden">不感兴趣</span></button>
-              </div>
-              <div class="segmented-demo" role="group" aria-label="阅读密度">
-                <button class="is-active" type="button" data-i18n="docs.kitSegmentBrief">简报</button>
-                <button type="button" data-i18n="docs.kitSegmentDigest">摘要</button>
-                <button type="button" data-i18n="docs.kitSegmentFull">全文</button>
-              </div>
-            </article>
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.toastRuleOne">图标+短句，信息密度适中。</li>
+                <li data-i18n="docs.toastRuleTwo">不同语义用不同图标色，背景统一玻璃态。</li>
+                <li data-i18n="docs.toastRuleThree">自动消失，也支持手动关闭。</li>
+              </ul>
+            </div>
 
-            <article class="kit-panel">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitInputLabel">Input</span>
-                <strong data-i18n="docs.kitInputTitle">检索输入</strong>
-              </div>
-              <label class="field-demo">
-                <span data-i18n="docs.kitInputLabelText">关键词</span>
-                <div class="field-shell">
-                  <i class="ph ph-magnifying-glass"></i>
-                  <input type="text" value="reasoning agent" aria-label="reasoning agent" />
-                  <button type="button" data-i18n-aria-label="docs.buttonMore" aria-label="更多"><i class="ph ph-sliders-horizontal"></i></button>
-                </div>
-              </label>
-              <div class="helper-row">
-                <i class="ph ph-info"></i>
-                <span data-i18n="docs.kitInputHelp">支持标题、作者、DOI 与领域标签混搜。</span>
-              </div>
-            </article>
-
-            <article class="kit-panel">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitStatusLabel">Status</span>
-                <strong data-i18n="docs.kitStatusTitle">多色状态</strong>
-              </div>
-              <div class="status-stack">
-                <span class="status-token is-info"><i class="ph ph-info"></i><span data-i18n="docs.kitStatusInfo">已同步 128 篇</span></span>
-                <span class="status-token is-success"><i class="ph ph-check-circle"></i><span data-i18n="docs.kitStatusSuccess">推荐稳定</span></span>
-                <span class="status-token is-warning"><i class="ph ph-warning"></i><span data-i18n="docs.kitStatusWarning">引用待复核</span></span>
-                <span class="status-token is-danger"><i class="ph ph-seal-warning"></i><span data-i18n="docs.kitStatusDanger">来源不足</span></span>
-              </div>
-            </article>
-
-            <article class="kit-panel kit-panel-large">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitListLabel">List</span>
-                <strong data-i18n="docs.kitListTitle">紧凑阅读列表</strong>
-              </div>
-              <div class="research-list-demo">
-                <div class="research-row">
-                  <span class="row-rank">01</span>
-                  <div>
-                    <strong>Tool-Augmented Agents for Literature Review</strong>
-                    <p data-i18n="docs.kitListItemOne">方法贡献清楚，适合加入本周综述。</p>
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="toast-stack-demo">
+                  <div class="toast-demo is-success">
+                    <i class="ph ph-check-circle"></i>
+                    <span data-i18n="docs.commonToastSaved">已加入阅读队列</span>
                   </div>
-                  <button type="button" data-i18n-aria-label="docs.bookmark" aria-label="收藏"><i class="ph ph-bookmark-simple"></i></button>
-                </div>
-                <div class="research-row is-muted">
-                  <span class="row-rank">02</span>
-                  <div>
-                    <strong>Efficient Long Context Retrieval</strong>
-                    <p data-i18n="docs.kitListItemTwo">已读，保留为引用候选。</p>
+                  <div class="toast-demo is-info">
+                    <i class="ph ph-link"></i>
+                    <span data-i18n="docs.commonToastCopied">引用链接已复制</span>
                   </div>
-                  <button type="button" data-i18n-aria-label="docs.buttonMore" aria-label="更多"><i class="ph ph-dots-three"></i></button>
                 </div>
               </div>
-            </article>
+            </div>
+          </div>
+        </section>
 
-            <article class="kit-panel">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitMetricLabel">Metric</span>
-                <strong data-i18n="docs.kitMetricTitle">数据摘要</strong>
-              </div>
-              <div class="metric-demo">
-                <div>
-                  <span data-i18n="docs.kitMetricSaved">收藏率</span>
-                  <strong>42%</strong>
-                </div>
-                <div>
-                  <span data-i18n="docs.kitMetricRead">读完率</span>
-                  <strong>68%</strong>
-                </div>
-              </div>
-            </article>
+        <section class="doc-section" id="components-filter-pills">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Filter Pills</h2>
+            <p data-i18n="docs.filterPillsDesc">胶囊形筛选标签，用于快速切换分类、主题或视图。</p>
+          </div>
 
-            <article class="kit-panel">
-              <div class="kit-panel-head">
-                <span data-i18n="docs.kitNoticeLabel">Notice</span>
-                <strong data-i18n="docs.kitNoticeTitle">轻提示</strong>
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.filterPillsRuleOne">图标+文字，语义一目了然。</li>
+                <li data-i18n="docs.filterPillsRuleTwo">激活态用轻底色+描边，不用强色块。</li>
+                <li data-i18n="docs.filterPillsRuleThree">支持多选和单选两种模式。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="filter-cloud" data-i18n-aria-label="docs.kitFilterAria" aria-label="研究方向筛选示例">
+                  <button class="filter-pill is-active" type="button"><i class="ph ph-brain"></i><span data-i18n="docs.kitFilterAi">AI</span></button>
+                  <button class="filter-pill" type="button"><i class="ph ph-dna"></i><span data-i18n="docs.kitFilterBio">Biology</span></button>
+                  <button class="filter-pill is-warm" type="button"><i class="ph ph-lightning"></i><span data-i18n="docs.kitFilterHot">突破</span></button>
+                  <button class="filter-pill is-cool" type="button"><i class="ph ph-waveform"></i><span data-i18n="docs.kitFilterAudio">Speech</span></button>
+                  <button class="filter-pill is-danger" type="button"><i class="ph ph-x"></i><span data-i18n="docs.kitFilterHidden">不感兴趣</span></button>
+                </div>
+                <div class="segmented-demo" role="group" aria-label="阅读密度">
+                  <button class="is-active" type="button" data-i18n="docs.kitSegmentBrief">简报</button>
+                  <button type="button" data-i18n="docs.kitSegmentDigest">摘要</button>
+                  <button type="button" data-i18n="docs.kitSegmentFull">全文</button>
+                </div>
               </div>
-              <div class="notice-demo">
-                <i class="ph ph-newspaper-clipping"></i>
-                <p data-i18n="docs.kitNoticeCopy">今日日报已生成。淡黄只用于重点提醒，不作为页面底色。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="components-search-input">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Search Input</h2>
+            <p data-i18n="docs.searchInputDesc">带图标的搜索输入框，支持前置图标和后置操作按钮。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.searchInputRuleOne">搜索图标前置，操作按钮后置。</li>
+                <li data-i18n="docs.searchInputRuleTwo">辅助说明文字放在输入框下方，不占位。</li>
+                <li data-i18n="docs.searchInputRuleThree">支持多字段混合搜索：标题、作者、DOI、标签。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <label class="field-demo">
+                  <span data-i18n="docs.kitInputLabelText">关键词</span>
+                  <div class="field-shell">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" value="reasoning agent" aria-label="reasoning agent" />
+                    <button type="button" data-i18n-aria-label="docs.buttonMore" aria-label="更多"><i class="ph ph-sliders-horizontal"></i></button>
+                  </div>
+                </label>
+                <div class="helper-row">
+                  <i class="ph ph-info"></i>
+                  <span data-i18n="docs.kitInputHelp">支持标题、作者、DOI 与领域标签混搜。</span>
+                </div>
               </div>
-            </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="components-status-indicators">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Status Indicators</h2>
+            <p data-i18n="docs.statusIndicatorsDesc">多色状态标签，传达同步、成功、警告、错误等语义。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.statusIndicatorsRuleOne">图标+文字，语义清晰。</li>
+                <li data-i18n="docs.statusIndicatorsRuleTwo">四种语义色：info、success、warning、danger。</li>
+                <li data-i18n="docs.statusIndicatorsRuleThree">玻璃态底+细边框，不抢正文注意力。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="status-stack">
+                  <span class="status-token is-info"><i class="ph ph-info"></i><span data-i18n="docs.kitStatusInfo">已同步 128 篇</span></span>
+                  <span class="status-token is-success"><i class="ph ph-check-circle"></i><span data-i18n="docs.kitStatusSuccess">推荐稳定</span></span>
+                  <span class="status-token is-warning"><i class="ph ph-warning"></i><span data-i18n="docs.kitStatusWarning">引用待复核</span></span>
+                  <span class="status-token is-danger"><i class="ph ph-seal-warning"></i><span data-i18n="docs.kitStatusDanger">来源不足</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="components-reading-list">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Reading List</h2>
+            <p data-i18n="docs.readingListDesc">紧凑阅读列表，排名、标题、描述和操作按钮一行搞定。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.readingListRuleOne">排名、标题、描述、操作四列结构清晰。</li>
+                <li data-i18n="docs.readingListRuleTwo">已读项降低对比度，保持信息完整。</li>
+                <li data-i18n="docs.readingListRuleThree">操作按钮右对齐，不干扰正文阅读。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="research-list-demo">
+                  <div class="research-row">
+                    <span class="row-rank">01</span>
+                    <div>
+                      <strong>Tool-Augmented Agents for Literature Review</strong>
+                      <p data-i18n="docs.kitListItemOne">方法贡献清楚，适合加入本周综述。</p>
+                    </div>
+                    <button type="button" data-i18n-aria-label="docs.bookmark" aria-label="收藏"><i class="ph ph-bookmark-simple"></i></button>
+                  </div>
+                  <div class="research-row is-muted">
+                    <span class="row-rank">02</span>
+                    <div>
+                      <strong>Efficient Long Context Retrieval</strong>
+                      <p data-i18n="docs.kitListItemTwo">已读，保留为引用候选。</p>
+                    </div>
+                    <button type="button" data-i18n-aria-label="docs.buttonMore" aria-label="更多"><i class="ph ph-dots-three"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="components-metrics">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Metrics</h2>
+            <p data-i18n="docs.metricsDesc">数据摘要卡片，展示关键指标的数值和含义。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.metricsRuleOne">标签在上，数值在下，层级清晰。</li>
+                <li data-i18n="docs.metricsRuleTwo">指标间用细分割线或留白区分。</li>
+                <li data-i18n="docs.metricsRuleThree">数值用大字重，标签用辅助色。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="metric-demo">
+                  <div>
+                    <span data-i18n="docs.kitMetricSaved">收藏率</span>
+                    <strong>42%</strong>
+                  </div>
+                  <div>
+                    <span data-i18n="docs.kitMetricRead">读完率</span>
+                    <strong>68%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="components-notice-bar">
+          <div class="doc-section-head">
+            <p class="eyebrow" data-i18n="docs.componentsEyebrow">Components</p>
+            <h2>Notice Bar</h2>
+            <p data-i18n="docs.noticeBarDesc">轻提示条，用于展示系统通知、日报生成等非阻断信息。</p>
+          </div>
+
+          <div class="doc-grid">
+            <div class="doc-copy">
+              <ul class="doc-list">
+                <li data-i18n="docs.noticeBarRuleOne">图标+文字，信息传达高效。</li>
+                <li data-i18n="docs.noticeBarRuleTwo">淡黄底色只用于重点提醒，不做页面底色。</li>
+                <li data-i18n="docs.noticeBarRuleThree">可手动关闭，也可自动消失。</li>
+              </ul>
+            </div>
+
+            <div class="demo-box">
+              <div class="demo-content">
+                <div class="notice-demo">
+                  <i class="ph ph-newspaper-clipping"></i>
+                  <p data-i18n="docs.kitNoticeCopy">今日日报已生成。淡黄只用于重点提醒，不作为页面底色。</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
