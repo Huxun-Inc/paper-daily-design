@@ -1089,16 +1089,6 @@ img {
   transition: border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), transform 200ms var(--ease-out);
 }
 
-.mission-evidence-item::after {
-  content: "";
-  position: absolute;
-  inset: auto -30% -42% 36%;
-  height: 86px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--brand-soft) 70%, transparent);
-  pointer-events: none;
-}
-
 .mission-evidence-item:hover {
   border-color: var(--line-strong);
   box-shadow: var(--shadow-md);
@@ -1139,6 +1129,80 @@ img {
   font-size: var(--font-caption-size);
   line-height: 1.65;
   color: var(--ink-muted);
+}
+
+.mission-insight-card {
+  margin-top: var(--space-md);
+  padding: var(--space-lg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, var(--panel-tint-top), var(--panel-tint-bottom)),
+    var(--surface);
+  box-shadow: var(--shadow-xs);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.mission-insight-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-micro-size);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-press);
+}
+
+.mission-insight-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--brand-soft) 65%, transparent);
+}
+
+.mission-insight-body {
+  margin: 0;
+  font-size: var(--font-caption-size);
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.mission-insight-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.mission-insight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--glass-bg-strong);
+  color: var(--ink);
+  font-size: var(--font-micro-size);
+  font-weight: 700;
+  transition: border-color 180ms var(--ease-out), background 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.mission-insight-link::after {
+  content: "\2197";
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.mission-insight-link:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
 }
 
 .mission-sources {
@@ -6336,6 +6400,19 @@ img {
 
   .mission-evidence-item {
     min-height: 0;
+  }
+
+  .mission-insight-card {
+    padding: var(--space-md);
+  }
+
+  .mission-insight-links {
+    flex-direction: column;
+  }
+
+  .mission-insight-link {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .section {
