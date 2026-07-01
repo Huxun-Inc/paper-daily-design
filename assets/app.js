@@ -431,13 +431,14 @@
     if (typeof i18next === 'undefined') return;
 
     const languageSelect = document.getElementById('languageSelect');
+    const savedLanguage = localStorage.getItem('paperdaily-language');
 
     i18next
       .use(i18nextHttpBackend)
       .use(i18nextBrowserLanguageDetector)
       .init({
         fallbackLng: 'zh',
-        lng: 'zh',
+        lng: savedLanguage || 'zh',
         backend: {
           loadPath: 'locales/{{lng}}/common.json'
         },
@@ -449,6 +450,8 @@
         if (languageSelect) {
           languageSelect.value = i18next.language || 'zh';
         }
+        document.documentElement.lang = i18next.language || 'zh';
+        document.documentElement.dir = i18next.language === 'ar' ? 'rtl' : 'ltr';
       });
 
     function updateContent() {
@@ -510,12 +513,86 @@
       el.replaceChildren(template.content.cloneNode(true));
     }
 
+    function saveLanguagePreference(language) {
+      localStorage.setItem('paperdaily-language', language);
+      localStorage.setItem('paperdaily-language-consent', 'accepted');
+      showLanguagePreferenceToast();
+    }
+
+    function showLanguagePreferenceToast() {
+      const previous = document.querySelector('.language-pref-toast');
+      if (previous) previous.remove();
+
+      const toast = document.createElement('div');
+      toast.className = 'language-pref-toast';
+      toast.setAttribute('role', 'status');
+      toast.innerHTML = `
+        <i class="ph ph-cookie"></i>
+        <span>${i18next.t('docs.languageSavedToast', { fallbackValue: '语言偏好已保存到本机浏览器。' })}</span>
+      `;
+      document.body.appendChild(toast);
+      window.setTimeout(() => toast.classList.add('is-visible'), 20);
+      window.setTimeout(() => {
+        toast.classList.remove('is-visible');
+        window.setTimeout(() => toast.remove(), 180);
+      }, 2600);
+    }
+
+    function showLanguagePreferencePrompt(language) {
+      if (document.querySelector('.language-pref-dialog')) return;
+
+      const overlay = document.createElement('div');
+      overlay.className = 'language-pref-dialog';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-labelledby', 'languagePrefTitle');
+      overlay.innerHTML = `
+        <div class="language-pref-card">
+          <div class="language-pref-icon" aria-hidden="true">
+            <i class="ph ph-cookie"></i>
+          </div>
+          <div class="language-pref-copy">
+            <strong id="languagePrefTitle">${i18next.t('docs.languageSaveTitle', { fallbackValue: '保存语言偏好？' })}</strong>
+            <p>${i18next.t('docs.languageSaveDesc', { fallbackValue: '我们可以把你选择的语言保存在本机浏览器里，让首页和文档保持一致。不会使用 cookie。' })}</p>
+          </div>
+          <div class="language-pref-actions">
+            <button class="btn btn-secondary btn-sm" type="button" data-language-pref="decline">${i18next.t('docs.languageSaveDecline', { fallbackValue: '暂不保存' })}</button>
+            <button class="btn btn-primary btn-sm" type="button" data-language-pref="accept">${i18next.t('docs.languageSaveAccept', { fallbackValue: '保存' })}</button>
+          </div>
+        </div>
+      `;
+
+      overlay.addEventListener('click', (event) => {
+        const action = event.target.closest('[data-language-pref]')?.dataset.languagePref;
+        if (!action) return;
+
+        if (action === 'accept') {
+          saveLanguagePreference(language);
+        } else {
+          localStorage.setItem('paperdaily-language-consent', 'declined');
+          localStorage.removeItem('paperdaily-language');
+        }
+
+        overlay.remove();
+      });
+
+      document.body.appendChild(overlay);
+    }
+
     if (languageSelect) {
       languageSelect.addEventListener('change', (e) => {
-        i18next.changeLanguage(e.target.value, () => {
+        const nextLanguage = e.target.value;
+        i18next.changeLanguage(nextLanguage, () => {
           updateContent();
-          document.documentElement.lang = e.target.value;
-          document.documentElement.dir = e.target.value === 'ar' ? 'rtl' : 'ltr';
+          document.documentElement.lang = nextLanguage;
+          document.documentElement.dir = nextLanguage === 'ar' ? 'rtl' : 'ltr';
+
+          const consent = localStorage.getItem('paperdaily-language-consent');
+          if (consent === 'accepted') {
+            saveLanguagePreference(nextLanguage);
+          } else if (!consent) {
+            showLanguagePreferencePrompt(nextLanguage);
+          }
         });
       });
     }
@@ -1545,8 +1622,8 @@
         const totalFrames = Math.max(1, op - ip);
 
         const rect = canvas.getBoundingClientRect();
-        const displayWidth = Math.max(w, Math.round(rect.width || w));
-        const displayHeight = Math.max(h, Math.round(rect.height || h));
+        const displayWidth = Math.max(1, Math.round(rect.width || w));
+        const displayHeight = Math.max(1, Math.round(rect.height || h));
         const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
         const renderWidth = Math.round(displayWidth * pixelRatio);
         const renderHeight = Math.round(displayHeight * pixelRatio);
