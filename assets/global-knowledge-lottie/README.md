@@ -1,39 +1,28 @@
-# Global Knowledge Earth Lottie
+# Global Knowledge Earth - Website Canvas Player
 
-Website-ready Lottie package.
+This package is the final website-ready version. It does not depend on
+`lottie-web`; it uses CanvasKit/Skottie in the browser, matching the renderer
+that plays the animation correctly.
 
 ## Files
 
-- `global-knowledge-earth.lottie.json` - the animation JSON.
-- `ArialUnicode.ttf` - subset font containing only the glyphs used by the
-  slogans, so the package stays small.
-- `index.html` - minimal browser demo using `lottie-web`.
+- `index.html` - ready-to-use web page.
+- `global-knowledge-earth.lottie.json` - animation source.
+- `ArialUnicode.ttf` - 72KB subset font containing only the slogan glyphs.
+- `canvaskit.js` and `canvaskit.wasm` - local CanvasKit runtime files.
 
-## Use On A Website
+## Test Locally
 
-Upload `global-knowledge-earth.lottie.json` and `ArialUnicode.ttf` to the same
-public folder, then load the JSON with `lottie-web`:
-
-```html
-<style>
-  @font-face {
-    font-family: "Arial Unicode MS";
-    src: url("./ArialUnicode.ttf") format("truetype");
-    font-display: block;
-  }
-</style>
-<div id="lottie" style="width:320px;height:320px"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-<script>
-  lottie.loadAnimation({
-    container: document.getElementById("lottie"),
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-    path: "./global-knowledge-earth.lottie.json",
-  });
-</script>
+```bash
+python3 -m http.server 8099
 ```
 
-For local testing, serve the folder with a local web server instead of opening
-the file directly.
+Then open:
+
+```text
+http://127.0.0.1:8099/
+```
+
+Upload all files in this folder together to your website. Do not open
+`index.html` directly from the filesystem; use a web server so JSON, font, and
+WASM files can be fetched correctly.
