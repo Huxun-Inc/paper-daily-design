@@ -3412,8 +3412,6 @@ img {
 
 .a11y-ref {
   margin-top: var(--space-xl);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--line);
 }
 
 .a11y-ref h3 {
@@ -6123,8 +6121,12 @@ img {
 
   .mission-globe-wrapper,
   .mission-globe {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .globe-lottie {
+    transform: translateX(-2%);
   }
 
   .globe-sparkles {
