@@ -5613,6 +5613,10 @@ img {
   border-top: 1px solid var(--line-soft);
 }
 
+.switch-save-btn.is-saved {
+  pointer-events: none;
+}
+
 [data-theme="dark"] .switch-demo.is-on {
   background: #CDEDEC;
   border-color: rgba(205, 237, 236, 0.64);

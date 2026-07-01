@@ -219,16 +219,17 @@
 
       if (saveBtn) {
         saveBtn.addEventListener('click', () => {
+          if (saveBtn.classList.contains('is-saved')) return;
           toggles.forEach(t => {
             savedStates.set(t, { checked: t.getAttribute('aria-checked') === 'true', isOn: t.classList.contains('is-on') });
           });
           const origLabel = saveBtn.textContent;
           const savedLabel = typeof i18next !== 'undefined' ? i18next.t('docs.switchSaved') : '已保存';
           saveBtn.textContent = savedLabel;
-          saveBtn.disabled = true;
+          saveBtn.classList.add('is-saved');
           setTimeout(() => {
             saveBtn.textContent = origLabel;
-            saveBtn.disabled = false;
+            saveBtn.classList.remove('is-saved');
           }, 1500);
         });
       }
