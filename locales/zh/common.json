@@ -391,6 +391,8 @@
   "docs.typographyRuleThreeDesc": "大标题行高紧凑（1.15）保证气场，正文行高宽松（1.60）保证长文阅读舒适度，小标题行高适中（1.30-1.35）兼顾密度与呼吸感。",
   "docs.typoShowcaseLabel": "Typography Scale",
   "docs.typoShowcaseTitle": "字号对照",
+  "docs.fontDisplayTitle": "标题字体",
+  "docs.fontUiTitle": "正文字体",
   "docs.colorsTitle": "主题色彩",
   "docs.colorsDesc": "底色中性克制，品牌色精准落点，语义色各司其职。不靠彩色撑气氛，内容本身是主角。深海青与冰海青只在关键处落笔。",
   "docs.colorsRuleOneTitle": "底色中性",

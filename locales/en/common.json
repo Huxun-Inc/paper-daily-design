@@ -390,6 +390,8 @@
   "docs.typographyRuleThreeDesc": "Tight line height for large titles (1.15) for presence, loose for body text (1.60) for reading comfort, moderate for subheadings (1.30-1.35) balancing density and breathing room.",
   "docs.typoShowcaseLabel": "Typography Scale",
   "docs.typoShowcaseTitle": "Type Scale Reference",
+  "docs.fontDisplayTitle": "Display Font",
+  "docs.fontUiTitle": "UI / Body Font",
   "docs.colorsTitle": "Theme Colors",
   "docs.colorsDesc": "Neutral and restrained backgrounds, precisely placed brand colors, and semantic colors each with their own role. No colorful atmosphere — content itself is the protagonist. Deep Sea and Ice Aqua only appear where they matter.",
   "docs.colorsRuleOneTitle": "Neutral Backgrounds",

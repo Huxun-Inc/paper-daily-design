@@ -3072,6 +3072,47 @@ img {
   color: var(--ink);
 }
 
+.font-family-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--line);
+}
+
+.font-family-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.font-family-sample {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.font-family-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.font-family-info strong {
+  font-size: var(--font-body-sm-size);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.font-family-info span {
+  font-size: var(--font-caption-size);
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
 .typography-scale.is-large {
   display: flex;
   flex-direction: column;
@@ -3127,7 +3168,7 @@ img {
   line-height: 1.35;
 }
 
-.typography-scale.is-large .type-row strong:not([class]) {
+.typography-scale.is-large .type-row.is-body strong {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
