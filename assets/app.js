@@ -196,14 +196,53 @@
   }
 
   function initSwitchDemos() {
-    document.querySelectorAll('.switch-demo[role="switch"]').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        if (toggle.disabled) return;
+    document.querySelectorAll('.demo-box').forEach(box => {
+      const toggles = box.querySelectorAll('.switch-demo[role="switch"]');
+      if (!toggles.length) return;
 
-        const isOn = toggle.getAttribute('aria-checked') === 'true';
-        toggle.setAttribute('aria-checked', String(!isOn));
-        toggle.classList.toggle('is-on', !isOn);
+      const savedStates = new Map();
+      toggles.forEach(t => {
+        savedStates.set(t, { checked: t.getAttribute('aria-checked') === 'true', isOn: t.classList.contains('is-on') });
       });
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          if (toggle.disabled) return;
+          const isOn = toggle.getAttribute('aria-checked') === 'true';
+          toggle.setAttribute('aria-checked', String(!isOn));
+          toggle.classList.toggle('is-on', !isOn);
+        });
+      });
+
+      const saveBtn = box.querySelector('.switch-save-btn');
+      const cancelBtn = box.querySelector('.switch-cancel-btn');
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          toggles.forEach(t => {
+            savedStates.set(t, { checked: t.getAttribute('aria-checked') === 'true', isOn: t.classList.contains('is-on') });
+          });
+          const origLabel = saveBtn.textContent;
+          const savedLabel = typeof i18next !== 'undefined' ? i18next.t('docs.switchSaved') : '已保存';
+          saveBtn.textContent = savedLabel;
+          saveBtn.disabled = true;
+          setTimeout(() => {
+            saveBtn.textContent = origLabel;
+            saveBtn.disabled = false;
+          }, 1500);
+        });
+      }
+
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', () => {
+          toggles.forEach(t => {
+            const s = savedStates.get(t);
+            if (!s) return;
+            t.setAttribute('aria-checked', String(s.checked));
+            t.classList.toggle('is-on', s.isOn);
+          });
+        });
+      }
     });
   }
 

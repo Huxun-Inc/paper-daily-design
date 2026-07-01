@@ -5604,6 +5604,15 @@ img {
   cursor: not-allowed;
 }
 
+.switch-demo-actions {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: flex-end;
+  padding-top: var(--space-sm);
+  margin-top: var(--space-xs);
+  border-top: 1px solid var(--line-soft);
+}
+
 [data-theme="dark"] .switch-demo.is-on {
   background: #CDEDEC;
   border-color: rgba(205, 237, 236, 0.64);
