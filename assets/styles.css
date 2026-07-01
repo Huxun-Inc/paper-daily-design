@@ -943,7 +943,8 @@ img {
   font-family: 'Arial Unicode MS', var(--font-ui);
 }
 
-.globe-lottie svg {
+.globe-lottie svg,
+.globe-lottie canvas {
   display: block;
   position: relative;
   z-index: 3;

@@ -1471,51 +1471,80 @@
   }
 
   function initGlobeLottie() {
-    const container = document.getElementById('globeLottie');
-    if (!container || typeof lottie === 'undefined') return;
+    const canvas = document.getElementById('globeLottie');
+    if (!canvas || typeof CanvasKitInit === 'undefined') return;
 
-    async function loadAnimation() {
-      try {
-        await document.fonts.load('13px "Arial Unicode MS"');
-        await document.fonts.load('13px "ArialUnicodeMS"');
-        await document.fonts.ready;
+    const basePath = 'assets/global-knowledge-lottie/';
+    const jsonPath = basePath + 'animations/global-knowledge-earth.lottie.json';
+    const fontPath = basePath + 'fonts/ArialUnicode.ttf';
 
-        const res = await fetch('assets/global-knowledge-lottie/animations/scene-1.json');
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-
-        const animation = lottie.loadAnimation({
-          container: container,
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          animationData: data,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid meet'
-          }
-        });
-
-        animation.addEventListener('DOMLoaded', () => {
-          container.dataset.animationReady = 'true';
-          console.log('[Lottie] DOM loaded, layers:', animation.animationData?.layers?.length);
-        });
-
-        animation.addEventListener('data_failed', (err) => {
-          console.error('[Lottie] Data failed:', err);
-        });
-
-        animation.addEventListener('error', (err) => {
-          console.error('[Lottie] Error:', err);
-        });
-
-        window.__paperDailyLottie = window.__paperDailyLottie || [];
-        window.__paperDailyLottie.push(animation);
-      } catch (e) {
-        console.error('[Lottie] Load failed:', e);
-      }
+    async function fetchOk(url, type) {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`${type} load failed: ${url}, HTTP ${res.status}`);
+      return res;
     }
 
-    loadAnimation();
+    (async () => {
+      try {
+        const CanvasKit = await CanvasKitInit({
+          locateFile: (file) => basePath + file
+        });
+
+        const [jsonText, fontBuffer] = await Promise.all([
+          fetchOk(jsonPath, 'json').then(r => r.text()),
+          fetchOk(fontPath, 'font').then(r => r.arrayBuffer())
+        ]);
+
+        const doc = JSON.parse(jsonText);
+        const w = Number(doc.w || 320);
+        const h = Number(doc.h || 320);
+        const fps = Number(doc.fr || 30);
+        const ip = Number(doc.ip || 0);
+        const op = Number(doc.op || 1);
+        const totalFrames = Math.max(1, op - ip);
+
+        canvas.width = w;
+        canvas.height = h;
+
+        const assets = {
+          'ArialUnicode.ttf': fontBuffer
+        };
+
+        const animation = CanvasKit.MakeManagedAnimation(jsonText, assets);
+        if (!animation) throw new Error('CanvasKit.MakeManagedAnimation returned null');
+
+        const surface = CanvasKit.MakeCanvasSurface(canvas);
+        if (!surface) throw new Error('CanvasKit.MakeCanvasSurface returned null');
+
+        const skCanvas = surface.getCanvas();
+        const bounds = CanvasKit.LTRBRect(0, 0, w, h);
+        const start = performance.now();
+
+        function draw(now) {
+          const elapsedSeconds = (now - start) / 1000;
+          const frame = ip + ((elapsedSeconds * fps) % totalFrames);
+
+          animation.seekFrame(frame);
+          skCanvas.clear(CanvasKit.TRANSPARENT);
+          animation.render(skCanvas, bounds);
+          surface.flush();
+
+          requestAnimationFrame(draw);
+        }
+
+        requestAnimationFrame(draw);
+
+        canvas.dataset.animationReady = 'true';
+        console.log('[CanvasKit] playing: ' + w + 'x' + h + ', ' + fps + 'fps, ' + totalFrames + ' frames');
+
+        window.addEventListener('beforeunload', () => {
+          try { animation.delete(); } catch (_) {}
+          try { surface.delete(); } catch (_) {}
+        });
+      } catch (err) {
+        console.error('[CanvasKit] Error:', err);
+      }
+    })();
   }
 
   function init() {
